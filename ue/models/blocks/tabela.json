@@ -1,0 +1,89 @@
+{
+  "definitions": [
+    {
+      "title": "Tabela",
+      "id": "tabela",
+      "model": "tabela",
+      "plugins": {
+        "da": {
+          "name": "tabela",
+          "unsafeHTML": "<div class=\"tabela\"><div><div>Tabela 1 | Legenda da tabela</div></div><div><div><table><tbody><tr><td>Coluna 1</td><td>Coluna 2</td></tr><tr><td>Valor</td><td>Valor</td></tr></tbody></table></div></div><div><div>Fonte: </div></div></div>",
+          "fields": [
+            {
+              "name": "legenda",
+              "selector": "div:nth-child(1)>div"
+            },
+            {
+              "name": "tabela",
+              "selector": "div:nth-child(2)>div"
+            },
+            {
+              "name": "fonte",
+              "selector": "div:nth-child(3)>div"
+            }
+          ]
+        }
+      },
+      "filter": "tabela"
+    }
+  ],
+  "models": [
+    {
+      "id": "tabela",
+      "fields": [
+        {
+          "component": "multiselect",
+          "name": "classes",
+          "label": "Variações",
+          "options": [
+            {
+              "name": "Centralizada",
+              "value": "centralizada"
+            },
+            {
+              "name": "Primeira coluna em destaque",
+              "value": "primeira-coluna"
+            },
+            {
+              "name": "Sem cabeçalho",
+              "value": "sem-cabecalho"
+            }
+          ]
+        },
+        {
+          "component": "text",
+          "name": "legenda",
+          "label": "Legenda (ex.: Tabela 1 | ...)",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "tabela",
+          "label": "Tabela (a primeira linha é o cabeçalho)",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "fonte",
+          "label": "Fonte",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "tabela",
+      "rte": {
+        "toolbar": {
+          "insert": [
+            "table"
+          ],
+          "sections": [
+            "insert"
+          ]
+        }
+      }
+    }
+  ]
+}

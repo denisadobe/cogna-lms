@@ -1,0 +1,82 @@
+{
+  "definitions": [
+    {
+      "title": "Folha de créditos",
+      "id": "folha-de-creditos",
+      "model": "folha-de-creditos",
+      "filter": "folha-de-creditos",
+      "plugins": {
+        "da": {
+          "name": "folha-de-creditos",
+          "rows": 1,
+          "columns": 2,
+          "fields": [
+            {
+              "name": "titulo",
+              "selector": "div:nth-child(1)>div"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Crédito",
+      "id": "folha-de-creditos-item",
+      "model": "folha-de-creditos-item",
+      "plugins": {
+        "da": {
+          "rows": 2,
+          "columns": 0,
+          "fields": [
+            {
+              "name": "rotulo",
+              "selector": "div:nth-child(1)"
+            },
+            {
+              "name": "texto",
+              "selector": "div:nth-child(2)"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "folha-de-creditos",
+      "fields": [
+        {
+          "component": "text",
+          "name": "titulo",
+          "label": "Título da obra / aula",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "id": "folha-de-creditos-item",
+      "fields": [
+        {
+          "component": "text",
+          "name": "rotulo",
+          "label": "Rótulo (vazio = nota centralizada)",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "texto",
+          "label": "Texto",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "folha-de-creditos",
+      "components": [
+        "folha-de-creditos-item"
+      ]
+    }
+  ]
+}

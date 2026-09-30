@@ -10,7 +10,13 @@ import {
   loadSections,
   loadCSS,
   buildBlock,
+  getMetadata,
+  readBlockConfig,
+  toCamelCase,
+  toClassName,
 } from './aem.js';
+import { contentBase, resolveContentPath } from './aula.js';
+import { isUniversalEditor } from './ue-utils.js';
 
 if (window.trustedTypes && window.trustedTypes.createPolicy) {
   const innerTT = window.trustedTypes.createPolicy('tt-inner', {
@@ -143,16 +149,84 @@ function decorateButtons(main) {
 }
 
 /**
+ * Applies "Section Metadata" blocks: "style" becomes section classes,
+ * any other key becomes a data attribute. The metadata block is then removed.
+ * @param {Element} main The main container element
+ */
+function decorateSectionMetadata(main) {
+  main.querySelectorAll(':scope > .section div.section-metadata').forEach((meta) => {
+    const section = meta.closest('.section');
+    const config = readBlockConfig(meta);
+    Object.entries(config).forEach(([key, value]) => {
+      if (key === 'style') {
+        value.split(',').map((v) => toClassName(v.trim())).filter(Boolean)
+          .forEach((cls) => section.classList.add(cls));
+      } else {
+        section.dataset[toCamelCase(key)] = value;
+      }
+    });
+    const wrapper = meta.parentElement;
+    meta.remove();
+    if (wrapper !== section && !wrapper.children.length) wrapper.remove();
+  });
+}
+
+/**
+ * In local previews content lives under /content: point site-absolute links there.
+ * @param {Element} main The main container element
+ */
+function localizeLinks(main) {
+  if (!contentBase()) return;
+  main.querySelectorAll('a[href^="/"]:not([href^="//"])').forEach((a) => {
+    a.setAttribute('href', resolveContentPath(a.getAttribute('href')));
+  });
+}
+
+/**
+ * In the Universal Editor, default content (text) arrives wrapped in div.richtext
+ * elements that carry the editor instrumentation. Mark them so they are not treated
+ * as blocks, and style their wrapper as default content.
+ * @param {Element} main The main container element
+ */
+function prepareRichtext(main) {
+  main.querySelectorAll(':scope > div > div.richtext').forEach((el) => {
+    el.classList.remove('richtext');
+    if (!el.classList.length) el.removeAttribute('class');
+    el.dataset.conteudo = 'texto';
+  });
+}
+
+function decorateRichtextWrappers(main) {
+  main.querySelectorAll('.section > div > [data-conteudo="texto"]').forEach((el) => {
+    el.parentElement.classList.add('default-content-wrapper');
+  });
+}
+
+/**
  * Decorates the main element.
  * @param {Element} main The main element
  */
 // eslint-disable-next-line import/prefer-default-export
 export function decorateMain(main) {
+  prepareRichtext(main);
   decorateIcons(main);
+  localizeLinks(main);
   buildAutoBlocks(main);
   decorateSections(main);
+  decorateRichtextWrappers(main);
+  decorateSectionMetadata(main);
   decorateBlocks(main);
   decorateButtons(main);
+}
+
+/**
+ * Lesson pages are consumed by the LMS without chrome. The demo navigation (header/footer)
+ * is shown unless the page sets "navegacao: off" or is requested with ?lms.
+ * @returns {boolean}
+ */
+function showNavigation() {
+  const off = ['off', 'false', 'nao', 'não'].includes(getMetadata('navegacao').toLowerCase());
+  return !off && !new URLSearchParams(window.location.search).has('lms');
 }
 
 /**
@@ -160,8 +234,9 @@ export function decorateMain(main) {
  * @param {Element} doc The container element
  */
 async function loadEager(doc) {
-  document.documentElement.lang = 'en';
+  document.documentElement.lang = 'pt-BR';
   decorateTemplateAndTheme();
+  if (!showNavigation()) document.body.classList.add('sem-navegacao');
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
@@ -184,16 +259,20 @@ async function loadEager(doc) {
  * @param {Element} doc The container element
  */
 async function loadLazy(doc) {
-  loadHeader(doc.querySelector('body > header'));
+  const navigation = showNavigation();
+  if (navigation) loadHeader(doc.querySelector('body > header'));
 
   const main = doc.querySelector('main');
   await loadSections(main);
+  if (/\\[([]/.test(main.textContent)) {
+    import('./formula.js').then(({ renderInlineMath }) => renderInlineMath(main));
+  }
 
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
   if (hash && element) element.scrollIntoView();
 
-  loadFooter(doc.querySelector('body > footer'));
+  if (navigation) loadFooter(doc.querySelector('body > footer'));
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
@@ -212,6 +291,11 @@ async function loadPage() {
   await loadEager(document);
   await loadLazy(document);
   loadDelayed();
+}
+
+// Universal Editor: comportamentos extras só dentro do editor
+if (isUniversalEditor()) {
+  import(`${window.hlx.codeBasePath}/ue/scripts/ue.js`).then(({ default: ue }) => ue());
 }
 
 loadPage();

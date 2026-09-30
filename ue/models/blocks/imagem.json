@@ -1,0 +1,85 @@
+{
+  "definitions": [
+    {
+      "title": "Imagem (figura)",
+      "id": "imagem",
+      "model": "imagem",
+      "plugins": {
+        "da": {
+          "name": "imagem",
+          "unsafeHTML": "<div class=\"imagem\"><div><div>Figura 1 | Legenda da figura</div></div><div><div><picture><img alt=\"\"></picture></div></div><div><div>Fonte: </div></div></div>",
+          "fields": [
+            {
+              "name": "legenda",
+              "selector": "div:nth-child(1)>div"
+            },
+            {
+              "name": "imagem",
+              "selector": "div:nth-child(2)>div picture>img[src]"
+            },
+            {
+              "name": "imagemAlt",
+              "selector": "div:nth-child(2)>div picture>img[alt]"
+            },
+            {
+              "name": "fonte",
+              "selector": "div:nth-child(3)>div"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "imagem",
+      "fields": [
+        {
+          "component": "multiselect",
+          "name": "classes",
+          "label": "Variações",
+          "options": [
+            {
+              "name": "Pequena",
+              "value": "pequena"
+            },
+            {
+              "name": "Sem borda",
+              "value": "sem-borda"
+            },
+            {
+              "name": "Sem ampliar",
+              "value": "sem-zoom"
+            }
+          ]
+        },
+        {
+          "component": "text",
+          "name": "legenda",
+          "label": "Legenda (ex.: Figura 1 | ...)",
+          "valueType": "string"
+        },
+        {
+          "component": "reference",
+          "name": "imagem",
+          "label": "Imagem",
+          "valueType": "string",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "name": "imagemAlt",
+          "label": "Texto alternativo",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "fonte",
+          "label": "Fonte (ex.: Fonte: Chapman (2013).)",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

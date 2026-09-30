@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <title>Vamos Começar! | Aula 1 – Máquinas Elétricas Avançadas</title>
+  <meta name="description" content="Obtenção dos parâmetros da máquina de indução: circuito equivalente, ensaio em vazio e ensaio de rotor bloqueado.">
+  <meta name="nav" content="/maquinas-eletricas-avancadas/unidade-1/aula-1/nav">
+  <meta name="disciplina" content="Máquinas Elétricas Avançadas">
+  <meta name="unidade" content="Unidade 1 – Conceitos Avançados de Máquinas Elétricas">
+  <meta name="aula" content="Aula 1 – Aprofundamento teórico em máquinas de indução">
+  <meta name="secao" content="vamos-comecar">
+  <meta name="ordem" content="3">
+</head>
+<body>
+<main>
+  <section>
+    <header data-bloco="banner">
+      <p>Vamos Começar!</p>
+      <h1>Obtenção dos parâmetros da máquina de indução</h1>
+    </header>
+  </section>
+
+  <section>
+    <h2>Circuito equivalente</h2>
+    <p>O motor de indução, em geral, é modelado matematicamente utilizando o circuito equivalente de rotor e estator. Esse circuito é uma representação simplificada do motor que permite a análise de seu comportamento elétrico. Basicamente, procuramos modelar o circuito equivalente da máquina de indução em operação como uma carga trifásica balanceada e, dessa forma, o modelamento de uma única fase é o bastante para uma análise bem completa. Assim, podemos construir o circuito equivalente da máquina modelando o circuito do estator e do rotor em uma única fase. Também se considera o acoplamento mútuo e os fluxos de estator e do rotor, possibilitando que tenhamos como ponto de partida o modelo conhecido do circuito equivalente do transformador (Chapman, 2013). Com algumas adaptações para considerar o acoplamento magnético da máquina, chegamos ao circuito apresentado na Figura 1. Observe!</p>
+
+    <figure data-bloco="imagem">
+      <figcaption>Figura 1 | Circuito equivalente de um motor de indução</figcaption>
+      <img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/aula-1/figura-1-circuito-equivalente.png" alt="Circuito equivalente por fase do motor de indução com R1, jX1, ramo de magnetização RC e jXM, jX2 e R2/s">
+      <p>Fonte: Chapman (2013, p. 321).</p>
+    </figure>
+
+    <p>O circuito equivalente do estator representa a parte fixa do motor de indução. Ele consiste em uma resistência de estator (R<sub>1</sub>) e uma reatância de dispersão de estator (X<sub>1</sub>), as quais modelam eletricamente as perdas no enrolamento do estator. O circuito equivalente do rotor representa a parte giratória do motor de indução. Independentemente do tipo (bobinado ou gaiola de esquilo), podemos modelar uma resistência de rotor (R<sub>2</sub>) e uma reatância de rotor (X<sub>2</sub>). O efeito do escorregamento (s) da máquina deve ser considerado para o cálculo da reatância do rotor. Contudo, um desenvolvimento matemático a partir das equações do rotor torna possível considerar o escorregamento na resistência do rotor, mantendo a reatância calculada na frequência nominal. Dessa forma, dividimos o valor de R<sub>2</sub> pelo escorregamento s. Entre as partes do estator e do rotor, há um acoplamento mútuo representado pela reatância de magnetização (X<sub>m</sub>). A resistência R<sub>c</sub> modela as perdas no núcleo (Umans, 2014).</p>
+
+    <div data-bloco="abas">
+      <div>
+        <div>Circuito do estator</div>
+        <div>
+          <p><img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/aula-1/circuito-estator.png" alt="Circuito do estator com R1, X1 e ramo de magnetização"></p>
+          <p>\[ \hat{V}_1 = \hat{E}_2 + \hat{I}_1 \left( R_1 + jX_1 \right) \]</p>
+          <p>Fonte: Umans (2014).</p>
+        </div>
+      </div>
+      <div>
+        <div>Circuito do rotor</div>
+        <div>
+          <p><img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/aula-1/circuito-rotor.png" alt="Circuito do rotor com sX2 e R2"></p>
+          <p>\[ f_r = s\,f_e \qquad \hat{I}_{2s} = \hat{I}_2 \qquad \hat{E}_{2s} = s\,\hat{E}_2 \]</p>
+          <p>Considerando uma relação de transformação 1:1 entre estator e rotor. Fonte: Umans (2014).</p>
+        </div>
+      </div>
+    </div>
+
+    <p>A relação de transformação entre as partes do estator e do rotor são um pouco complexas de serem determinadas matematicamente, principalmente ao considerarmos o tipo de rotor de gaiola de esquilo, no qual não podemos obter exatamente uma relação direta de espiras entre o enrolamento do estator e o enrolamento do rotor. Isso dificulta obter exatamente os valores dos parâmetros referidos em cada um dos lados (estator e rotor). As tensões e correntes no circuito equivalente são normalmente referidas ao lado do estator para simplificar as análises. Os parâmetros do circuito equivalente, resistências e reatâncias, são determinados experimentalmente ou por meio de simulações. Ao analisar o motor de indução usando seu circuito equivalente, é possível determinar seu desempenho elétrico, eficiência, características de torque-velocidade e outras propriedades importantes para diferentes condições de operação, como carga e frequência da rede. Este modelo é fundamental para projetar e controlar motores de indução em uma variedade de aplicações industriais.</p>
+  </section>
+
+  <section>
+    <h2>Os ensaios da máquina de indução</h2>
+    <p>O ensaio em vazio realizado na máquina de indução é um tipo de ensaio que se assemelha ao teste de circuito aberto realizado no transformador (Chapman, 2013). Em ambos os casos, os ensaios são utilizados para obter dados para o cálculo de parâmetros da máquina. No caso da máquina de indução, o ensaio em vazio obtém informações sobre a corrente de excitação e as perdas rotacionais. Durante este teste, uma tensão balanceada trifásica é aplicada nos enrolamentos do estator com a frequência nominal, enquanto o rotor permanece sem carga mecânica acoplada ao eixo. Nesse cenário, ocorrem perdas de potência devido às perdas no núcleo, ao atrito e às correntes nos enrolamentos, além das perdas rotacionais, cujo valor total permanece constante quando em vazio, sob tensão e frequência nominais.</p>
+    <p>Um teste adicional complementar para determinar os parâmetros na máquina de indução é o teste de rotor bloqueado. Durante este teste, o rotor é fixado para impedir qualquer rotação. Em seguida, uma tensão balanceada trifásica é aplicada aos terminais do estator. É crucial que o teste de rotor bloqueado seja conduzido sob condições de tensão e frequência reduzidas. A frequência de ensaio sugerida pela norma IEEE 112, que trata dos procedimentos de testes em motores e geradores polifásicos, é de cerca de 25% da frequência nominal. A tensão é reduzida com o rotor bloqueado, de forma a obter uma corrente próxima da nominal (Umans, 2014).</p>
+    <p>Para realizar os ensaios de circuito aberto e de rotor bloqueado na máquina de indução, com o objetivo de obter os parâmetros do circuito equivalente, os passos necessários devem ser conforme a seguir:</p>
+  </section>
+
+  <section>
+    <h2>Ensaio em vazio</h2>
+    <div data-bloco="linha-do-tempo" data-variante="etapas">
+      <div><div>Segurança</div><div><p>Garanta que a máquina de indução esteja desenergizada e em segurança para manutenção.</p></div></div>
+      <div><div>Dados nominais</div><div><p>Identifique e anote as características nominais da máquina, incluindo a tensão e a frequência nominais.</p></div></div>
+      <div><div>Resistência CC</div><div><p>Antes de energizar a máquina, mede-se a resistência CC no enrolamento do estator (que será o valor de R<sub>1</sub>).</p></div></div>
+      <div><div>Montagem</div><div><p>Conecte os equipamentos de medição ao circuito da máquina, como mostra a Figura 2.</p></div></div>
+      <div><div>Alimentação</div><div><p>Certifique-se de utilizar uma fonte de tensão balanceada trifásica para aplicar a tensão nominal nos enrolamentos do estator. Mantenha o eixo sem carga.</p></div></div>
+      <div><div>Leituras</div><div><p>Registre a corrente medida no amperímetro e a tensão no voltímetro (que deve ser a nominal).</p></div></div>
+      <div><div>Potência</div><div><p>Meça a potência ativa absorvida pela máquina.</p></div></div>
+    </div>
+
+    <figure data-bloco="imagem">
+      <figcaption>Figura 2 | Montagem dos equipamentos de medição no ensaio em vazio</figcaption>
+      <img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/aula-1/figura-2-ensaio-em-vazio.png" alt="Montagem do ensaio em vazio: fonte trifásica de tensão e frequência variáveis, wattímetros P1 e P2, amperímetros e voltímetro ligados ao motor a vazio">
+      <p>Fonte: Chapman (2013, p. 381).</p>
+    </figure>
+
+    <p>Para obter as perdas rotacionais, calcula-se o valor das perdas na resistência do estator e esse valor é subtraído da potência de entrada.</p>
+    <p>Analisando o circuito equivalente da máquina, poderemos concluir que, no caso de não existir carga no motor, o valor da resistência definida R<sub>2</sub>/s é muito grande (escorregamento próximo de zero) e dessa forma a impedância vista em uma fase dos terminais no ensaio em vazio será dada por:</p>
+    <div data-bloco="formula">
+      <p>\hat{Z}_{\text{vazio}} = R_{\text{vazio}} + jX_{\text{vazio}} = R_1 + j\left(X_1 + X_m\right)</p>
+    </div>
+    <p>Assim, tendo o valor da tensão por fase, a potência ativa medida e a corrente do ensaio, calculamos Z<sub>vazio</sub> e R<sub>vazio</sub>:</p>
+    <div data-bloco="formula" data-variante="destaque">
+      <p>Z_{\text{vazio}} = \dfrac{V_{1,\text{vz}}}{\sqrt{3}\, I_{1,\text{vz}}}</p>
+      <p>R_{\text{vazio}} = \dfrac{P_{\text{vazio}}}{3\, I_{1,\text{vz}}^{2}}</p>
+      <p>X_{\text{vazio}} = \sqrt{Z_{\text{vazio}}^{2} - R_{\text{vazio}}^{2}} = X_1 + X_m</p>
+    </div>
+    <div data-bloco="botao-expansivel">
+      <div>
+        <div>Ver o circuito equivalente no ensaio em vazio</div>
+        <div>
+          <h3>Circuito equivalente no ensaio em vazio</h3>
+          <p>Com escorregamento próximo de zero, o ramo do rotor (R<sub>2</sub>/s) é muito grande e pode ser desconsiderado. A impedância vista dos terminais fica composta por R<sub>1</sub>, X<sub>1</sub> e pela reatância de magnetização X<sub>m</sub>.</p>
+          <p><img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/aula-1/circuito-ensaio-vazio.png" alt="Circuito equivalente simplificado do ensaio em vazio com Rvz, X1 e Xm em série"></p>
+          <p>Fonte: Umans (2014).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ensaio de rotor bloqueado</h2>
+    <p>Após o ensaio de rotor em vazio, deve-se:</p>
+    <div data-bloco="linha-do-tempo" data-variante="etapas">
+      <div><div>Desenergizar</div><div><p>Desligar a máquina e retirar a energização.</p></div></div>
+      <div><div>Bloqueio e montagem</div><div><p>Fazer o bloqueio do rotor e proceder com a montagem do aparato de medição conforme a Figura 3.</p></div></div>
+      <div><div>Ajuste</div><div><p>Ajustar a tensão para obter corrente nominal e frequência adequadas ao ensaio.</p></div></div>
+      <div><div>Medições</div><div><p>Medir e anotar os valores medidos.</p></div></div>
+    </div>
+
+    <figure data-bloco="imagem">
+      <figcaption>Figura 3 | Ensaio de rotor bloqueado</figcaption>
+      <img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/aula-1/figura-3-rotor-bloqueado.png" alt="Montagem do ensaio de rotor bloqueado: fonte trifásica de tensão e frequência ajustáveis, wattímetros, amperímetros e voltímetro ligados ao motor com rotor bloqueado">
+      <p>Fonte: Chapman (2013, p. 384).</p>
+    </figure>
+
+    <p>Durante o ensaio de rotor bloqueado, o escorregamento atinge 1. Como resultado, analisando o circuito equivalente, a reatância de magnetização estará em paralelo com a impedância do rotor refletida do lado do estator. Esta última é consideravelmente menor em comparação com a impedância de magnetização. Nessas condições, teremos então que:</p>
+    <div data-bloco="formula">
+      <p>\hat{Z}_{\text{bloc}} = R_{\text{bloc}} + jX_{\text{bloc}} \approx R_1 + R_2 + j\left(X_1 + X_2\right)</p>
+    </div>
+    <p>Assim:</p>
+    <div data-bloco="formula" data-variante="destaque">
+      <p>Z_{\text{bloc}} = \dfrac{V_{\text{bloc}}}{\sqrt{3}\, I_{\text{bloc}}}</p>
+      <p>R_{\text{bloc}} = \dfrac{P_{\text{bloc}}}{3\, I_{\text{bloc}}^{2}} \;\Rightarrow\; R_2 = R_{\text{bloc}} - R_1</p>
+      <p>X_{\text{bloc}} = \sqrt{Z_{\text{bloc}}^{2} - R_{\text{bloc}}^{2}} = X_1 + X_2</p>
+    </div>
+    <div data-bloco="botao-expansivel">
+      <div>
+        <div>Ver o circuito equivalente no ensaio de rotor bloqueado</div>
+        <div>
+          <h3>Circuito equivalente no ensaio de rotor bloqueado</h3>
+          <p>Com o rotor bloqueado (s = 1), a impedância do rotor é muito menor que a reatância de magnetização X<sub>m</sub>, que pode ser desprezada no paralelo. A impedância vista dos terminais fica composta por R<sub>1</sub>, X<sub>1</sub>, X<sub>2</sub> e R<sub>2</sub>.</p>
+          <p><img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/aula-1/circuito-rotor-bloqueado.png" alt="Circuito equivalente do ensaio de rotor bloqueado com R1, X1, Xm, X2 e R2"></p>
+          <p>Fonte: Umans (2014).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

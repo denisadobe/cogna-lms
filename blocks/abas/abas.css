@@ -1,0 +1,44 @@
+.abas {
+  margin: 24px 0;
+}
+
+.abas .abas-lista {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  border-bottom: 2px solid var(--border-color);
+  scrollbar-width: thin;
+}
+
+.abas .abas-aba {
+  flex: none;
+  margin-bottom: -2px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  border-radius: var(--radius-s) var(--radius-s) 0 0;
+  padding: 10px 18px;
+  background: none;
+  color: var(--text-muted);
+  font-size: var(--body-font-size-s);
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+}
+
+.abas .abas-aba:hover {
+  background: var(--color-tint);
+  color: var(--color-primary);
+}
+
+.abas .abas-aba[aria-selected='true'] {
+  border-bottom-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.abas .abas-painel-conteudo {
+  padding: 8px 4px;
+}
+
+.abas .abas-painel-conteudo > :last-child {
+  margin-bottom: 0;
+}

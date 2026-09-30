@@ -1,0 +1,45 @@
+.bloco-de-codigo {
+  overflow: hidden;
+  margin: 28px 0;
+  border-radius: var(--radius-m);
+  background: #1e1b2e;
+  color: #ece8f7;
+}
+
+.bloco-de-codigo .bloco-de-codigo-cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px 8px 20px;
+  background: #2b2640;
+  color: #b9b1d6;
+  font-size: var(--body-font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.bloco-de-codigo .bloco-de-codigo-copiar {
+  border: 1px solid #4a4266;
+  border-radius: 999px;
+  padding: 4px 12px;
+  background: transparent;
+  color: #ece8f7;
+  font-size: 12px;
+  text-transform: none;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.bloco-de-codigo .bloco-de-codigo-copiar:hover {
+  background: #4a4266;
+}
+
+.bloco-de-codigo pre {
+  margin: 0;
+  border-radius: 0;
+  padding: 20px;
+  background: none;
+  color: inherit;
+  line-height: 1.6;
+}

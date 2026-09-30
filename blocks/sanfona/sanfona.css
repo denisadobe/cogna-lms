@@ -1,0 +1,78 @@
+.sanfona {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.sanfona .sanfona-item {
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-m);
+  background: var(--background-color);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.sanfona .sanfona-item[open] {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-s);
+}
+
+.sanfona .sanfona-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 20px;
+  color: var(--color-primary-strong);
+  font-weight: 700;
+  line-height: 1.4;
+  cursor: pointer;
+  list-style: none;
+}
+
+.sanfona .sanfona-titulo::-webkit-details-marker {
+  display: none;
+}
+
+.sanfona .sanfona-titulo::after {
+  content: '+';
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-tint);
+  color: var(--color-primary);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
+  transition: transform 0.2s;
+}
+
+.sanfona .sanfona-titulo:hover {
+  background: var(--color-tint);
+}
+
+.sanfona .sanfona-item[open] .sanfona-titulo {
+  background: var(--color-tint);
+}
+
+.sanfona .sanfona-item[open] .sanfona-titulo::after {
+  content: '−';
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.sanfona .sanfona-conteudo {
+  padding: 4px 20px 20px;
+}
+
+.sanfona .sanfona-conteudo > :first-child {
+  margin-top: 12px;
+}
+
+.sanfona .sanfona-conteudo > :last-child {
+  margin-bottom: 0;
+}

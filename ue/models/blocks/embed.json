@@ -1,0 +1,61 @@
+{
+  "definitions": [
+    {
+      "title": "Embed",
+      "id": "embed",
+      "model": "embed",
+      "plugins": {
+        "da": {
+          "name": "embed",
+          "unsafeHTML": "<div class=\"embed\"><div><div><a href=\"https://\">Conteúdo externo</a></div></div><div><div>Título do conteúdo</div></div></div>",
+          "fields": [
+            {
+              "name": "url",
+              "selector": "div:nth-child(1)>div a[href]"
+            },
+            {
+              "name": "titulo",
+              "selector": "div:nth-child(2)>div"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "embed",
+      "fields": [
+        {
+          "component": "multiselect",
+          "name": "classes",
+          "label": "Variações",
+          "options": [
+            {
+              "name": "Alto (4:3)",
+              "value": "alto"
+            },
+            {
+              "name": "Quadrado",
+              "value": "quadrado"
+            }
+          ]
+        },
+        {
+          "component": "text",
+          "name": "url",
+          "label": "Endereço do conteúdo externo",
+          "valueType": "string",
+          "required": true
+        },
+        {
+          "component": "text",
+          "name": "titulo",
+          "label": "Título (acessibilidade)",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

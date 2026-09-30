@@ -1,0 +1,135 @@
+.galeria {
+  margin: 32px 0;
+}
+
+.galeria .galeria-trilha {
+  display: grid;
+  grid-auto-columns: 100%;
+  grid-auto-flow: column;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+  list-style: none;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.galeria .galeria-trilha::-webkit-scrollbar {
+  display: none;
+}
+
+.galeria .galeria-slide {
+  margin: 0;
+  scroll-snap-align: start;
+}
+
+.galeria figure {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-m);
+  background: var(--light-color);
+}
+
+.galeria figure img {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  padding: 12px;
+  background: #fff;
+  object-fit: contain;
+}
+
+/* variante para fotografias: preenche todo o quadro */
+.galeria.foto figure img {
+  padding: 0;
+  object-fit: cover;
+}
+
+.galeria figcaption {
+  padding: 14px 20px;
+  background: var(--color-tint);
+  color: var(--color-primary-strong);
+  font-size: var(--body-font-size-s);
+}
+
+.galeria figcaption > * {
+  margin: 0;
+}
+
+.galeria .galeria-controles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.galeria .galeria-anterior,
+.galeria .galeria-proxima {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  background: var(--background-color);
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+.galeria .galeria-anterior::before,
+.galeria .galeria-proxima::before {
+  content: '';
+  width: 9px;
+  height: 9px;
+  border: solid currentcolor;
+  border-width: 0 3px 3px 0;
+}
+
+.galeria .galeria-anterior::before {
+  margin-left: 4px;
+  transform: rotate(135deg);
+}
+
+.galeria .galeria-proxima::before {
+  margin-right: 4px;
+  transform: rotate(-45deg);
+}
+
+.galeria .galeria-anterior:disabled,
+.galeria .galeria-proxima:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.galeria .galeria-anterior:hover:not(:disabled),
+.galeria .galeria-proxima:hover:not(:disabled) {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.galeria .galeria-indicadores {
+  display: flex;
+  gap: 8px;
+}
+
+.galeria .galeria-indicadores button {
+  width: 10px;
+  height: 10px;
+  border: 0;
+  border-radius: 999px;
+  padding: 0;
+  background: var(--border-color);
+  cursor: pointer;
+  transition: width 0.2s, background-color 0.2s;
+}
+
+.galeria .galeria-indicadores button[aria-current='true'] {
+  width: 28px;
+  background: var(--color-primary);
+}

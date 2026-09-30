@@ -1,0 +1,67 @@
+{
+  "definitions": [
+    {
+      "title": "Vídeo",
+      "id": "video",
+      "model": "video",
+      "plugins": {
+        "da": {
+          "name": "video",
+          "unsafeHTML": "<div class=\"video\"><div><div><a href=\"https://www.youtube.com/watch?v=\">Link do vídeo</a></div></div><div><div><picture><img alt=\"\"></picture></div></div><div><div>Videoaula</div></div></div>",
+          "fields": [
+            {
+              "name": "url",
+              "selector": "div:nth-child(1)>div a[href]"
+            },
+            {
+              "name": "capa",
+              "selector": "div:nth-child(2)>div picture>img[src]"
+            },
+            {
+              "name": "capaAlt",
+              "selector": "div:nth-child(2)>div picture>img[alt]"
+            },
+            {
+              "name": "titulo",
+              "selector": "div:nth-child(3)>div"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "video",
+      "fields": [
+        {
+          "component": "text",
+          "name": "url",
+          "label": "Link do vídeo (YouTube, Vimeo, MP4 ou player)",
+          "valueType": "string",
+          "required": true
+        },
+        {
+          "component": "reference",
+          "name": "capa",
+          "label": "Imagem de capa",
+          "valueType": "string",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "name": "capaAlt",
+          "label": "Texto alternativo da capa",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "titulo",
+          "label": "Título",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

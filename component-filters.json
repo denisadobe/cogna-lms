@@ -1,0 +1,95 @@
+[
+  {
+    "id": "main",
+    "components": [
+      "section"
+    ]
+  },
+  {
+    "id": "section",
+    "components": [
+      "text",
+      "image",
+      "abas",
+      "banner",
+      "bloco-de-codigo",
+      "botao-expansivel",
+      "citacao",
+      "comparador-imagens",
+      "embed",
+      "folha-de-creditos",
+      "formula",
+      "galeria",
+      "imagem",
+      "indice",
+      "linha-do-tempo",
+      "olho",
+      "quadro-box",
+      "questao",
+      "sanfona",
+      "tabela",
+      "video"
+    ]
+  },
+  {
+    "id": "abas",
+    "components": [
+      "abas-item"
+    ]
+  },
+  {
+    "id": "botao-expansivel",
+    "components": [
+      "botao-expansivel-item"
+    ]
+  },
+  {
+    "id": "folha-de-creditos",
+    "components": [
+      "folha-de-creditos-item"
+    ]
+  },
+  {
+    "id": "formula",
+    "components": [
+      "formula-linha"
+    ]
+  },
+  {
+    "id": "galeria",
+    "components": [
+      "galeria-slide"
+    ]
+  },
+  {
+    "id": "linha-do-tempo",
+    "components": [
+      "linha-do-tempo-item"
+    ]
+  },
+  {
+    "id": "quadro-box",
+    "components": [
+      "quadro-box-item"
+    ]
+  },
+  {
+    "id": "sanfona",
+    "components": [
+      "sanfona-item"
+    ]
+  },
+  {
+    "id": "tabela",
+    "rte": {
+      "toolbar": {
+        "insert": [
+          "table"
+        ],
+        "sections": [
+          "insert"
+        ]
+      }
+    }
+  }
+]

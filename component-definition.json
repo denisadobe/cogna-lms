@@ -1,0 +1,613 @@
+{
+  "groups": [
+    {
+      "title": "Default Content",
+      "id": "default",
+      "components": [
+        {
+          "title": "Texto",
+          "id": "text",
+          "model": "text",
+          "plugins": {
+            "da": {
+              "name": "text",
+              "type": "text"
+            }
+          }
+        },
+        {
+          "title": "Imagem simples",
+          "id": "image",
+          "model": "image",
+          "plugins": {
+            "da": {
+              "name": "image",
+              "type": "image",
+              "fields": [
+                {
+                  "name": "image",
+                  "selector": "img[src]"
+                },
+                {
+                  "name": "imageAlt",
+                  "selector": "img[alt]"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Sections",
+      "id": "sections",
+      "components": [
+        {
+          "title": "Seção",
+          "id": "section",
+          "plugins": {
+            "da": {
+              "unsafeHTML": "<div></div>"
+            }
+          },
+          "filter": "section",
+          "model": "section"
+        }
+      ]
+    },
+    {
+      "title": "Blocks",
+      "id": "blocks",
+      "components": [
+        {
+          "title": "Abas",
+          "id": "abas",
+          "model": "abas",
+          "filter": "abas",
+          "plugins": {
+            "da": {
+              "name": "abas",
+              "rows": 1,
+              "columns": 2
+            }
+          }
+        },
+        {
+          "title": "Aba",
+          "id": "abas-item",
+          "model": "abas-item",
+          "plugins": {
+            "da": {
+              "rows": 2,
+              "columns": 0,
+              "fields": [
+                {
+                  "name": "titulo",
+                  "selector": "div:nth-child(1)"
+                },
+                {
+                  "name": "conteudo",
+                  "selector": "div:nth-child(2)"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Banner",
+          "id": "banner",
+          "model": "banner",
+          "plugins": {
+            "da": {
+              "name": "banner",
+              "unsafeHTML": "<div class=\"banner\"><div><div><p>Aula #</p><h1>Título da aula</h1><p><em>Frase de chamada sobre o conteúdo.</em></p></div></div><div><div><picture><img alt=\"\"></picture></div></div></div>",
+              "fields": [
+                {
+                  "name": "texto",
+                  "selector": "div:nth-child(1)>div"
+                },
+                {
+                  "name": "imagem",
+                  "selector": "div:nth-child(2)>div picture>img[src]"
+                },
+                {
+                  "name": "imagemAlt",
+                  "selector": "div:nth-child(2)>div picture>img[alt]"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Bloco de código",
+          "id": "bloco-de-codigo",
+          "model": "bloco-de-codigo",
+          "plugins": {
+            "da": {
+              "name": "bloco-de-codigo",
+              "unsafeHTML": "<div class=\"bloco-de-codigo\"><div><div><pre><code>print(\"Olá\")</code></pre></div></div><div><div>Python</div></div></div>",
+              "fields": [
+                {
+                  "name": "codigo",
+                  "selector": "div:nth-child(1)>div"
+                },
+                {
+                  "name": "linguagem",
+                  "selector": "div:nth-child(2)>div"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Botão expansível",
+          "id": "botao-expansivel",
+          "model": "botao-expansivel",
+          "filter": "botao-expansivel",
+          "plugins": {
+            "da": {
+              "name": "botao-expansivel",
+              "rows": 1,
+              "columns": 2
+            }
+          }
+        },
+        {
+          "title": "Botão",
+          "id": "botao-expansivel-item",
+          "model": "botao-expansivel-item",
+          "plugins": {
+            "da": {
+              "rows": 2,
+              "columns": 0,
+              "fields": [
+                {
+                  "name": "rotulo",
+                  "selector": "div:nth-child(1)"
+                },
+                {
+                  "name": "conteudo",
+                  "selector": "div:nth-child(2)"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Citação",
+          "id": "citacao",
+          "model": "citacao",
+          "plugins": {
+            "da": {
+              "name": "citacao",
+              "unsafeHTML": "<div class=\"citacao\"><div><div><p>Texto da citação.</p></div></div><div><div>Autor</div></div></div>",
+              "fields": [
+                {
+                  "name": "citacao",
+                  "selector": "div:nth-child(1)>div"
+                },
+                {
+                  "name": "autor",
+                  "selector": "div:nth-child(2)>div"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Comparador de imagens",
+          "id": "comparador-imagens",
+          "model": "comparador-imagens",
+          "plugins": {
+            "da": {
+              "name": "comparador-imagens",
+              "unsafeHTML": "<div class=\"comparador-imagens\"><div><div><picture><img alt=\"\"></picture></div><div><picture><img alt=\"\"></picture></div></div><div><div>Antes</div><div>Depois</div></div></div>",
+              "fields": [
+                {
+                  "name": "imagemAntes",
+                  "selector": "div:nth-child(1)>div:nth-child(1) picture>img[src]"
+                },
+                {
+                  "name": "imagemAntesAlt",
+                  "selector": "div:nth-child(1)>div:nth-child(1) picture>img[alt]"
+                },
+                {
+                  "name": "imagemDepois",
+                  "selector": "div:nth-child(1)>div:nth-child(2) picture>img[src]"
+                },
+                {
+                  "name": "imagemDepoisAlt",
+                  "selector": "div:nth-child(1)>div:nth-child(2) picture>img[alt]"
+                },
+                {
+                  "name": "rotuloAntes",
+                  "selector": "div:nth-child(2)>div:nth-child(1)"
+                },
+                {
+                  "name": "rotuloDepois",
+                  "selector": "div:nth-child(2)>div:nth-child(2)"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Embed",
+          "id": "embed",
+          "model": "embed",
+          "plugins": {
+            "da": {
+              "name": "embed",
+              "unsafeHTML": "<div class=\"embed\"><div><div><a href=\"https://\">Conteúdo externo</a></div></div><div><div>Título do conteúdo</div></div></div>",
+              "fields": [
+                {
+                  "name": "url",
+                  "selector": "div:nth-child(1)>div a[href]"
+                },
+                {
+                  "name": "titulo",
+                  "selector": "div:nth-child(2)>div"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Folha de créditos",
+          "id": "folha-de-creditos",
+          "model": "folha-de-creditos",
+          "filter": "folha-de-creditos",
+          "plugins": {
+            "da": {
+              "name": "folha-de-creditos",
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                {
+                  "name": "titulo",
+                  "selector": "div:nth-child(1)>div"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Crédito",
+          "id": "folha-de-creditos-item",
+          "model": "folha-de-creditos-item",
+          "plugins": {
+            "da": {
+              "rows": 2,
+              "columns": 0,
+              "fields": [
+                {
+                  "name": "rotulo",
+                  "selector": "div:nth-child(1)"
+                },
+                {
+                  "name": "texto",
+                  "selector": "div:nth-child(2)"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Fórmula",
+          "id": "formula",
+          "model": "formula",
+          "filter": "formula",
+          "plugins": {
+            "da": {
+              "name": "formula",
+              "rows": 1,
+              "columns": 2
+            }
+          }
+        },
+        {
+          "title": "Linha da fórmula",
+          "id": "formula-linha",
+          "model": "formula-linha",
+          "plugins": {
+            "da": {
+              "rows": 2,
+              "columns": 0,
+              "fields": [
+                {
+                  "name": "latex",
+                  "selector": "div:nth-child(1)"
+                },
+                {
+                  "name": "rotulo",
+                  "selector": "div:nth-child(2)"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Galeria",
+          "id": "galeria",
+          "model": "galeria",
+          "filter": "galeria",
+          "plugins": {
+            "da": {
+              "name": "galeria",
+              "rows": 1,
+              "columns": 2
+            }
+          }
+        },
+        {
+          "title": "Imagem da galeria",
+          "id": "galeria-slide",
+          "model": "galeria-slide",
+          "plugins": {
+            "da": {
+              "rows": 2,
+              "columns": 0,
+              "fields": [
+                {
+                  "name": "imagem",
+                  "selector": "div:nth-child(1) picture>img[src]"
+                },
+                {
+                  "name": "imagemAlt",
+                  "selector": "div:nth-child(1) picture>img[alt]"
+                },
+                {
+                  "name": "legenda",
+                  "selector": "div:nth-child(2)"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Imagem (figura)",
+          "id": "imagem",
+          "model": "imagem",
+          "plugins": {
+            "da": {
+              "name": "imagem",
+              "unsafeHTML": "<div class=\"imagem\"><div><div>Figura 1 | Legenda da figura</div></div><div><div><picture><img alt=\"\"></picture></div></div><div><div>Fonte: </div></div></div>",
+              "fields": [
+                {
+                  "name": "legenda",
+                  "selector": "div:nth-child(1)>div"
+                },
+                {
+                  "name": "imagem",
+                  "selector": "div:nth-child(2)>div picture>img[src]"
+                },
+                {
+                  "name": "imagemAlt",
+                  "selector": "div:nth-child(2)>div picture>img[alt]"
+                },
+                {
+                  "name": "fonte",
+                  "selector": "div:nth-child(3)>div"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Índice",
+          "id": "indice",
+          "model": "indice",
+          "plugins": {
+            "da": {
+              "name": "indice",
+              "unsafeHTML": "<div class=\"indice\"><div><div>Nesta página</div></div></div>",
+              "fields": [
+                {
+                  "name": "titulo",
+                  "selector": "div:nth-child(1)>div"
+                },
+                {
+                  "name": "links",
+                  "selector": "div:nth-child(2)>div"
+                },
+                {
+                  "name": "imagem",
+                  "selector": "div:nth-child(3)>div picture>img[src]"
+                },
+                {
+                  "name": "imagemAlt",
+                  "selector": "div:nth-child(3)>div picture>img[alt]"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Linha do tempo",
+          "id": "linha-do-tempo",
+          "model": "linha-do-tempo",
+          "filter": "linha-do-tempo",
+          "plugins": {
+            "da": {
+              "name": "linha-do-tempo",
+              "rows": 1,
+              "columns": 2
+            }
+          }
+        },
+        {
+          "title": "Marco",
+          "id": "linha-do-tempo-item",
+          "model": "linha-do-tempo-item",
+          "plugins": {
+            "da": {
+              "rows": 2,
+              "columns": 0,
+              "fields": [
+                {
+                  "name": "marco",
+                  "selector": "div:nth-child(1)"
+                },
+                {
+                  "name": "conteudo",
+                  "selector": "div:nth-child(2)"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Olho",
+          "id": "olho",
+          "model": "olho",
+          "plugins": {
+            "da": {
+              "name": "olho",
+              "unsafeHTML": "<div class=\"olho\"><div><div>Ideia-chave</div></div><div><div><p>Texto de destaque.</p></div></div></div>",
+              "fields": [
+                {
+                  "name": "titulo",
+                  "selector": "div:nth-child(1)>div"
+                },
+                {
+                  "name": "texto",
+                  "selector": "div:nth-child(2)>div"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Quadro box",
+          "id": "quadro-box",
+          "model": "quadro-box",
+          "filter": "quadro-box",
+          "plugins": {
+            "da": {
+              "name": "quadro-box",
+              "rows": 1,
+              "columns": 1
+            }
+          }
+        },
+        {
+          "title": "Quadro",
+          "id": "quadro-box-item",
+          "model": "quadro-box-item",
+          "plugins": {
+            "da": {
+              "rows": 1,
+              "columns": 0,
+              "fields": [
+                {
+                  "name": "texto",
+                  "selector": "div:nth-child(1)"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Questão",
+          "id": "questao",
+          "model": "questao",
+          "plugins": {
+            "da": {
+              "name": "questao",
+              "type": "key-value-block"
+            }
+          }
+        },
+        {
+          "title": "Sanfona",
+          "id": "sanfona",
+          "model": "sanfona",
+          "filter": "sanfona",
+          "plugins": {
+            "da": {
+              "name": "sanfona",
+              "rows": 1,
+              "columns": 2
+            }
+          }
+        },
+        {
+          "title": "Item da sanfona",
+          "id": "sanfona-item",
+          "model": "sanfona-item",
+          "plugins": {
+            "da": {
+              "rows": 2,
+              "columns": 0,
+              "fields": [
+                {
+                  "name": "titulo",
+                  "selector": "div:nth-child(1)"
+                },
+                {
+                  "name": "conteudo",
+                  "selector": "div:nth-child(2)"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "title": "Tabela",
+          "id": "tabela",
+          "model": "tabela",
+          "plugins": {
+            "da": {
+              "name": "tabela",
+              "unsafeHTML": "<div class=\"tabela\"><div><div>Tabela 1 | Legenda da tabela</div></div><div><div><table><tbody><tr><td>Coluna 1</td><td>Coluna 2</td></tr><tr><td>Valor</td><td>Valor</td></tr></tbody></table></div></div><div><div>Fonte: </div></div></div>",
+              "fields": [
+                {
+                  "name": "legenda",
+                  "selector": "div:nth-child(1)>div"
+                },
+                {
+                  "name": "tabela",
+                  "selector": "div:nth-child(2)>div"
+                },
+                {
+                  "name": "fonte",
+                  "selector": "div:nth-child(3)>div"
+                }
+              ]
+            }
+          },
+          "filter": "tabela"
+        },
+        {
+          "title": "Vídeo",
+          "id": "video",
+          "model": "video",
+          "plugins": {
+            "da": {
+              "name": "video",
+              "unsafeHTML": "<div class=\"video\"><div><div><a href=\"https://www.youtube.com/watch?v=\">Link do vídeo</a></div></div><div><div><picture><img alt=\"\"></picture></div></div><div><div>Videoaula</div></div></div>",
+              "fields": [
+                {
+                  "name": "url",
+                  "selector": "div:nth-child(1)>div a[href]"
+                },
+                {
+                  "name": "capa",
+                  "selector": "div:nth-child(2)>div picture>img[src]"
+                },
+                {
+                  "name": "capaAlt",
+                  "selector": "div:nth-child(2)>div picture>img[alt]"
+                },
+                {
+                  "name": "titulo",
+                  "selector": "div:nth-child(3)>div"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

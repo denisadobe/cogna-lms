@@ -1,0 +1,65 @@
+{
+  "definitions": [
+    {
+      "title": "Seção",
+      "id": "section",
+      "plugins": {
+        "da": {
+          "unsafeHTML": "<div></div>"
+        }
+      },
+      "filter": "section",
+      "model": "section"
+    }
+  ],
+  "models": [
+    {
+      "id": "section",
+      "fields": [
+        {
+          "component": "multiselect",
+          "name": "style",
+          "label": "Estilo da seção",
+          "options": [
+            {
+              "name": "Fundo claro",
+              "value": "light"
+            },
+            {
+              "name": "Fundo escuro",
+              "value": "dark"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "section",
+      "components": [
+        "text",
+        "image",
+        "abas",
+        "banner",
+        "bloco-de-codigo",
+        "botao-expansivel",
+        "citacao",
+        "comparador-imagens",
+        "embed",
+        "folha-de-creditos",
+        "formula",
+        "galeria",
+        "imagem",
+        "indice",
+        "linha-do-tempo",
+        "olho",
+        "quadro-box",
+        "questao",
+        "sanfona",
+        "tabela",
+        "video"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "definitions": [
+    {
+      "title": "Linha do tempo",
+      "id": "linha-do-tempo",
+      "model": "linha-do-tempo",
+      "filter": "linha-do-tempo",
+      "plugins": {
+        "da": {
+          "name": "linha-do-tempo",
+          "rows": 1,
+          "columns": 2
+        }
+      }
+    },
+    {
+      "title": "Marco",
+      "id": "linha-do-tempo-item",
+      "model": "linha-do-tempo-item",
+      "plugins": {
+        "da": {
+          "rows": 2,
+          "columns": 0,
+          "fields": [
+            {
+              "name": "marco",
+              "selector": "div:nth-child(1)"
+            },
+            {
+              "name": "conteudo",
+              "selector": "div:nth-child(2)"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "linha-do-tempo",
+      "fields": [
+        {
+          "component": "multiselect",
+          "name": "classes",
+          "label": "Variações",
+          "options": [
+            {
+              "name": "Etapas numeradas",
+              "value": "etapas"
+            },
+            {
+              "name": "Alternada",
+              "value": "alternada"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "linha-do-tempo-item",
+      "fields": [
+        {
+          "component": "text",
+          "name": "marco",
+          "label": "Marco (data ou etapa)",
+          "valueType": "string",
+          "required": true
+        },
+        {
+          "component": "richtext",
+          "name": "conteudo",
+          "label": "Conteúdo",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "linha-do-tempo",
+      "components": [
+        "linha-do-tempo-item"
+      ]
+    }
+  ]
+}

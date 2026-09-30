@@ -1,0 +1,98 @@
+{
+  "definitions": [
+    {
+      "title": "Comparador de imagens",
+      "id": "comparador-imagens",
+      "model": "comparador-imagens",
+      "plugins": {
+        "da": {
+          "name": "comparador-imagens",
+          "unsafeHTML": "<div class=\"comparador-imagens\"><div><div><picture><img alt=\"\"></picture></div><div><picture><img alt=\"\"></picture></div></div><div><div>Antes</div><div>Depois</div></div></div>",
+          "fields": [
+            {
+              "name": "imagemAntes",
+              "selector": "div:nth-child(1)>div:nth-child(1) picture>img[src]"
+            },
+            {
+              "name": "imagemAntesAlt",
+              "selector": "div:nth-child(1)>div:nth-child(1) picture>img[alt]"
+            },
+            {
+              "name": "imagemDepois",
+              "selector": "div:nth-child(1)>div:nth-child(2) picture>img[src]"
+            },
+            {
+              "name": "imagemDepoisAlt",
+              "selector": "div:nth-child(1)>div:nth-child(2) picture>img[alt]"
+            },
+            {
+              "name": "rotuloAntes",
+              "selector": "div:nth-child(2)>div:nth-child(1)"
+            },
+            {
+              "name": "rotuloDepois",
+              "selector": "div:nth-child(2)>div:nth-child(2)"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "comparador-imagens",
+      "fields": [
+        {
+          "component": "multiselect",
+          "name": "classes",
+          "label": "Variações",
+          "options": [
+            {
+              "name": "Diagrama (imagem inteira)",
+              "value": "diagrama"
+            }
+          ]
+        },
+        {
+          "component": "reference",
+          "name": "imagemAntes",
+          "label": "Imagem (antes)",
+          "valueType": "string",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "name": "imagemAntesAlt",
+          "label": "Texto alternativo (antes)",
+          "valueType": "string"
+        },
+        {
+          "component": "reference",
+          "name": "imagemDepois",
+          "label": "Imagem (depois)",
+          "valueType": "string",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "name": "imagemDepoisAlt",
+          "label": "Texto alternativo (depois)",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "rotuloAntes",
+          "label": "Rótulo (antes)",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "rotuloDepois",
+          "label": "Rótulo (depois)",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

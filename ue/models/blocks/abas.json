@@ -1,0 +1,70 @@
+{
+  "definitions": [
+    {
+      "title": "Abas",
+      "id": "abas",
+      "model": "abas",
+      "filter": "abas",
+      "plugins": {
+        "da": {
+          "name": "abas",
+          "rows": 1,
+          "columns": 2
+        }
+      }
+    },
+    {
+      "title": "Aba",
+      "id": "abas-item",
+      "model": "abas-item",
+      "plugins": {
+        "da": {
+          "rows": 2,
+          "columns": 0,
+          "fields": [
+            {
+              "name": "titulo",
+              "selector": "div:nth-child(1)"
+            },
+            {
+              "name": "conteudo",
+              "selector": "div:nth-child(2)"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "abas",
+      "fields": []
+    },
+    {
+      "id": "abas-item",
+      "fields": [
+        {
+          "component": "text",
+          "name": "titulo",
+          "label": "Título da aba",
+          "valueType": "string",
+          "required": true
+        },
+        {
+          "component": "richtext",
+          "name": "conteudo",
+          "label": "Conteúdo",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "abas",
+      "components": [
+        "abas-item"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "definitions": [
+    {
+      "title": "Fórmula",
+      "id": "formula",
+      "model": "formula",
+      "filter": "formula",
+      "plugins": {
+        "da": {
+          "name": "formula",
+          "rows": 1,
+          "columns": 2
+        }
+      }
+    },
+    {
+      "title": "Linha da fórmula",
+      "id": "formula-linha",
+      "model": "formula-linha",
+      "plugins": {
+        "da": {
+          "rows": 2,
+          "columns": 0,
+          "fields": [
+            {
+              "name": "latex",
+              "selector": "div:nth-child(1)"
+            },
+            {
+              "name": "rotulo",
+              "selector": "div:nth-child(2)"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "formula",
+      "fields": [
+        {
+          "component": "multiselect",
+          "name": "classes",
+          "label": "Variações",
+          "options": [
+            {
+              "name": "Destaque",
+              "value": "destaque"
+            },
+            {
+              "name": "Alinhada à esquerda",
+              "value": "esquerda"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formula-linha",
+      "fields": [
+        {
+          "component": "text",
+          "name": "latex",
+          "label": "Expressão em LaTeX (ex.: Z = \\dfrac{V}{I})",
+          "valueType": "string",
+          "required": true
+        },
+        {
+          "component": "text",
+          "name": "rotulo",
+          "label": "Rótulo (ex.: (1))",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "formula",
+      "components": [
+        "formula-linha"
+      ]
+    }
+  ]
+}

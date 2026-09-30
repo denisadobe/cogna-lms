@@ -1,0 +1,116 @@
+.imagem {
+  margin: 32px 0;
+}
+
+.imagem figure {
+  margin: 0;
+}
+
+.imagem .imagem-legenda {
+  margin-bottom: 12px;
+  color: var(--color-primary-strong);
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.imagem .imagem-midia {
+  position: relative;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-m);
+  padding: 16px;
+  background: #fff;
+}
+
+.imagem .imagem-midia picture,
+.imagem .imagem-midia img {
+  display: block;
+  margin: 0 auto;
+}
+
+.imagem .imagem-ampliar {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: var(--shadow-s);
+  cursor: zoom-in;
+  opacity: 0.85;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.imagem .imagem-ampliar:hover,
+.imagem .imagem-ampliar:focus-visible {
+  opacity: 1;
+  transform: scale(1.06);
+}
+
+.imagem .imagem-fonte {
+  margin: 8px 0 0;
+  color: var(--text-muted);
+  font-size: var(--body-font-size-xs);
+  text-align: center;
+}
+
+/* variantes */
+.imagem.pequena .imagem-midia {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.imagem.sem-borda .imagem-midia {
+  border: 0;
+  padding: 0;
+  background: none;
+}
+
+.imagem.sem-borda .imagem-midia img {
+  border-radius: var(--radius-m);
+}
+
+/* diálogo de ampliação (fica fora do bloco, no body) */
+dialog.imagem-zoom {
+  max-width: min(1200px, 96vw);
+  max-height: 94vh;
+  border: 0;
+  border-radius: var(--radius-m);
+  padding: 48px 24px 24px;
+  background: #fff;
+  box-shadow: var(--shadow-m);
+}
+
+dialog.imagem-zoom::backdrop {
+  background: rgb(40 17 75 / 70%);
+  backdrop-filter: blur(2px);
+}
+
+dialog.imagem-zoom .imagem-zoom-img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(94vh - 96px);
+  margin: auto;
+  object-fit: contain;
+}
+
+dialog.imagem-zoom .imagem-zoom-fechar {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--light-color);
+  color: var(--text-color);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}

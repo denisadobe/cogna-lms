@@ -1,0 +1,45 @@
+{
+  "definitions": [
+    {
+      "title": "Imagem simples",
+      "id": "image",
+      "model": "image",
+      "plugins": {
+        "da": {
+          "name": "image",
+          "type": "image",
+          "fields": [
+            {
+              "name": "image",
+              "selector": "img[src]"
+            },
+            {
+              "name": "imageAlt",
+              "selector": "img[alt]"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "image",
+      "fields": [
+        {
+          "component": "reference",
+          "name": "image",
+          "label": "Imagem",
+          "valueType": "string",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "name": "imageAlt",
+          "label": "Texto alternativo",
+          "valueType": "string"
+        }
+      ]
+    }
+  ]
+}

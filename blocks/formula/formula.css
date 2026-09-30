@@ -1,0 +1,59 @@
+/* expressões inline no texto: \( ... \) */
+.formula-inline .katex {
+  font-size: 1.05em;
+}
+
+.formula {
+  margin: 24px 0;
+}
+
+.formula .formula-linha {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.formula .formula-linha + .formula-linha {
+  margin-top: 4px;
+}
+
+.formula .formula-expressao {
+  flex: 1;
+  min-width: 0;
+  overflow: auto hidden;
+  color: var(--color-primary-strong);
+  font-size: 1.1em;
+  text-align: center;
+}
+
+.formula .formula-expressao .katex-display {
+  margin: 0.4em 0;
+}
+
+.formula .formula-rotulo {
+  flex: none;
+  color: var(--text-muted);
+  font-size: var(--body-font-size-s);
+}
+
+.formula.destaque {
+  border: 1px solid var(--color-tint-strong);
+  border-radius: var(--radius-m);
+  padding: 12px 20px;
+  background: var(--color-tint);
+}
+
+.formula.esquerda .formula-expressao {
+  text-align: left;
+}
+
+.formula.esquerda .katex-display > .katex {
+  text-align: left;
+}
+
+/* equações em destaque dentro de outros blocos: \[ ... \] */
+.formula-bloco {
+  overflow: auto hidden;
+  color: var(--color-primary-strong);
+  text-align: center;
+}

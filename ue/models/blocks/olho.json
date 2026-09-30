@@ -1,0 +1,46 @@
+{
+  "definitions": [
+    {
+      "title": "Olho",
+      "id": "olho",
+      "model": "olho",
+      "plugins": {
+        "da": {
+          "name": "olho",
+          "unsafeHTML": "<div class=\"olho\"><div><div>Ideia-chave</div></div><div><div><p>Texto de destaque.</p></div></div></div>",
+          "fields": [
+            {
+              "name": "titulo",
+              "selector": "div:nth-child(1)>div"
+            },
+            {
+              "name": "texto",
+              "selector": "div:nth-child(2)>div"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "olho",
+      "fields": [
+        {
+          "component": "text",
+          "name": "titulo",
+          "label": "Título",
+          "valueType": "string",
+          "required": true
+        },
+        {
+          "component": "richtext",
+          "name": "texto",
+          "label": "Texto",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

@@ -1,0 +1,106 @@
+{
+  "models": [
+    {
+      "id": "page-metadata",
+      "fields": [
+        {
+          "component": "text",
+          "name": "title",
+          "label": "Título",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "description",
+          "label": "Descrição",
+          "valueType": "string"
+        },
+        {
+          "component": "reference",
+          "name": "image",
+          "label": "Imagem de compartilhamento",
+          "valueType": "string",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "name": "nav",
+          "label": "Sumário da aula (ex.: /disciplina/unidade-1/aula-1/nav)",
+          "valueType": "string"
+        },
+        {
+          "component": "select",
+          "name": "theme",
+          "label": "Tema",
+          "options": [
+            {
+              "name": "Cogna",
+              "value": ""
+            },
+            {
+              "name": "Editora (azul)",
+              "value": "editora"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "navegacao",
+          "label": "Navegação de demonstração",
+          "options": [
+            {
+              "name": "Exibir",
+              "value": ""
+            },
+            {
+              "name": "Ocultar (LMS)",
+              "value": "off"
+            }
+          ]
+        },
+        {
+          "component": "text",
+          "name": "disciplina",
+          "label": "Disciplina",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "unidade",
+          "label": "Unidade",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "aula",
+          "label": "Aula",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "secao",
+          "label": "Seção da aula",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "ordem",
+          "label": "Ordem",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "autor",
+          "label": "Autor",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "keywords",
+          "label": "Palavras-chave",
+          "valueType": "string"
+        }
+      ]
+    }
+  ]
+}

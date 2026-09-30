@@ -1,0 +1,889 @@
+[
+  {
+    "id": "page-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Título",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "description",
+        "label": "Descrição",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Imagem de compartilhamento",
+        "valueType": "string",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "nav",
+        "label": "Sumário da aula (ex.: /disciplina/unidade-1/aula-1/nav)",
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "theme",
+        "label": "Tema",
+        "options": [
+          {
+            "name": "Cogna",
+            "value": ""
+          },
+          {
+            "name": "Editora (azul)",
+            "value": "editora"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "navegacao",
+        "label": "Navegação de demonstração",
+        "options": [
+          {
+            "name": "Exibir",
+            "value": ""
+          },
+          {
+            "name": "Ocultar (LMS)",
+            "value": "off"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "disciplina",
+        "label": "Disciplina",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "unidade",
+        "label": "Unidade",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "aula",
+        "label": "Aula",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "secao",
+        "label": "Seção da aula",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "ordem",
+        "label": "Ordem",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "autor",
+        "label": "Autor",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "keywords",
+        "label": "Palavras-chave",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "image",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Imagem",
+        "valueType": "string",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Texto alternativo",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "section",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "style",
+        "label": "Estilo da seção",
+        "options": [
+          {
+            "name": "Fundo claro",
+            "value": "light"
+          },
+          {
+            "name": "Fundo escuro",
+            "value": "dark"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "abas",
+    "fields": []
+  },
+  {
+    "id": "abas-item",
+    "fields": [
+      {
+        "component": "text",
+        "name": "titulo",
+        "label": "Título da aba",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "richtext",
+        "name": "conteudo",
+        "label": "Conteúdo",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "banner",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Variações",
+        "options": [
+          {
+            "name": "Texto à esquerda",
+            "value": "esquerda"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "name": "texto",
+        "label": "Texto (rótulo, título e frase de chamada)",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "name": "imagem",
+        "label": "Imagem de fundo (opcional)",
+        "valueType": "string",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imagemAlt",
+        "label": "Texto alternativo da imagem",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "bloco-de-codigo",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "codigo",
+        "label": "Código",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "linguagem",
+        "label": "Linguagem (ex.: Python)",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "botao-expansivel",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Variações",
+        "options": [
+          {
+            "name": "Centralizado",
+            "value": "centralizado"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "botao-expansivel-item",
+    "fields": [
+      {
+        "component": "text",
+        "name": "rotulo",
+        "label": "Texto do botão",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "richtext",
+        "name": "conteudo",
+        "label": "Conteúdo da janela (um título no início vira o título da janela)",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "citacao",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "citacao",
+        "label": "Citação",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "autor",
+        "label": "Autor / fonte",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "comparador-imagens",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Variações",
+        "options": [
+          {
+            "name": "Diagrama (imagem inteira)",
+            "value": "diagrama"
+          }
+        ]
+      },
+      {
+        "component": "reference",
+        "name": "imagemAntes",
+        "label": "Imagem (antes)",
+        "valueType": "string",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imagemAntesAlt",
+        "label": "Texto alternativo (antes)",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "name": "imagemDepois",
+        "label": "Imagem (depois)",
+        "valueType": "string",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imagemDepoisAlt",
+        "label": "Texto alternativo (depois)",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "rotuloAntes",
+        "label": "Rótulo (antes)",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "rotuloDepois",
+        "label": "Rótulo (depois)",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "embed",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Variações",
+        "options": [
+          {
+            "name": "Alto (4:3)",
+            "value": "alto"
+          },
+          {
+            "name": "Quadrado",
+            "value": "quadrado"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "url",
+        "label": "Endereço do conteúdo externo",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "titulo",
+        "label": "Título (acessibilidade)",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "folha-de-creditos",
+    "fields": [
+      {
+        "component": "text",
+        "name": "titulo",
+        "label": "Título da obra / aula",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "folha-de-creditos-item",
+    "fields": [
+      {
+        "component": "text",
+        "name": "rotulo",
+        "label": "Rótulo (vazio = nota centralizada)",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "texto",
+        "label": "Texto",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "formula",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Variações",
+        "options": [
+          {
+            "name": "Destaque",
+            "value": "destaque"
+          },
+          {
+            "name": "Alinhada à esquerda",
+            "value": "esquerda"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "formula-linha",
+    "fields": [
+      {
+        "component": "text",
+        "name": "latex",
+        "label": "Expressão em LaTeX (ex.: Z = \\dfrac{V}{I})",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "rotulo",
+        "label": "Rótulo (ex.: (1))",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "galeria",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Variações",
+        "options": [
+          {
+            "name": "Fotografias (preencher o quadro)",
+            "value": "foto"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "galeria-slide",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "imagem",
+        "label": "Imagem",
+        "valueType": "string",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imagemAlt",
+        "label": "Texto alternativo",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "legenda",
+        "label": "Legenda",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "imagem",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Variações",
+        "options": [
+          {
+            "name": "Pequena",
+            "value": "pequena"
+          },
+          {
+            "name": "Sem borda",
+            "value": "sem-borda"
+          },
+          {
+            "name": "Sem ampliar",
+            "value": "sem-zoom"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "legenda",
+        "label": "Legenda (ex.: Figura 1 | ...)",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "name": "imagem",
+        "label": "Imagem",
+        "valueType": "string",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imagemAlt",
+        "label": "Texto alternativo",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "fonte",
+        "label": "Fonte (ex.: Fonte: Chapman (2013).)",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "indice",
+    "fields": [
+      {
+        "component": "text",
+        "name": "titulo",
+        "label": "Título",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "links",
+        "label": "Links (vazio = gerado a partir dos títulos da página)",
+        "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "name": "imagem",
+        "label": "Imagem (opcional)",
+        "valueType": "string",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imagemAlt",
+        "label": "Texto alternativo",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "linha-do-tempo",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Variações",
+        "options": [
+          {
+            "name": "Etapas numeradas",
+            "value": "etapas"
+          },
+          {
+            "name": "Alternada",
+            "value": "alternada"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "linha-do-tempo-item",
+    "fields": [
+      {
+        "component": "text",
+        "name": "marco",
+        "label": "Marco (data ou etapa)",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "richtext",
+        "name": "conteudo",
+        "label": "Conteúdo",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "olho",
+    "fields": [
+      {
+        "component": "text",
+        "name": "titulo",
+        "label": "Título",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "richtext",
+        "name": "texto",
+        "label": "Texto",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "quadro-box",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Variações",
+        "options": [
+          {
+            "name": "Atenção",
+            "value": "atencao"
+          },
+          {
+            "name": "Importante",
+            "value": "importante"
+          },
+          {
+            "name": "Dica",
+            "value": "dica"
+          },
+          {
+            "name": "Exemplo",
+            "value": "exemplo"
+          },
+          {
+            "name": "Reflita",
+            "value": "reflita"
+          },
+          {
+            "name": "Saiba mais",
+            "value": "saiba-mais"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "quadro-box-item",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "texto",
+        "label": "Conteúdo (um título ou primeira linha em negrito vira o título)",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "questao",
+    "fields": [
+      {
+        "component": "select",
+        "name": "tipo",
+        "label": "Tipo da questão",
+        "options": [
+          {
+            "name": "Múltipla escolha simples",
+            "value": "Múltipla escolha simples"
+          },
+          {
+            "name": "Múltipla escolha complexa",
+            "value": "Múltipla escolha complexa"
+          },
+          {
+            "name": "Asserção-razão",
+            "value": "Asserção-razão"
+          },
+          {
+            "name": "Discursiva",
+            "value": "Discursiva"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "dificuldade",
+        "label": "Dificuldade",
+        "options": [
+          {
+            "name": "Fácil",
+            "value": "Fácil"
+          },
+          {
+            "name": "Intermediário",
+            "value": "Intermediário"
+          },
+          {
+            "name": "Difícil",
+            "value": "Difícil"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "bloom",
+        "label": "Taxonomia de Bloom",
+        "options": [
+          {
+            "name": "Lembrar",
+            "value": "Lembrar"
+          },
+          {
+            "name": "Compreensão",
+            "value": "Compreensão"
+          },
+          {
+            "name": "Aplicação",
+            "value": "Aplicação"
+          },
+          {
+            "name": "Análise",
+            "value": "Análise"
+          },
+          {
+            "name": "Avaliação",
+            "value": "Avaliação"
+          },
+          {
+            "name": "Criação",
+            "value": "Criação"
+          }
+        ]
+      },
+      {
+        "component": "richtext",
+        "name": "texto-base",
+        "label": "Texto-base (afirmativas I, II... e PORQUE em parágrafos próprios)",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "referencia",
+        "label": "Referência do texto-base",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "enunciado",
+        "label": "Enunciado",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "richtext",
+        "name": "a",
+        "label": "Alternativa A",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "b",
+        "label": "Alternativa B",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "c",
+        "label": "Alternativa C",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "d",
+        "label": "Alternativa D",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "e",
+        "label": "Alternativa E",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "gabarito",
+        "label": "Gabarito (letra correta, ex.: B) — na discursiva, a resposta esperada",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "resolucao",
+        "label": "Resolução comentada (equações em \\[ ... \\])",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "sanfona",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Variações",
+        "options": [
+          {
+            "name": "Vários itens abertos",
+            "value": "multipla"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sanfona-item",
+    "fields": [
+      {
+        "component": "text",
+        "name": "titulo",
+        "label": "Título",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "richtext",
+        "name": "conteudo",
+        "label": "Conteúdo",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "tabela",
+    "fields": [
+      {
+        "component": "multiselect",
+        "name": "classes",
+        "label": "Variações",
+        "options": [
+          {
+            "name": "Centralizada",
+            "value": "centralizada"
+          },
+          {
+            "name": "Primeira coluna em destaque",
+            "value": "primeira-coluna"
+          },
+          {
+            "name": "Sem cabeçalho",
+            "value": "sem-cabecalho"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "legenda",
+        "label": "Legenda (ex.: Tabela 1 | ...)",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "tabela",
+        "label": "Tabela (a primeira linha é o cabeçalho)",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "fonte",
+        "label": "Fonte",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "video",
+    "fields": [
+      {
+        "component": "text",
+        "name": "url",
+        "label": "Link do vídeo (YouTube, Vimeo, MP4 ou player)",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "reference",
+        "name": "capa",
+        "label": "Imagem de capa",
+        "valueType": "string",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "capaAlt",
+        "label": "Texto alternativo da capa",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "titulo",
+        "label": "Título",
+        "valueType": "string"
+      }
+    ]
+  }
+]

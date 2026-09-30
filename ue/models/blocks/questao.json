@@ -1,0 +1,157 @@
+{
+  "definitions": [
+    {
+      "title": "Questão",
+      "id": "questao",
+      "model": "questao",
+      "plugins": {
+        "da": {
+          "name": "questao",
+          "type": "key-value-block"
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "questao",
+      "fields": [
+        {
+          "component": "select",
+          "name": "tipo",
+          "label": "Tipo da questão",
+          "options": [
+            {
+              "name": "Múltipla escolha simples",
+              "value": "Múltipla escolha simples"
+            },
+            {
+              "name": "Múltipla escolha complexa",
+              "value": "Múltipla escolha complexa"
+            },
+            {
+              "name": "Asserção-razão",
+              "value": "Asserção-razão"
+            },
+            {
+              "name": "Discursiva",
+              "value": "Discursiva"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "dificuldade",
+          "label": "Dificuldade",
+          "options": [
+            {
+              "name": "Fácil",
+              "value": "Fácil"
+            },
+            {
+              "name": "Intermediário",
+              "value": "Intermediário"
+            },
+            {
+              "name": "Difícil",
+              "value": "Difícil"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "bloom",
+          "label": "Taxonomia de Bloom",
+          "options": [
+            {
+              "name": "Lembrar",
+              "value": "Lembrar"
+            },
+            {
+              "name": "Compreensão",
+              "value": "Compreensão"
+            },
+            {
+              "name": "Aplicação",
+              "value": "Aplicação"
+            },
+            {
+              "name": "Análise",
+              "value": "Análise"
+            },
+            {
+              "name": "Avaliação",
+              "value": "Avaliação"
+            },
+            {
+              "name": "Criação",
+              "value": "Criação"
+            }
+          ]
+        },
+        {
+          "component": "richtext",
+          "name": "texto-base",
+          "label": "Texto-base (afirmativas I, II... e PORQUE em parágrafos próprios)",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "referencia",
+          "label": "Referência do texto-base",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "enunciado",
+          "label": "Enunciado",
+          "valueType": "string",
+          "required": true
+        },
+        {
+          "component": "richtext",
+          "name": "a",
+          "label": "Alternativa A",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "b",
+          "label": "Alternativa B",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "c",
+          "label": "Alternativa C",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "d",
+          "label": "Alternativa D",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "e",
+          "label": "Alternativa E",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "gabarito",
+          "label": "Gabarito (letra correta, ex.: B) — na discursiva, a resposta esperada",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "resolucao",
+          "label": "Resolução comentada (equações em \\[ ... \\])",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

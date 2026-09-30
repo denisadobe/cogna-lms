@@ -1,0 +1,45 @@
+{
+  "definitions": [
+    {
+      "title": "Bloco de código",
+      "id": "bloco-de-codigo",
+      "model": "bloco-de-codigo",
+      "plugins": {
+        "da": {
+          "name": "bloco-de-codigo",
+          "unsafeHTML": "<div class=\"bloco-de-codigo\"><div><div><pre><code>print(\"Olá\")</code></pre></div></div><div><div>Python</div></div></div>",
+          "fields": [
+            {
+              "name": "codigo",
+              "selector": "div:nth-child(1)>div"
+            },
+            {
+              "name": "linguagem",
+              "selector": "div:nth-child(2)>div"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "bloco-de-codigo",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "codigo",
+          "label": "Código",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "linguagem",
+          "label": "Linguagem (ex.: Python)",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

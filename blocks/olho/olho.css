@@ -1,0 +1,38 @@
+.olho {
+  margin: 32px 0;
+}
+
+.olho aside {
+  display: grid;
+  gap: 8px 32px;
+  border-left: 6px solid var(--color-accent);
+  padding: 8px 0 8px 24px;
+}
+
+.olho .olho-titulo {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: var(--heading-font-size-m);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.olho .olho-texto {
+  color: var(--text-color);
+  font-size: var(--heading-font-size-xs);
+}
+
+.olho .olho-texto > :first-child {
+  margin-top: 0;
+}
+
+.olho .olho-texto > :last-child {
+  margin-bottom: 0;
+}
+
+@media (width >= 900px) {
+  .olho aside {
+    grid-template-columns: minmax(180px, 1fr) 2fr;
+    align-items: center;
+  }
+}

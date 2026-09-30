@@ -1,0 +1,82 @@
+{
+  "definitions": [
+    {
+      "title": "Botão expansível",
+      "id": "botao-expansivel",
+      "model": "botao-expansivel",
+      "filter": "botao-expansivel",
+      "plugins": {
+        "da": {
+          "name": "botao-expansivel",
+          "rows": 1,
+          "columns": 2
+        }
+      }
+    },
+    {
+      "title": "Botão",
+      "id": "botao-expansivel-item",
+      "model": "botao-expansivel-item",
+      "plugins": {
+        "da": {
+          "rows": 2,
+          "columns": 0,
+          "fields": [
+            {
+              "name": "rotulo",
+              "selector": "div:nth-child(1)"
+            },
+            {
+              "name": "conteudo",
+              "selector": "div:nth-child(2)"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "botao-expansivel",
+      "fields": [
+        {
+          "component": "multiselect",
+          "name": "classes",
+          "label": "Variações",
+          "options": [
+            {
+              "name": "Centralizado",
+              "value": "centralizado"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "botao-expansivel-item",
+      "fields": [
+        {
+          "component": "text",
+          "name": "rotulo",
+          "label": "Texto do botão",
+          "valueType": "string",
+          "required": true
+        },
+        {
+          "component": "richtext",
+          "name": "conteudo",
+          "label": "Conteúdo da janela (um título no início vira o título da janela)",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "botao-expansivel",
+      "components": [
+        "botao-expansivel-item"
+      ]
+    }
+  ]
+}

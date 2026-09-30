@@ -1,20 +1,47 @@
-import { getMetadata } from '../../scripts/aem.js';
-import { loadFragment } from '../fragment/fragment.js';
+import { getAulaNav } from '../../scripts/aula.js';
 
 /**
- * loads and decorates the footer
+ * Builds a previous/next link card.
+ * @param {object} step lesson step
+ * @param {string} direction 'anterior' or 'proxima'
+ * @returns {Element}
+ */
+function buildStepLink(step, direction) {
+  const a = document.createElement('a');
+  a.className = `footer-passo footer-${direction}`;
+  a.href = step.href;
+  a.rel = direction === 'anterior' ? 'prev' : 'next';
+  const label = document.createElement('span');
+  label.className = 'footer-passo-rotulo';
+  label.textContent = direction === 'anterior' ? 'Anterior' : 'Próxima';
+  const title = document.createElement('span');
+  title.className = 'footer-passo-titulo';
+  title.textContent = step.title;
+  a.append(label, title);
+  return a;
+}
+
+/**
+ * loads and decorates the footer (previous / next lesson section)
  * @param {Element} block The footer block element
  */
 export default async function decorate(block) {
-  // load footer as fragment
-  const footerMeta = getMetadata('footer');
-  const footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : '/footer';
-  const fragment = await loadFragment(footerPath);
-
-  // decorate footer DOM
   block.textContent = '';
-  const footer = document.createElement('div');
-  while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
+  const nav = await getAulaNav();
 
-  block.append(footer);
+  if (nav && nav.index >= 0) {
+    const pager = document.createElement('nav');
+    pager.className = 'footer-paginacao';
+    pager.setAttribute('aria-label', 'Seções da aula');
+    const prev = nav.steps[nav.index - 1];
+    const next = nav.steps[nav.index + 1];
+    pager.append(prev ? buildStepLink(prev, 'anterior') : document.createElement('span'));
+    pager.append(next ? buildStepLink(next, 'proxima') : document.createElement('span'));
+    block.append(pager);
+  }
+
+  const legal = document.createElement('p');
+  legal.className = 'footer-legal';
+  legal.textContent = `© ${new Date().getFullYear()} Cogna Educação. Todos os direitos reservados.`;
+  block.append(legal);
 }

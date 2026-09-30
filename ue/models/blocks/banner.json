@@ -1,0 +1,67 @@
+{
+  "definitions": [
+    {
+      "title": "Banner",
+      "id": "banner",
+      "model": "banner",
+      "plugins": {
+        "da": {
+          "name": "banner",
+          "unsafeHTML": "<div class=\"banner\"><div><div><p>Aula #</p><h1>Título da aula</h1><p><em>Frase de chamada sobre o conteúdo.</em></p></div></div><div><div><picture><img alt=\"\"></picture></div></div></div>",
+          "fields": [
+            {
+              "name": "texto",
+              "selector": "div:nth-child(1)>div"
+            },
+            {
+              "name": "imagem",
+              "selector": "div:nth-child(2)>div picture>img[src]"
+            },
+            {
+              "name": "imagemAlt",
+              "selector": "div:nth-child(2)>div picture>img[alt]"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "banner",
+      "fields": [
+        {
+          "component": "multiselect",
+          "name": "classes",
+          "label": "Variações",
+          "options": [
+            {
+              "name": "Texto à esquerda",
+              "value": "esquerda"
+            }
+          ]
+        },
+        {
+          "component": "richtext",
+          "name": "texto",
+          "label": "Texto (rótulo, título e frase de chamada)",
+          "valueType": "string"
+        },
+        {
+          "component": "reference",
+          "name": "imagem",
+          "label": "Imagem de fundo (opcional)",
+          "valueType": "string",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "name": "imagemAlt",
+          "label": "Texto alternativo da imagem",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

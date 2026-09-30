@@ -1,0 +1,94 @@
+.tabela {
+  margin: 32px 0;
+}
+
+.tabela figure {
+  margin: 0;
+}
+
+.tabela .tabela-rolagem {
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-m);
+}
+
+.tabela table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--body-font-size-s);
+  line-height: 1.5;
+}
+
+.tabela caption {
+  padding: 0 0 12px;
+  color: var(--color-primary-strong);
+  font-weight: 700;
+  text-align: center;
+  caption-side: top;
+}
+
+/* legenda fica fora da borda arredondada */
+.tabela .tabela-rolagem:has(caption) {
+  border: 0;
+  border-radius: 0;
+}
+
+.tabela .tabela-rolagem:has(caption) table {
+  border: 1px solid var(--border-color);
+}
+
+.tabela th,
+.tabela td {
+  border-bottom: 1px solid var(--border-color);
+  padding: 12px 16px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.tabela td + td,
+.tabela th + th,
+.tabela th + td {
+  border-left: 1px solid var(--border-color);
+}
+
+.tabela thead th {
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 700;
+}
+
+.tabela tbody th {
+  background: var(--color-tint);
+  color: var(--color-primary-strong);
+  font-weight: 700;
+}
+
+.tabela tbody tr:nth-child(even) td {
+  background: var(--light-color);
+}
+
+.tabela tbody tr:last-child :is(td, th) {
+  border-bottom: 0;
+}
+
+.tabela td > :first-child,
+.tabela th > :first-child {
+  margin-top: 0;
+}
+
+.tabela td > :last-child,
+.tabela th > :last-child {
+  margin-bottom: 0;
+}
+
+.tabela .tabela-fonte {
+  margin: 8px 0 0;
+  color: var(--text-muted);
+  font-size: var(--body-font-size-xs);
+  text-align: center;
+}
+
+/* variante: valores numéricos centralizados */
+.tabela.centralizada :is(td, thead th) {
+  text-align: center;
+}

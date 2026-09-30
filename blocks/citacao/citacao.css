@@ -1,0 +1,55 @@
+.citacao {
+  margin: 32px 0;
+}
+
+.citacao figure {
+  position: relative;
+  margin: 0;
+  border-radius: var(--radius-m);
+  padding: 32px 28px 28px 88px;
+  background: var(--color-tint);
+}
+
+.citacao figure::before {
+  content: '“';
+  position: absolute;
+  top: 8px;
+  left: 20px;
+  color: var(--color-primary-mid);
+  font-family: Georgia, serif;
+  font-size: 112px;
+  line-height: 1;
+  opacity: 0.45;
+}
+
+.citacao blockquote {
+  margin: 0;
+  color: var(--color-primary-strong);
+  font-size: var(--heading-font-size-xs);
+  line-height: 1.6;
+}
+
+.citacao blockquote > :first-child {
+  margin-top: 0;
+}
+
+.citacao blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+.citacao figcaption {
+  margin-top: 16px;
+  color: var(--text-muted);
+  font-size: var(--body-font-size-s);
+  font-style: italic;
+}
+
+.citacao figcaption::before {
+  content: '— ';
+}
+
+@media (width < 600px) {
+  .citacao figure {
+    padding: 64px 20px 20px;
+  }
+}

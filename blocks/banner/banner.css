@@ -1,0 +1,111 @@
+.banner {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 56px 20px;
+  background: var(--banner-gradient);
+  color: #fff;
+  text-align: center;
+}
+
+/* padrão geométrico sutil */
+.banner::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 12% 30%, rgb(255 255 255 / 12%) 0 18px, transparent 19px),
+    radial-gradient(circle at 88% 70%, rgb(255 255 255 / 10%) 0 42px, transparent 43px),
+    radial-gradient(circle at 70% 18%, rgb(255 173 1 / 35%) 0 6px, transparent 7px),
+    linear-gradient(135deg, transparent 0 48%, rgb(255 255 255 / 5%) 48% 52%, transparent 52% 100%);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 64px 64px;
+}
+
+.banner .banner-imagem {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+}
+
+.banner .banner-imagem picture,
+.banner .banner-imagem img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner.com-imagem::before {
+  background: linear-gradient(90deg, rgb(40 17 75 / 92%) 0%, rgb(40 17 75 / 70%) 55%, rgb(40 17 75 / 25%) 100%);
+}
+
+.banner .banner-conteudo {
+  max-width: var(--content-width);
+  margin: auto;
+}
+
+.banner .banner-conteudo > * {
+  margin: 0;
+  color: inherit;
+}
+
+.banner .banner-rotulo {
+  display: inline-block;
+  margin-bottom: 16px;
+  border-radius: 999px;
+  padding: 4px 14px;
+  background: rgb(255 255 255 / 14%);
+  font-size: var(--body-font-size-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.banner .banner-conteudo :is(h1, h2, h3) {
+  font-size: var(--heading-font-size-xxl);
+  font-weight: 700;
+}
+
+.banner .banner-conteudo :is(h1, h2, h3)::after {
+  content: '';
+  display: block;
+  width: 64px;
+  height: 4px;
+  margin: 18px auto 0;
+  border-radius: 2px;
+  background: var(--color-accent);
+}
+
+.banner .banner-chamada {
+  margin-top: 16px;
+  font-size: var(--heading-font-size-s);
+  font-style: italic;
+  opacity: 0.92;
+}
+
+/* variante com texto alinhado à esquerda (bom para imagem de fundo) */
+.banner.esquerda,
+.banner.com-imagem {
+  text-align: left;
+}
+
+.banner.esquerda .banner-conteudo :is(h1, h2, h3)::after,
+.banner.com-imagem .banner-conteudo :is(h1, h2, h3)::after {
+  margin-left: 0;
+}
+
+.banner.com-imagem .banner-conteudo {
+  max-width: var(--wide-width);
+  padding: 0 12px;
+}
+
+.banner.com-imagem .banner-conteudo > * {
+  max-width: 640px;
+}
+
+@media (width >= 900px) {
+  .banner {
+    padding: 88px 32px;
+  }
+}

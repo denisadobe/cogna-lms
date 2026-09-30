@@ -1,0 +1,166 @@
+{
+  "templates": [
+    {
+      "name": "aula-lms",
+      "description": "Página de aula digital (abertura, seções, questões, navegação e biblioteca de componentes) gerada a partir do documento Word da aula",
+      "urls": [
+        "http://localhost:3000/tools/importer/fontes/index.html",
+        "http://localhost:3000/tools/importer/fontes/biblioteca-de-componentes.html",
+        "http://localhost:3000/tools/importer/fontes/maquinas-eletricas-avancadas/unidade-1/aula-1/nav.html",
+        "http://localhost:3000/tools/importer/fontes/maquinas-eletricas-avancadas/unidade-1/aula-1/aprofundamento-teorico-em-maquinas-de-inducao.html",
+        "http://localhost:3000/tools/importer/fontes/maquinas-eletricas-avancadas/unidade-1/aula-1/ponto-de-partida.html",
+        "http://localhost:3000/tools/importer/fontes/maquinas-eletricas-avancadas/unidade-1/aula-1/vamos-comecar.html",
+        "http://localhost:3000/tools/importer/fontes/maquinas-eletricas-avancadas/unidade-1/aula-1/siga-em-frente.html",
+        "http://localhost:3000/tools/importer/fontes/maquinas-eletricas-avancadas/unidade-1/aula-1/vamos-exercitar.html",
+        "http://localhost:3000/tools/importer/fontes/maquinas-eletricas-avancadas/unidade-1/aula-1/saiba-mais.html",
+        "http://localhost:3000/tools/importer/fontes/maquinas-eletricas-avancadas/unidade-1/aula-1/teste-seus-conhecimentos.html",
+        "http://localhost:3000/tools/importer/fontes/maquinas-eletricas-avancadas/unidade-1/aula-1/referencias.html"
+      ],
+      "blocks": [
+        {
+          "name": "banner",
+          "instances": [
+            "[data-bloco=\"banner\"]"
+          ]
+        },
+        {
+          "name": "indice",
+          "instances": [
+            "[data-bloco=\"indice\"]"
+          ]
+        },
+        {
+          "name": "linha-do-tempo",
+          "instances": [
+            "[data-bloco=\"linha-do-tempo\"]"
+          ]
+        },
+        {
+          "name": "sanfona",
+          "instances": [
+            "[data-bloco=\"sanfona\"]"
+          ]
+        },
+        {
+          "name": "abas",
+          "instances": [
+            "[data-bloco=\"abas\"]"
+          ]
+        },
+        {
+          "name": "bloco-de-codigo",
+          "instances": [
+            "[data-bloco=\"bloco-de-codigo\"]"
+          ]
+        },
+        {
+          "name": "comparador-imagens",
+          "instances": [
+            "[data-bloco=\"comparador-imagens\"]"
+          ]
+        },
+        {
+          "name": "video",
+          "instances": [
+            "[data-bloco=\"video\"]"
+          ]
+        },
+        {
+          "name": "embed",
+          "instances": [
+            "[data-bloco=\"embed\"]"
+          ]
+        },
+        {
+          "name": "imagem",
+          "instances": [
+            "[data-bloco=\"imagem\"]"
+          ]
+        },
+        {
+          "name": "botao-expansivel",
+          "instances": [
+            "[data-bloco=\"botao-expansivel\"]"
+          ]
+        },
+        {
+          "name": "citacao",
+          "instances": [
+            "[data-bloco=\"citacao\"]"
+          ]
+        },
+        {
+          "name": "galeria",
+          "instances": [
+            "[data-bloco=\"galeria\"]"
+          ]
+        },
+        {
+          "name": "folha-de-creditos",
+          "instances": [
+            "[data-bloco=\"folha-de-creditos\"]"
+          ]
+        },
+        {
+          "name": "olho",
+          "instances": [
+            "[data-bloco=\"olho\"]"
+          ]
+        },
+        {
+          "name": "quadro-box",
+          "instances": [
+            "[data-bloco=\"quadro-box\"]"
+          ]
+        },
+        {
+          "name": "tabela",
+          "instances": [
+            "[data-bloco=\"tabela\"]"
+          ]
+        },
+        {
+          "name": "formula",
+          "instances": [
+            "[data-bloco=\"formula\"]"
+          ]
+        },
+        {
+          "name": "questao",
+          "instances": [
+            "[data-bloco=\"questao\"]"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "secoes",
+          "name": "Seções da página",
+          "selector": [
+            "main > section:not([data-bloco])"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            "h1",
+            "h2",
+            "h3",
+            "p",
+            "ul",
+            "ol"
+          ]
+        },
+        {
+          "id": "metadados",
+          "name": "Metadados da aula",
+          "selector": [
+            "head meta"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}

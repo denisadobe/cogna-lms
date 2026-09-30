@@ -1,0 +1,130 @@
+.linha-do-tempo {
+  margin: 32px 0;
+}
+
+.linha-do-tempo .linha-do-tempo-lista {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: etapa;
+}
+
+/* eixo */
+.linha-do-tempo .linha-do-tempo-lista::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 15px;
+  width: 3px;
+  border-radius: 2px;
+  background: linear-gradient(var(--color-primary), var(--color-primary-mid));
+}
+
+.linha-do-tempo .linha-do-tempo-item {
+  position: relative;
+  margin: 0;
+  padding: 0 0 28px 52px;
+  counter-increment: etapa;
+}
+
+.linha-do-tempo .linha-do-tempo-item:last-child {
+  padding-bottom: 0;
+}
+
+.linha-do-tempo .linha-do-tempo-item::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  box-sizing: border-box;
+  width: 21px;
+  height: 21px;
+  border: 4px solid var(--color-primary);
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.linha-do-tempo .linha-do-tempo-marco {
+  display: inline-block;
+  margin: 0 0 8px;
+  border-radius: 999px;
+  padding: 2px 14px;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: var(--body-font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.linha-do-tempo .linha-do-tempo-conteudo {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-m);
+  padding: 16px 20px;
+  background: var(--background-color);
+  box-shadow: var(--shadow-s);
+}
+
+.linha-do-tempo .linha-do-tempo-conteudo > :first-child {
+  margin-top: 0;
+}
+
+.linha-do-tempo .linha-do-tempo-conteudo > :last-child {
+  margin-bottom: 0;
+}
+
+.linha-do-tempo .linha-do-tempo-titulo {
+  font-size: var(--heading-font-size-xs);
+}
+
+.linha-do-tempo .linha-do-tempo-conteudo picture img {
+  display: block;
+  border-radius: var(--radius-s);
+}
+
+/* variante etapas: marcador numerado */
+.linha-do-tempo.etapas .linha-do-tempo-item::before {
+  content: counter(etapa);
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 33px;
+  height: 33px;
+  border: 0;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* desktop: itens alternados */
+@media (width >= 900px) {
+  .linha-do-tempo.alternada .linha-do-tempo-lista::before {
+    left: calc(50% - 1.5px);
+  }
+
+  .linha-do-tempo.alternada .linha-do-tempo-item {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 0 40px 32px 0;
+    text-align: right;
+  }
+
+  .linha-do-tempo.alternada .linha-do-tempo-item::before {
+    left: auto;
+    right: -10.5px;
+  }
+
+  .linha-do-tempo.alternada .linha-do-tempo-item:nth-child(even) {
+    margin-left: 50%;
+    padding: 0 0 32px 40px;
+    text-align: left;
+  }
+
+  .linha-do-tempo.alternada .linha-do-tempo-item:nth-child(even)::before {
+    right: auto;
+    left: -10.5px;
+  }
+}

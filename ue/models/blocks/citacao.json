@@ -1,0 +1,46 @@
+{
+  "definitions": [
+    {
+      "title": "Citação",
+      "id": "citacao",
+      "model": "citacao",
+      "plugins": {
+        "da": {
+          "name": "citacao",
+          "unsafeHTML": "<div class=\"citacao\"><div><div><p>Texto da citação.</p></div></div><div><div>Autor</div></div></div>",
+          "fields": [
+            {
+              "name": "citacao",
+              "selector": "div:nth-child(1)>div"
+            },
+            {
+              "name": "autor",
+              "selector": "div:nth-child(2)>div"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "citacao",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "citacao",
+          "label": "Citação",
+          "valueType": "string",
+          "required": true
+        },
+        {
+          "component": "text",
+          "name": "autor",
+          "label": "Autor / fonte",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

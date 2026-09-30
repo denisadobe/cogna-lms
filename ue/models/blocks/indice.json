@@ -1,0 +1,66 @@
+{
+  "definitions": [
+    {
+      "title": "Índice",
+      "id": "indice",
+      "model": "indice",
+      "plugins": {
+        "da": {
+          "name": "indice",
+          "unsafeHTML": "<div class=\"indice\"><div><div>Nesta página</div></div></div>",
+          "fields": [
+            {
+              "name": "titulo",
+              "selector": "div:nth-child(1)>div"
+            },
+            {
+              "name": "links",
+              "selector": "div:nth-child(2)>div"
+            },
+            {
+              "name": "imagem",
+              "selector": "div:nth-child(3)>div picture>img[src]"
+            },
+            {
+              "name": "imagemAlt",
+              "selector": "div:nth-child(3)>div picture>img[alt]"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "indice",
+      "fields": [
+        {
+          "component": "text",
+          "name": "titulo",
+          "label": "Título",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "links",
+          "label": "Links (vazio = gerado a partir dos títulos da página)",
+          "valueType": "string"
+        },
+        {
+          "component": "reference",
+          "name": "imagem",
+          "label": "Imagem (opcional)",
+          "valueType": "string",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "name": "imagemAlt",
+          "label": "Texto alternativo",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

@@ -1,0 +1,91 @@
+{
+  "definitions": [
+    {
+      "title": "Quadro box",
+      "id": "quadro-box",
+      "model": "quadro-box",
+      "filter": "quadro-box",
+      "plugins": {
+        "da": {
+          "name": "quadro-box",
+          "rows": 1,
+          "columns": 1
+        }
+      }
+    },
+    {
+      "title": "Quadro",
+      "id": "quadro-box-item",
+      "model": "quadro-box-item",
+      "plugins": {
+        "da": {
+          "rows": 1,
+          "columns": 0,
+          "fields": [
+            {
+              "name": "texto",
+              "selector": "div:nth-child(1)"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "quadro-box",
+      "fields": [
+        {
+          "component": "multiselect",
+          "name": "classes",
+          "label": "Variações",
+          "options": [
+            {
+              "name": "Atenção",
+              "value": "atencao"
+            },
+            {
+              "name": "Importante",
+              "value": "importante"
+            },
+            {
+              "name": "Dica",
+              "value": "dica"
+            },
+            {
+              "name": "Exemplo",
+              "value": "exemplo"
+            },
+            {
+              "name": "Reflita",
+              "value": "reflita"
+            },
+            {
+              "name": "Saiba mais",
+              "value": "saiba-mais"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quadro-box-item",
+      "fields": [
+        {
+          "component": "richtext",
+          "name": "texto",
+          "label": "Conteúdo (um título ou primeira linha em negrito vira o título)",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "quadro-box",
+      "components": [
+        "quadro-box-item"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "definitions": [
+    {
+      "title": "Sanfona",
+      "id": "sanfona",
+      "model": "sanfona",
+      "filter": "sanfona",
+      "plugins": {
+        "da": {
+          "name": "sanfona",
+          "rows": 1,
+          "columns": 2
+        }
+      }
+    },
+    {
+      "title": "Item da sanfona",
+      "id": "sanfona-item",
+      "model": "sanfona-item",
+      "plugins": {
+        "da": {
+          "rows": 2,
+          "columns": 0,
+          "fields": [
+            {
+              "name": "titulo",
+              "selector": "div:nth-child(1)"
+            },
+            {
+              "name": "conteudo",
+              "selector": "div:nth-child(2)"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "sanfona",
+      "fields": [
+        {
+          "component": "multiselect",
+          "name": "classes",
+          "label": "Variações",
+          "options": [
+            {
+              "name": "Vários itens abertos",
+              "value": "multipla"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sanfona-item",
+      "fields": [
+        {
+          "component": "text",
+          "name": "titulo",
+          "label": "Título",
+          "valueType": "string",
+          "required": true
+        },
+        {
+          "component": "richtext",
+          "name": "conteudo",
+          "label": "Conteúdo",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "sanfona",
+      "components": [
+        "sanfona-item"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+.comparador-imagens {
+  margin: 32px 0;
+}
+
+.comparador-imagens .comparador-imagens-palco {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-m);
+  background: var(--light-color);
+  user-select: none;
+}
+
+.comparador-imagens .comparador-imagens-depois img,
+.comparador-imagens .comparador-imagens-antes img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.comparador-imagens .comparador-imagens-depois {
+  aspect-ratio: 3 / 2;
+}
+
+.comparador-imagens .comparador-imagens-antes {
+  position: absolute;
+  inset: 0;
+  clip-path: inset(0 calc(100% - var(--posicao)) 0 0);
+}
+
+.comparador-imagens .comparador-imagens-rotulo {
+  position: absolute;
+  top: 12px;
+  border-radius: 999px;
+  padding: 2px 12px;
+  background: rgb(40 17 75 / 80%);
+  color: #fff;
+  font-size: var(--body-font-size-xs);
+  font-weight: 600;
+}
+
+.comparador-imagens .comparador-imagens-antes .comparador-imagens-rotulo {
+  left: 12px;
+}
+
+.comparador-imagens .comparador-imagens-depois .comparador-imagens-rotulo {
+  right: 12px;
+}
+
+.comparador-imagens .comparador-imagens-alca {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--posicao);
+  width: 4px;
+  margin-left: -2px;
+  background: #fff;
+  box-shadow: 0 0 8px rgb(0 0 0 / 30%);
+  pointer-events: none;
+}
+
+.comparador-imagens .comparador-imagens-alca::after {
+  content: '‹ ›';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  transform: translate(-50%, -50%);
+  box-shadow: var(--shadow-m);
+}
+
+.comparador-imagens .comparador-imagens-controle {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+}
+
+.comparador-imagens .comparador-imagens-palco:has(.comparador-imagens-controle:focus-visible) .comparador-imagens-alca::after {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* variante para diagramas técnicos: imagem inteira sobre fundo branco */
+.comparador-imagens.diagrama .comparador-imagens-palco {
+  border: 1px solid var(--border-color);
+  background: #fff;
+}
+
+.comparador-imagens.diagrama .comparador-imagens-depois {
+  aspect-ratio: 21 / 9;
+}
+
+.comparador-imagens.diagrama .comparador-imagens-antes {
+  background: #fff;
+}
+
+.comparador-imagens.diagrama img {
+  object-fit: contain;
+  padding: 12px;
+  box-sizing: border-box;
+}

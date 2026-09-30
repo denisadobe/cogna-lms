@@ -1,2 +1,4 @@
 helix-importer-ui
 *.min.js
+scripts/katex/
+tools/importer/*.bundle.js

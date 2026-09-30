@@ -1,0 +1,92 @@
+{
+  "definitions": [
+    {
+      "title": "Galeria",
+      "id": "galeria",
+      "model": "galeria",
+      "filter": "galeria",
+      "plugins": {
+        "da": {
+          "name": "galeria",
+          "rows": 1,
+          "columns": 2
+        }
+      }
+    },
+    {
+      "title": "Imagem da galeria",
+      "id": "galeria-slide",
+      "model": "galeria-slide",
+      "plugins": {
+        "da": {
+          "rows": 2,
+          "columns": 0,
+          "fields": [
+            {
+              "name": "imagem",
+              "selector": "div:nth-child(1) picture>img[src]"
+            },
+            {
+              "name": "imagemAlt",
+              "selector": "div:nth-child(1) picture>img[alt]"
+            },
+            {
+              "name": "legenda",
+              "selector": "div:nth-child(2)"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "galeria",
+      "fields": [
+        {
+          "component": "multiselect",
+          "name": "classes",
+          "label": "Variações",
+          "options": [
+            {
+              "name": "Fotografias (preencher o quadro)",
+              "value": "foto"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "galeria-slide",
+      "fields": [
+        {
+          "component": "reference",
+          "name": "imagem",
+          "label": "Imagem",
+          "valueType": "string",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "name": "imagemAlt",
+          "label": "Texto alternativo",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "legenda",
+          "label": "Legenda",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "galeria",
+      "components": [
+        "galeria-slide"
+      ]
+    }
+  ]
+}

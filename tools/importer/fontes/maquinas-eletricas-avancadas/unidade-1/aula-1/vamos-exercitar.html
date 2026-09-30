@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <title>Vamos Exercitar? | Aula 1 – Máquinas Elétricas Avançadas</title>
+  <meta name="description" content="Resolução do desafio de Roberto: perdas rotacionais e parâmetros do circuito equivalente a partir dos ensaios em vazio e de rotor bloqueado.">
+  <meta name="nav" content="/maquinas-eletricas-avancadas/unidade-1/aula-1/nav">
+  <meta name="disciplina" content="Máquinas Elétricas Avançadas">
+  <meta name="unidade" content="Unidade 1 – Conceitos Avançados de Máquinas Elétricas">
+  <meta name="aula" content="Aula 1 – Aprofundamento teórico em máquinas de indução">
+  <meta name="secao" content="vamos-exercitar">
+  <meta name="ordem" content="5">
+</head>
+<body>
+<main>
+  <section>
+    <header data-bloco="banner">
+      <p>Vamos Exercitar?</p>
+      <h1>Obtendo os parâmetros do motor de indução</h1>
+    </header>
+  </section>
+
+  <section>
+    <p>Voltando ao desafio de Roberto para determinar os parâmetros da máquina, ele deverá analisar cuidadosamente os valores medidos no ensaio. A potência medida durante o ensaio em vazio o ajudará no cálculo das perdas rotacionais. Esse valor está na Tabela 1 (apresentada anteriormente), assim como também a corrente do ensaio em vazio.</p>
+    <div data-bloco="botao-expansivel">
+      <div>
+        <div>Rever a Tabela 1</div>
+        <div>
+          <h3>Tabela 1 | Dados dos ensaios com motor de indução</h3>
+          <ul>
+            <li><strong>Ensaio em vazio:</strong> 460,0 V; 34,0 A; 1,3 kW.</li>
+            <li><strong>Ensaio de rotor bloqueado:</strong> 42,4 V; 171 A; 4.340 W (a 15 Hz).</li>
+            <li><strong>Resistência CC do estator (por fase):</strong> 0,0298 Ω.</li>
+          </ul>
+          <p>Fonte: Elaborada pelo autor (2024).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Perdas rotacionais</h2>
+    <p>Para obter as perdas rotacionais, Roberto deverá subtrair da potência medida as perdas na resistência de estator, utilizando o valor da resistência CC medida, que é o valor de R<sub>1</sub>. Neste sentido, temos:</p>
+    <div data-bloco="formula" data-variante="destaque">
+      <p>P_{\text{Cu,est}} = 3\, I_{1,\text{vz}}^{2}\, R_1 = 3 \cdot (34{,}0)^{2} \cdot 0{,}0298 \approx 103{,}3\ \text{W}</p>
+      <p>P_{\text{rot}} = P_{\text{vazio}} - P_{\text{Cu,est}} = 1300 - 103{,}3 \approx 1196{,}7\ \text{W}</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Parâmetros do ensaio em vazio</h2>
+    <p>Da Tabela 1, Roberto ainda pode usar os dados medidos para obter os parâmetros utilizando as equações desenvolvidas para cada ensaio. Para a tensão por fase, Roberto precisa realizar o cálculo, utilizando a tensão de linha medida. Ou seja:</p>
+    <div data-bloco="formula">
+      <p>V_{\phi,\text{vz}} = \dfrac{460}{\sqrt{3}} \approx 265{,}6\ \text{V}</p>
+    </div>
+    <p>Dividindo esse valor pela corrente medida, Roberto tem a impedância em vazio. Utilizando a potência em vazio, ele obtém de imediato a resistência do estator e, em seguida, a reatância em vazio. Assim, Roberto tem que:</p>
+    <div data-bloco="formula" data-variante="destaque">
+      <p>Z_{\text{vazio}} = \dfrac{265{,}6}{34{,}0} \approx 7{,}811\ \Omega</p>
+      <p>R_{\text{vazio}} = \dfrac{1300}{3 \cdot (34{,}0)^{2}} \approx 0{,}375\ \Omega</p>
+      <p>X_{\text{vazio}} = \sqrt{7{,}811^{2} - 0{,}375^{2}} \approx 7{,}802\ \Omega = X_1 + X_m</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Parâmetros do ensaio de rotor bloqueado</h2>
+    <p>Enfim, Roberto precisa partir agora dos resultados do ensaio de rotor bloqueado. Então, ele calcula inicialmente a tensão por fase deste teste. Ou seja:</p>
+    <div data-bloco="formula">
+      <p>V_{\phi,\text{bloc}} = \dfrac{42{,}4}{\sqrt{3}} \approx 24{,}48\ \text{V}</p>
+    </div>
+    <div data-bloco="formula" data-variante="destaque">
+      <p>Z_{\text{bloc}} = \dfrac{24{,}48}{171} \approx 0{,}1432\ \Omega</p>
+      <p>R_{\text{bloc}} = \dfrac{4340}{3 \cdot 171^{2}} \approx 0{,}0495\ \Omega \;\Rightarrow\; R_2 = 0{,}0495 - 0{,}0298 \approx 0{,}0197\ \Omega</p>
+      <p>X_{\text{bloc},15\,\text{Hz}} = \sqrt{0{,}1432^{2} - 0{,}0495^{2}} \approx 0{,}1343\ \Omega</p>
+    </div>
+    <p>Esta reatância de rotor bloqueado é calculada para 15 Hz. Desta forma, Roberto precisa fazer uma conversão para a frequência nominal de 60 Hz. Diante disso, Roberto tem que:</p>
+    <div data-bloco="formula">
+      <p>X_{\text{bloc},60\,\text{Hz}} = \dfrac{60}{15} \cdot 0{,}1343 \approx 0{,}537\ \Omega = X_1 + X_2</p>
+    </div>
+    <p>Fazendo uma aproximação de que X<sub>1</sub> = X<sub>2</sub>, resulta:</p>
+    <div data-bloco="formula" data-variante="destaque">
+      <p>X_1 = X_2 = \dfrac{0{,}537}{2} \approx 0{,}269\ \Omega</p>
+      <p>X_m = X_{\text{vazio}} - X_1 = 7{,}802 - 0{,}269 \approx 7{,}533\ \Omega</p>
+    </div>
+  </section>
+
+  <section data-estilo="light">
+    <h2>Resultado</h2>
+    <figure data-bloco="tabela" data-variante="centralizada">
+      <figcaption>Tabela 2 | Parâmetros obtidos para o motor de 100 HP, 460 V e 60 Hz</figcaption>
+      <table>
+        <tr><th>P<sub>rot</sub></th><th>R<sub>1</sub></th><th>R<sub>2</sub></th><th>X<sub>1</sub> = X<sub>2</sub></th><th>X<sub>m</sub></th></tr>
+        <tr><td>≈ 1.197 W</td><td>0,0298 Ω</td><td>≈ 0,0197 Ω</td><td>≈ 0,269 Ω</td><td>≈ 7,53 Ω</td></tr>
+      </table>
+      <p>Fonte: Elaborada a partir dos dados da Tabela 1.</p>
+    </figure>
+    <div data-bloco="quadro-box" data-variante="dica">
+      <div>
+        <div>
+          <p><strong>Missão cumprida!</strong></p>
+          <p>Roberto conseguiu realizar os cálculos fundamentais necessários, baseado nos valores medidos nos ensaios em vazio e de rotor bloqueado, obtendo assim alguns parâmetros importantes para a análise e o design de sistemas elétricos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

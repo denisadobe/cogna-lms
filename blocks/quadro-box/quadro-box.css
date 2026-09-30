@@ -1,0 +1,109 @@
+.quadro-box {
+  --quadro-cor: var(--color-primary);
+  --quadro-fundo: var(--color-tint);
+  --quadro-icone: '';
+
+  display: grid;
+  gap: 20px;
+  margin: 28px 0;
+}
+
+.quadro-box.grade {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.quadro-box .quadro-box-item {
+  border-radius: var(--radius-m);
+  padding: 22px 24px;
+  background: var(--quadro-fundo);
+}
+
+.quadro-box .quadro-box-item > :first-child,
+.quadro-box .quadro-box-conteudo > :first-child {
+  margin-top: 0;
+}
+
+.quadro-box .quadro-box-item > :last-child,
+.quadro-box .quadro-box-conteudo > :last-child {
+  margin-bottom: 0;
+}
+
+.quadro-box .quadro-box-titulo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 8px;
+  color: var(--quadro-cor);
+  font-size: var(--heading-font-size-xs);
+  font-weight: 700;
+}
+
+.quadro-box .quadro-box-item picture img {
+  display: block;
+  border-radius: var(--radius-s);
+}
+
+/* quadros de destaque */
+.quadro-box:is(.atencao, .dica, .exemplo, .reflita, .importante, .saiba-mais) .quadro-box-item {
+  border-left: 6px solid var(--quadro-cor);
+  border-radius: 0 var(--radius-m) var(--radius-m) 0;
+}
+
+.quadro-box:is(.atencao, .dica, .exemplo, .reflita, .importante, .saiba-mais) .quadro-box-titulo::before {
+  content: var(--quadro-icone);
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--quadro-cor);
+  color: #fff;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.quadro-box.atencao {
+  --quadro-cor: #b3261e;
+  --quadro-fundo: #fdf0ef;
+  --quadro-icone: '!';
+}
+
+.quadro-box.importante {
+  --quadro-cor: #9a5b00;
+  --quadro-fundo: #fff6e0;
+  --quadro-icone: '★';
+}
+
+.quadro-box.dica {
+  --quadro-cor: var(--color-success);
+  --quadro-fundo: var(--color-success-tint);
+  --quadro-icone: '✓';
+}
+
+.quadro-box.exemplo {
+  --quadro-cor: var(--color-primary-mid);
+  --quadro-fundo: var(--color-tint);
+  --quadro-icone: '→';
+}
+
+.quadro-box.reflita {
+  --quadro-cor: #0b6e8a;
+  --quadro-fundo: #e7f5f9;
+  --quadro-icone: '?';
+}
+
+.quadro-box.saiba-mais {
+  --quadro-cor: var(--color-primary);
+  --quadro-fundo: var(--color-tint);
+  --quadro-icone: '+';
+}
+
+/* quadros neutros sobre seções coloridas */
+.section:is(.light, .highlight) .quadro-box:not(.atencao, .dica, .exemplo, .reflita, .importante, .saiba-mais) {
+  --quadro-fundo: var(--background-color);
+}
+
+.section:is(.light, .highlight) .quadro-box .quadro-box-item {
+  box-shadow: var(--shadow-s);
+}
