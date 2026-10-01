@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <title>Teste seus conhecimentos | Aula 2 – Máquinas Elétricas Avançadas</title>
-  <meta name="description" content="Questões pós-aula da Aula 2: modos de operação, escorregamento no torque máximo e efeito da resistência do rotor.">
+  <meta name="description" content="Questões pós-aula da Aula 2: modos de operação, escorregamento no torque máximo e efeito da tensão de alimentação no conjugado máximo.">
   <meta name="nav" content="/maquinas-eletricas-avancadas/unidade-1/aula-2/nav">
   <meta name="disciplina" content="Máquinas Elétricas Avançadas">
   <meta name="unidade" content="Unidade 1 – Conceitos Avançados de Máquinas Elétricas">
@@ -26,25 +26,25 @@
       <div data-campo="Dificuldade">Intermediário</div>
       <div data-campo="Bloom">Análise</div>
       <div data-campo="Texto-base">
-        <p>Com o circuito equivalente de Thévenin da máquina de indução, podemos obter a curva do torque em função do escorregamento. Como o escorregamento está relacionado à velocidade de rotação da máquina, é possível também obter a curva em relação à sua velocidade de operação.</p>
-        <p>Considerando a curva de torque versus velocidade da máquina de indução, analise as afirmativas a seguir:</p>
-        <p>I. No funcionamento da máquina de indução como motor, o valor do escorregamento está entre 1,0 e 0.</p>
-        <p>II. Quando a máquina de indução trabalha acima da velocidade síncrona, ela opera no modo gerador, desenvolvendo torque negativo.</p>
-        <p>III. A máquina de indução opera como gerador no caso de o escorregamento ser superior a 1.</p>
-        <p>IV. Para operar na região de frenagem, o motor deve ser acionado em sentido contrário ao da rotação do seu campo magnético.</p>
+        <p>A equação do conjugado obtida com o equivalente de Thévenin vale para qualquer escorregamento. Quando a curva é traçada em toda a faixa de velocidades, ela mostra que a mesma máquina de indução pode funcionar como motor, como gerador ou como freio, dependendo da velocidade do rotor em relação ao campo girante.</p>
+        <p>Considerando a curva de conjugado × velocidade da máquina de indução, analise as afirmativas a seguir:</p>
+        <p>I. Para 0 &lt; s &lt; 1, o rotor gira no mesmo sentido do campo, abaixo da velocidade síncrona, e a máquina opera como motor.</p>
+        <p>II. Na velocidade síncrona (s = 0), o conjugado induzido é nulo, pois não há movimento relativo entre o campo girante e os condutores do rotor.</p>
+        <p>III. Para s &lt; 0, a máquina recebe potência mecânica pelo eixo e pode devolver potência elétrica à rede.</p>
+        <p>IV. A região de frenagem corresponde a escorregamentos negativos, quando o rotor gira acima da velocidade síncrona.</p>
       </div>
       <div data-campo="Enunciado"><p>Considerando o contexto apresentado, é correto o que se afirma em:</p></div>
-      <div data-campo="A"><p>I e III, apenas.</p></div>
-      <div data-campo="B"><p>II e IV, apenas.</p></div>
+      <div data-campo="A"><p>I e II, apenas.</p></div>
+      <div data-campo="B"><p>III e IV, apenas.</p></div>
       <div data-campo="C"><p>I, II e III, apenas.</p></div>
-      <div data-campo="D"><p>I, II e IV, apenas.</p></div>
+      <div data-campo="D"><p>I, III e IV, apenas.</p></div>
       <div data-campo="E"><p>I, II, III e IV.</p></div>
-      <div data-campo="Gabarito"><p>D) I, II e IV, apenas.</p></div>
+      <div data-campo="Gabarito"><p>C) I, II e III, apenas.</p></div>
       <div data-campo="Resolução">
-        <p>A afirmativa I está correta, pois, quando a máquina opera como motor, ela desenvolve torque desde a partida (escorregamento 1) até a velocidade de operação, que sempre é menor que a síncrona, mas próxima a ela. Sendo assim, o escorregamento se encontra entre 1 e 0.</p>
-        <p>A afirmativa II está correta, pois, ao analisarmos a curva de torque versus velocidade, veremos que, na situação de velocidade maior que a síncrona, a máquina entra em modo gerador, com torque negativo. De fato, se os seus terminais de estator forem conectados a uma fonte de tensão polifásica e seu rotor for acionado por uma máquina motriz acima da velocidade síncrona, ela entra no modo gerador.</p>
-        <p>A afirmativa III está incorreta, pois, para atender à condição mencionada na justificativa da afirmativa II (velocidade maior que a síncrona), o escorregamento deve ser negativo.</p>
-        <p>A afirmativa IV está correta, pois, no modo freio, a máquina de indução é alimentada com energia elétrica de uma fonte externa. Essa energia elétrica é convertida em um campo magnético rotativo no estator, o que gera um torque oposto ao movimento do rotor. Esse torque contrário ao movimento é o que desacelera o sistema mecânico da máquina.</p>
+        <p>A afirmativa I está correta: entre a partida (s = 1) e a velocidade síncrona (s = 0), o rotor acompanha o campo com um pequeno atraso e o conjugado é positivo. Essa é a região de motor.</p>
+        <p>A afirmativa II está correta: em s = 0 não há variação de fluxo vista pelo rotor, logo não há tensão nem corrente induzidas e o conjugado é zero. Por isso um motor nunca chega exatamente à velocidade síncrona.</p>
+        <p>A afirmativa III está correta: com s &lt; 0, o rotor é acelerado por uma máquina primária acima da velocidade síncrona, o conjugado induzido fica negativo e a máquina passa a converter potência mecânica em elétrica.</p>
+        <p>A afirmativa IV está incorreta: a frenagem por contracorrente ocorre para s &gt; 1, quando o rotor gira no sentido oposto ao do campo girante. Escorregamentos negativos correspondem ao modo gerador.</p>
       </div>
     </section>
 
@@ -53,27 +53,23 @@
       <div data-campo="Dificuldade">Intermediário</div>
       <div data-campo="Bloom">Aplicação</div>
       <div data-campo="Texto-base">
-        <p>O processo de obtenção do torque máximo e escorregamento máximo de uma máquina de indução se inicia na obtenção da característica de torque em função do escorregamento. A partir dessa relação, pode-se derivar a equação do torque em relação ao escorregamento igualando a zero para obter o escorregamento necessário para obter o máximo valor de torque. Esse valor máximo ocorre em uma condição específica chamada de "deslizamento máximo". Considere um motor de indução trifásico de 460 V, 60 Hz, 6 polos, que possui os seguintes valores de resistências e reatâncias do circuito equivalente: R<sub>1</sub> = 0,3 Ohms, R<sub>2</sub> = 0,32 Ohms, X<sub>1</sub> = X<sub>2</sub> = 1,03 Ohms e X<sub>m</sub> = 30 Ohms.</p>
+        <p>O escorregamento em que ocorre o conjugado máximo de um motor de indução depende da resistência do rotor e da impedância de Thévenin vista pelo rotor. Conhecer esse valor ajuda a prever em que velocidade o motor atinge o seu limite de sobrecarga. Considere um motor de indução trifásico de 440 V, 60 Hz, 4 polos, ligado em estrela, com os seguintes parâmetros do circuito equivalente por fase: R<sub>1</sub> = 0,25 Ω, R<sub>2</sub> = 0,20 Ω, X<sub>1</sub> = X<sub>2</sub> = 0,80 Ω e X<sub>M</sub> = 25 Ω.</p>
       </div>
-      <div data-campo="Enunciado"><p>Considerando o valor do escorregamento no torque máximo desenvolvido por essa máquina, dentro do contexto apresentado, assinale a alternativa correta.</p></div>
-      <div data-campo="A"><p>\(s_{T\max} = 11\%\).</p></div>
-      <div data-campo="B"><p>\(s_{T\max} = 16\%\).</p></div>
-      <div data-campo="C"><p>\(s_{T\max} = 21\%\).</p></div>
-      <div data-campo="D"><p>\(s_{T\max} = 28\%\).</p></div>
-      <div data-campo="E"><p>\(s_{T\max} = 30\%\).</p></div>
-      <div data-campo="Gabarito"><p>B) sTmax = 16%.</p></div>
+      <div data-campo="Enunciado"><p>Considerando o contexto apresentado, assinale a alternativa que apresenta o escorregamento no torque máximo desse motor.</p></div>
+      <div data-campo="A"><p>\(s_{maxT} \approx 6{,}3\%\).</p></div>
+      <div data-campo="B"><p>\(s_{maxT} \approx 9{,}8\%\).</p></div>
+      <div data-campo="C"><p>\(s_{maxT} \approx 11{,}2\%\).</p></div>
+      <div data-campo="D"><p>\(s_{maxT} \approx 12{,}5\%\).</p></div>
+      <div data-campo="E"><p>\(s_{maxT} \approx 25{,}0\%\).</p></div>
+      <div data-campo="Gabarito"><p>D) smaxT ≈ 12,5%.</p></div>
       <div data-campo="Resolução">
-        <p>Para calcular o escorregamento no torque máximo usando o circuito equivalente de Thévenin da máquina de indução, precisamos calcular os parâmetros de Thévenin do circuito equivalente. Iniciamos o cálculo do valor da tensão de fase:</p>
-        <p>\[ V_1 = \dfrac{460}{\sqrt{3}} \approx 265{,}58\ \text{V} \]</p>
-        <p>Podemos, então, calcular a tensão equivalente de Thévenin conforme apresentado a seguir:</p>
-        <p>\[ V_{th} = \dfrac{X_m}{\sqrt{R_1^{2} + \left(X_1 + X_m\right)^{2}}}\, V_1 = \dfrac{30}{\sqrt{0{,}3^{2} + 31{,}03^{2}}} \cdot 265{,}58 \approx 256{,}75\ \text{V} \]</p>
-        <p>Também é necessário calcular a impedância equivalente de Thévenin para obter os valores de resistência e reatância equivalentes de Thévenin. Nessas condições, temos:</p>
-        <p>\[ \hat{Z}_{th} = \dfrac{jX_m\left(R_1 + jX_1\right)}{R_1 + j\left(X_1 + X_m\right)} = \dfrac{j30\left(0{,}3 + j1{,}03\right)}{0{,}3 + j31{,}03} \approx 0{,}280 + j0{,}999\ \Omega \]</p>
-        <p>Isso nos dá os valores de resistência R<sub>th</sub> ≈ 0,28 Ω e reatância X<sub>th</sub> ≈ 1,00 Ω. Para determinar o escorregamento no torque máximo em um motor de indução, podemos usar a seguinte fórmula:</p>
-        <p>\[ s_{T\max} = \dfrac{R_2}{\sqrt{R_{th}^{2} + \left(X_{th} + X_2\right)^{2}}} \]</p>
-        <p>Com isso, podemos simplesmente aplicar os valores dados e obtidos do circuito equivalente de Thévenin, ou seja:</p>
-        <p>\[ s_{T\max} = \dfrac{0{,}32}{\sqrt{0{,}28^{2} + \left(1{,}00 + 1{,}03\right)^{2}}} \approx 0{,}156 \approx 16\% \]</p>
-        <p>Assim, a resposta correta é um escorregamento de 16%.</p>
+        <p>O escorregamento no torque máximo depende da impedância de Thévenin. Embora a tensão não entre nessa conta, vale registrar a tensão de fase e a tensão de Thévenin, que seriam usadas para calcular o próprio conjugado máximo:</p>
+        <p>\[ V_1 = \dfrac{440}{\sqrt{3}} \approx 254{,}03\ \text{V} \qquad V_{th} = \dfrac{25}{\sqrt{0{,}25^{2} + 25{,}80^{2}}} \cdot 254{,}03 \approx 246{,}15\ \text{V} \]</p>
+        <p>A impedância de Thévenin é calculada pela Equação 6:</p>
+        <p>\[ \hat{Z}_{th} = \dfrac{j25\left(0{,}25 + j0{,}80\right)}{0{,}25 + j25{,}80} \approx 0{,}235 + j0{,}778\ \Omega \]</p>
+        <p>Aplicando a Equação 9:</p>
+        <p>\[ s_{maxT} = \dfrac{R_2}{\sqrt{R_{th}^{2} + \left(X_{th} + X_2\right)^{2}}} = \dfrac{0{,}20}{\sqrt{0{,}235^{2} + \left(0{,}778 + 0{,}80\right)^{2}}} \approx \dfrac{0{,}20}{1{,}595} \approx 0{,}125 \]</p>
+        <p>Portanto, o torque máximo ocorre com escorregamento de cerca de 12,5%, ou seja, por volta de 1.575 rpm.</p>
       </div>
     </section>
 
@@ -82,13 +78,13 @@
       <div data-campo="Dificuldade">Intermediário</div>
       <div data-campo="Bloom">Compreensão</div>
       <div data-campo="Texto-base">
-        <p>“Quando está operando com frequência constante, um motor comum de indução convencional com rotor de gaiola é essencialmente um motor de velocidade constante, apresentando uma queda de velocidade de cerca de 10% ou menos ao passar da condição a vazio para a de plena carga. No caso de um motor de indução de rotor bobinado, a variação de velocidade pode ser obtida inserindo uma resistência externa no circuito do rotor”.</p>
-        <p>Com base na alteração da resistência do rotor de uma máquina de indução, avalie as seguintes asserções e a relação proposta entre elas.</p>
-        <p>I. O valor do torque máximo não se altera ao se adicionar resistências externas para o controle de máquinas de indução com rotor bobinado.</p>
+        <p>Em plantas industriais extensas, a partida de grandes cargas e os longos alimentadores podem provocar quedas de tensão nos terminais dos motores. Mesmo quedas moderadas afetam o desempenho das máquinas de indução, e um motor que acionava a carga sem dificuldade pode passar a desacelerar diante de picos de conjugado resistente.</p>
+        <p>Com base na equação do conjugado máximo da máquina de indução, avalie as seguintes asserções e a relação proposta entre elas.</p>
+        <p>I. Se a tensão de alimentação de um motor de indução cair 10%, o conjugado máximo que ele consegue desenvolver diminui cerca de 19%.</p>
         <p>PORQUE</p>
-        <p>II. Ao obter a equação do torque máximo desenvolvido por uma máquina de indução a partir do circuito equivalente da máquina, perceberemos que este independe da resistência do rotor.</p>
+        <p>II. O conjugado máximo é proporcional ao quadrado da tensão de Thévenin, que por sua vez é proporcional à tensão aplicada ao estator.</p>
       </div>
-      <div data-campo="Referência"><p>UMANS, S. D. Máquinas elétricas de Fitzgerald e Kingsley. 7. ed. Porto Alegre: AMGH, 2014. Disponível em: https://integrada.minhabiblioteca.com.br/reader/books/9788580552072/pageid/0.</p></div>
+      <div data-campo="Referência"><p>UMANS, S. D. Máquinas elétricas de Fitzgerald e Kingsley. 7. ed. Porto Alegre: AMGH, 2014.</p></div>
       <div data-campo="Enunciado"><p>A respeito dessas asserções, assinale a alternativa correta.</p></div>
       <div data-campo="A"><p>As asserções I e II são proposições verdadeiras, mas a II não justifica a I.</p></div>
       <div data-campo="B"><p>As asserções I e II são proposições verdadeiras e a II justifica a I.</p></div>
@@ -97,8 +93,8 @@
       <div data-campo="E"><p>As asserções I e II são proposições falsas.</p></div>
       <div data-campo="Gabarito"><p>B) As asserções I e II são proposições verdadeiras e a II justifica a I.</p></div>
       <div data-campo="Resolução">
-        <p>A asserção I é verdadeira, pois adicionar resistências externas ao rotor de uma máquina de indução com rotor bobinado permite controlar a velocidade, mas não afeta o torque máximo, pois este é determinado pelas características do projeto da máquina.</p>
-        <p>A asserção II também é verdadeira, pois, ao derivar a equação do torque máximo do circuito equivalente da máquina de indução, observa-se que não há termos relacionados à resistência do rotor. Isso ocorre devido à natureza da indução eletromagnética, em que o torque máximo é determinado principalmente pelas características do estator e pela impedância do rotor. Então, matematicamente, teremos uma justificativa para o que foi afirmado na asserção I.</p>
+        <p>A asserção II é verdadeira: na Equação 10, T<sub>max</sub> depende de V<sub>th</sub><sup>2</sup>, e a Equação 5 mostra que V<sub>th</sub> é uma fração constante de V<sub>1</sub>, fixada pelos parâmetros da máquina.</p>
+        <p>A asserção I também é verdadeira e decorre diretamente da II: com 90% da tensão, o conjugado máximo passa a ser 0,9<sup>2</sup> = 0,81 do valor original, uma redução de cerca de 19%. Assim, a II justifica a I. Na prática, isso significa que quedas de tensão reduzem bastante a capacidade de sobrecarga dos motores.</p>
       </div>
     </section>
   </section>

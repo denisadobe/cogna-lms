@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <title>Siga em Frente | Aula 2 – Máquinas Elétricas Avançadas</title>
-  <meta name="description" content="Modos de operação da máquina de indução na curva de conjugado × velocidade, torques de partida, plena carga e máximo, e o escorregamento no torque máximo.">
+  <meta name="description" content="Modos de operação da máquina de indução na curva de conjugado × velocidade, conjugados de partida, nominal e máximo e o escorregamento no torque máximo.">
   <meta name="nav" content="/maquinas-eletricas-avancadas/unidade-1/aula-2/nav">
   <meta name="disciplina" content="Máquinas Elétricas Avançadas">
   <meta name="unidade" content="Unidade 1 – Conceitos Avançados de Máquinas Elétricas">
@@ -15,71 +15,71 @@
   <section>
     <header data-bloco="banner">
       <p>Siga em Frente...</p>
-      <h1>Os modos de operação da máquina e o escorregamento para o máximo torque</h1>
+      <h1>Modos de operação e torque máximo</h1>
     </header>
   </section>
 
   <section>
     <h2>Modos de operação</h2>
-    <p>Na curva de conjugado versus velocidade de uma máquina de indução, os diferentes modos de operação podem ser representados de maneira diferente, dependendo da condição de operação e do controle aplicado. Estes modos podem ser localizados na curva de conjugado versus velocidade, como mostra a Figura 3 (Umans, 2014).</p>
+    <p>A Equação 8 não vale apenas entre a partida e a velocidade síncrona. Se deixarmos o escorregamento assumir qualquer valor, a mesma curva revela três modos de operação da máquina de indução, cada um em uma faixa de velocidades, como mostra a Figura 3 (Umans, 2014).</p>
     <figure data-bloco="imagem">
-      <figcaption>Figura 3 | Característica de conjugado versus velocidade e escorregamento da máquina de indução</figcaption>
-      <img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/aula-2/figura-3-modos-de-operacao.png" alt="Curva de conjugado em função da velocidade (em porcentagem da síncrona) e do escorregamento, com as regiões de frenagem (escorregamento maior que 1), motor (entre 1 e 0) e gerador (escorregamento negativo)">
-      <p>Fonte: Umans (2014, p. 362).</p>
+      <figcaption>Figura 3 | Curva de conjugado em toda a faixa de escorregamento e os três modos de operação</figcaption>
+      <img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/aula-2/figura-3-modos-de-operacao.png" alt="Curva de conjugado em porcentagem do nominal versus velocidade em porcentagem da síncrona, de menos 60% a 190%: região de freio para velocidades negativas (s maior que 1), região de motor entre 0 e 100% (s entre 0 e 1) com conjugado positivo e região de gerador acima de 100% (s negativo) com conjugado negativo">
+      <p>Fonte: Elaborada pela autora.</p>
     </figure>
     <div data-bloco="abas">
       <div>
+        <div>Modo motor</div>
+        <div><p>Para 0 &lt; s &lt; 1, o rotor gira no mesmo sentido do campo girante, um pouco abaixo da velocidade síncrona. A máquina absorve energia elétrica da rede e entrega conjugado positivo no eixo. É a região de trabalho da grande maioria dos motores industriais, normalmente com escorregamentos de 1% a 5% em carga nominal.</p></div>
+      </div>
+      <div>
         <div>Modo gerador</div>
-        <div><p>No modo gerador, a máquina de indução está sendo acionada mecanicamente e está gerando energia elétrica, normalmente em um sistema de geração distribuída ou em situações de frenagem regenerativa. Neste modo, a máquina opera em uma região da curva de conjugado versus velocidade, em que o conjugado resistente é maior do que o conjugado produzido. O ponto de operação nesta região geralmente está localizado em uma velocidade mais alta e um torque mais baixo.</p></div>
+        <div><p>Para s &lt; 0, uma máquina primária (turbina, motor a combustão ou a própria carga em descida) acelera o rotor acima da velocidade síncrona. O conjugado induzido fica negativo, opondo-se ao movimento, e a máquina devolve energia elétrica à rede. Esse modo aparece em pequenas centrais eólicas e hidráulicas e em frenagem regenerativa de elevadores e guindastes.</p></div>
       </div>
       <div>
         <div>Modo freio</div>
-        <div><p>No modo de freio, a máquina de indução está sendo usada para dissipar energia mecânica excessiva, geralmente convertendo-a em energia elétrica dissipada como calor. Isso pode ser feito através de resistores de frenagem ou através de técnicas de frenagem regenerativa usando um inversor de frequência. O ponto de operação nesta região da curva de conjugado versus velocidade está localizado em uma velocidade mais alta e um torque mais baixo, dependendo do método de frenagem utilizado.</p></div>
-      </div>
-      <div>
-        <div>Modo motor</div>
-        <div><p>No modo motor, a máquina de indução consome energia elétrica da fonte de alimentação e converte-a em energia mecânica para realizar trabalho. Neste modo, a máquina opera em uma região da curva de conjugado versus velocidade, em que o conjugado produzido é maior do que o conjugado resistente, resultando em aceleração do sistema. O ponto de operação nesta região geralmente está localizado em uma velocidade mais baixa e um torque mais alto.</p></div>
+        <div><p>Para s &gt; 1, o rotor gira no sentido contrário ao do campo girante, o que acontece, por exemplo, quando se invertem duas fases de um motor em movimento (frenagem por contracorrente). O conjugado se opõe à rotação e freia a carga rapidamente, mas a máquina absorve energia tanto da rede quanto do eixo, e toda ela é dissipada como calor no rotor.</p></div>
       </div>
     </div>
   </section>
 
   <section data-estilo="light">
-    <h2>Torque de partida, de plena carga e máximo</h2>
-    <p>Na máquina de indução operando como motor, o torque de partida, o torque a plena carga e o torque máximo são conceitos importantes que descrevem o comportamento do motor em diferentes condições de operação. Na Figura 4, a localização dos valores destes torques é apresentada.</p>
+    <h2>Torque de partida, nominal e máximo</h2>
+    <p>Na região de motor, três pontos da curva interessam especialmente a quem especifica um acionamento. A Figura 4 mostra onde cada um deles fica em um motor típico de catálogo, com os valores em porcentagem do conjugado nominal.</p>
     <figure data-bloco="imagem">
-      <figcaption>Figura 4 | Conjugado da máquina de indução: partida, plena carga e máximo conjugado</figcaption>
-      <img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/aula-2/figura-4-conjugados-partida-plena-maximo.png" alt="Curva de conjugado induzido em porcentagem da carga plena versus velocidade mecânica, indicando o conjugado de partida (cerca de 200%), o conjugado máximo (cerca de 440%) e o conjugado de plena carga (100%) próximo à velocidade síncrona">
-      <p>Fonte: Chapman (2013, p. 336).</p>
+      <figcaption>Figura 4 | Conjugados de partida, máximo e nominal de um motor de indução típico</figcaption>
+      <img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/aula-2/figura-4-conjugados-partida-plena-maximo.png" alt="Curva de conjugado em porcentagem do nominal versus velocidade mecânica de 0 a 1.800 rpm: conjugado de partida de cerca de 154%, conjugado máximo de cerca de 306% perto de 1.340 rpm e conjugado nominal de 100% perto de 1.730 rpm">
+      <p>Fonte: Elaborada pela autora.</p>
     </figure>
     <div data-bloco="sanfona" data-variante="multipla">
       <div>
         <div>Torque de partida</div>
-        <div><p>O torque de partida é o torque máximo desenvolvido pelo motor de indução no momento em que é ligado à fonte de alimentação. Esse torque é necessário para superar a inércia do sistema e iniciar o movimento do eixo do motor. O valor do torque de partida é geralmente maior do que o torque nominal do motor e pode ser de até cinco ou seis vezes o torque nominal, dependendo do projeto do motor e da carga mecânica.</p></div>
+        <div><p>É o conjugado desenvolvido com o rotor parado (s = 1), no instante em que o motor é ligado. Ele precisa superar o conjugado resistente e a inércia da carga para que a aceleração aconteça. Em motores de uso geral, costuma ficar entre 1,5 e 2,5 vezes o conjugado nominal, acompanhado de uma corrente de partida de 6 a 8 vezes a nominal.</p></div>
       </div>
       <div>
-        <div>Torque à plena carga</div>
-        <div><p>O torque à plena carga, também conhecido como torque nominal, é o torque que o motor de indução pode produzir continuamente quando operando sob condições de carga nominal, ou seja, quando está fornecendo sua potência nominal. Esse é o torque máximo que o motor pode produzir sem exceder suas especificações de temperatura e corrente. O motor é projetado para operar eficientemente nessa condição de carga, e o torque à plena carga é normalmente especificado pelo fabricante do motor.</p></div>
+        <div>Torque nominal (plena carga)</div>
+        <div><p>É o conjugado que o motor entrega continuamente na potência e na velocidade de placa, sem ultrapassar os limites de temperatura do isolamento. Fica muito perto da velocidade síncrona, em um trecho quase linear da curva, o que explica por que a velocidade do motor de indução varia pouco com a carga.</p></div>
       </div>
       <div>
         <div>Torque máximo</div>
-        <div><p>O torque máximo é o maior torque que o motor de indução pode produzir em qualquer condição de operação, independentemente da carga aplicada. Este torque ocorre em uma condição específica chamada de "deslizamento máximo", na qual o motor está operando em uma velocidade próxima à sua velocidade síncrona. O torque máximo geralmente ocorre durante a partida do motor e diminui à medida que a velocidade do motor aumenta (Umans, 2014).</p></div>
+        <div><p>Também chamado de conjugado crítico ou de ruptura, é o maior conjugado que o motor consegue desenvolver. Ele ocorre em um escorregamento intermediário, s<sub>maxT</sub>, entre a partida e a velocidade nominal. Se a carga exigir mais do que esse valor, o motor desacelera até parar. Por isso, a razão entre o conjugado máximo e o nominal mede a capacidade do motor de suportar sobrecargas momentâneas (Chapman, 2013).</p></div>
       </div>
     </div>
   </section>
 
   <section>
     <h2>Escorregamento no torque máximo</h2>
-    <p>A obtenção do torque máximo é possível ao analisarmos a curva desta função. Devemos derivar a expressão em termos do escorregamento, igualando-o a zero. Isso nos dará o ponto da curva em que o torque atinge o valor máximo. Quando fazemos isso, obtemos o escorregamento correspondente ao torque máximo (s<sub>maxT</sub>). A expressão para o escorregamento durante o máximo conjugado desenvolvido é dada pela Equação 9:</p>
+    <p>Para encontrar o ponto de máximo da curva, derivamos a Equação 8 em relação ao escorregamento e igualamos o resultado a zero. Uma forma mais rápida de chegar ao mesmo resultado é usar o teorema da máxima transferência de potência: a potência em R<sub>2</sub>/s, e portanto o conjugado, é máxima quando essa resistência se iguala ao módulo da impedância do resto do circuito. Isso leva ao escorregamento do torque máximo:</p>
     <div data-bloco="formula" data-variante="destaque">
-      <p data-rotulo="(9)">\dfrac{d T_m}{d s} = 0 \;\rightarrow\; s_{maxT} = \dfrac{R_2}{\sqrt{R_{th}^{2} + \left(X_{th} + X_2\right)^{2}}}</p>
+      <p data-rotulo="(9)">\dfrac{R_2}{s_{maxT}} = \sqrt{R_{th}^{2} + \left(X_{th} + X_2\right)^{2}} \;\rightarrow\; s_{maxT} = \dfrac{R_2}{\sqrt{R_{th}^{2} + \left(X_{th} + X_2\right)^{2}}}</p>
     </div>
-    <p>O torque máximo é obtido fazendo a substituição direta de (9) por (8), em que nota-se que o máximo torque é desenvolvido independentemente do valor da resistência do circuito do rotor.</p>
+    <p>Substituindo (9) em (8), obtemos o valor do conjugado máximo. Repare que R<sub>2</sub> desaparece da expressão:</p>
     <div data-bloco="formula" data-variante="destaque">
       <p data-rotulo="(10)">T_{max} = \dfrac{3}{2\,\omega_s}\left(\dfrac{V_{th}^{2}}{R_{th} + \sqrt{R_{th}^{2} + \left(X_{th} + X_2\right)^{2}}}\right)</p>
     </div>
     <div data-bloco="olho">
       <div><div>Repare</div></div>
-      <div><div><p>R<sub>2</sub> não aparece na Equação 10: alterar a resistência do rotor desloca a velocidade em que o torque máximo acontece, mas não muda o valor desse torque — exatamente o que mostram as curvas da Figura 1.</p></div></div>
+      <div><div><p>s<sub>maxT</sub> é proporcional a R<sub>2</sub>, mas T<sub>max</sub> não depende de R<sub>2</sub>. Aumentar a resistência do rotor leva o pico para velocidades menores sem mudar a sua altura, exatamente como vimos na Figura 1. Já T<sub>max</sub> é proporcional a V<sub>th</sub><sup>2</sup>: uma queda de tensão na rede reduz rapidamente a capacidade de sobrecarga do motor.</p></div></div>
     </div>
   </section>
 </main>

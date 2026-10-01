@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <title>Ponto de Partida | Aula 1 – Máquinas Elétricas Avançadas</title>
-  <meta name="description" content="Introdução e problematização: o desafio de obter os parâmetros de uma máquina de indução a partir dos ensaios em vazio e de rotor bloqueado.">
+  <meta name="description" content="Introdução e problematização: como levantar a ficha técnica de um motor de indução a partir de ensaios de laboratório.">
   <meta name="nav" content="/maquinas-eletricas-avancadas/unidade-1/aula-1/nav">
   <meta name="disciplina" content="Máquinas Elétricas Avançadas">
   <meta name="unidade" content="Unidade 1 – Conceitos Avançados de Máquinas Elétricas">
@@ -21,50 +21,51 @@
 
   <section>
     <p><strong>Olá, estudante!</strong></p>
-    <p>O objetivo desta aula é guiar você pelo processo de obtenção dos parâmetros de uma máquina de indução a partir dos ensaios em vazio e de rotor bloqueado, ilustrando a importância desses parâmetros na análise e design de sistemas elétricos.</p>
-    <p>Como engenheiro eletricista responsável por determinar os parâmetros elétricos de uma máquina de indução, você precisará compreender os fundamentos dos ensaios em vazio e de rotor bloqueado, técnicas essenciais para a obtenção desses parâmetros. Por meio desses ensaios, você será capaz de entender o funcionamento e desempenho dessa máquina importante em sistemas elétricos.</p>
-    <p>Antes de tratarmos dos ensaios, vamos entender o circuito equivalente de uma máquina de indução. Este circuito inclui parâmetros como a resistência e a reatância do enrolamento do estator, a resistência e a reatância do enrolamento do rotor e as reatâncias de magnetização, que são fundamentais para o funcionamento da máquina.</p>
+    <p>Motores de indução estão em bombas, esteiras, compressores e ventiladores de praticamente toda planta industrial. Para prever como um desses motores vai se comportar sob carga, quanto ele vai aquecer ou qual corrente vai solicitar da rede, não basta ler a placa de identificação: precisamos de um modelo elétrico confiável da máquina.</p>
+    <p>Esse modelo é o circuito equivalente por fase, formado por resistências e reatâncias que representam o estator, o rotor e o caminho do fluxo magnético. O desafio é que esses elementos não podem ser medidos diretamente com um multímetro: eles precisam ser deduzidos a partir de ensaios feitos com o motor em condições bem controladas.</p>
+    <p>Nesta aula, você vai conhecer os dois ensaios clássicos usados para isso e aprender a transformar leituras de tensão, corrente e potência nos parâmetros do circuito equivalente.</p>
 
     <div data-bloco="abas">
       <div>
         <div>Ensaio em vazio</div>
-        <div><p>No ensaio em vazio, a máquina é alimentada com sua <strong>tensão nominal</strong>, sem carga mecânica acoplada ao eixo.</p></div>
+        <div><p>O motor gira <strong>livre, sem carga no eixo</strong>, alimentado com tensão e frequência nominais. Revela o ramo de magnetização e as perdas rotacionais.</p></div>
       </div>
       <div>
         <div>Ensaio de rotor bloqueado</div>
-        <div><p>No ensaio de rotor bloqueado, o rotor é <strong>travado</strong>, impedindo o movimento do seu eixo.</p></div>
+        <div><p>O eixo é <strong>impedido de girar</strong> e a tensão é reduzida até circular a corrente nominal. Revela as resistências e as reatâncias de dispersão.</p></div>
       </div>
     </div>
 
-    <p>Os ensaios em vazio e de rotor bloqueado são as duas técnicas fundamentais para determinar os parâmetros da máquina de indução. Durante esses ensaios, são registrados valores de corrente, tensão e potência, fornecendo informações preciosas sobre a máquina. Esses valores nos permitem calcular os parâmetros do circuito equivalente.</p>
+    <p>Combinando as leituras dos dois ensaios com uma medição de resistência em corrente contínua, conseguimos montar o circuito equivalente completo. É exatamente isso que a personagem desta aula vai precisar fazer.</p>
   </section>
 
   <section data-estilo="light">
-    <h2>O desafio de Roberto</h2>
+    <h2>O desafio de Camila</h2>
     <div data-bloco="quadro-box" data-variante="exemplo">
       <div>
         <div>
           <p><strong>Situação-problema</strong></p>
-          <p>Roberto, engenheiro responsável pela aferição dos parâmetros das máquinas de indução em uma empresa que fabrica motores para os mais diversos segmentos da indústria, está em mais um dia de trabalho no laboratório, realizando ensaios e testes em uma máquina de indução de <strong>100 HP, 460 V e 60 Hz</strong>. Nos ensaios em vazio e de rotor bloqueado, Roberto registra os valores da Tabela 1.</p>
+          <p>Camila acaba de assumir o laboratório de testes da Motores Aurora, uma fabricante de motores para saneamento e mineração. Um motor de <strong>50 HP, 380 V, 60 Hz, 4 polos, ligado em estrela</strong> voltou de uma reforma e precisa de uma ficha técnica atualizada antes de ser despachado ao cliente. Camila executa o ensaio em vazio e o ensaio de rotor bloqueado e registra as leituras da Tabela 1.</p>
         </div>
       </div>
     </div>
 
     <figure data-bloco="tabela" data-variante="centralizada">
-      <figcaption>Tabela 1 | Dados dos ensaios com motor de indução</figcaption>
+      <figcaption>Tabela 1 | Leituras dos ensaios do motor de 50 HP</figcaption>
       <table>
-        <tr><th>Parâmetros</th><th>Ensaio em vazio</th><th>Ensaio de rotor bloqueado</th></tr>
-        <tr><td>Tensão (V)</td><td>460,0 V</td><td>42,4 V</td></tr>
-        <tr><td>Corrente (A)</td><td>34,0 A</td><td>171 A</td></tr>
-        <tr><td>Potência (W)</td><td>1,3 kW</td><td>4.340 W</td></tr>
-        <tr><td>Resistência CC estator (fase)</td><td>0,0298 Ohms</td></tr>
+        <tr><th>Grandeza</th><th>Ensaio em vazio</th><th>Ensaio de rotor bloqueado</th></tr>
+        <tr><td>Tensão de linha</td><td>380 V</td><td>26,0 V</td></tr>
+        <tr><td>Corrente de linha</td><td>18,5 A</td><td>72,0 A</td></tr>
+        <tr><td>Potência trifásica</td><td>1.200 W</td><td>2.600 W</td></tr>
+        <tr><td>Frequência</td><td>60 Hz</td><td>15 Hz</td></tr>
+        <tr><td>Resistência CC do estator (por fase)</td><td>0,070 Ω</td></tr>
       </table>
-      <p>Fonte: Elaborada pelo autor (2024).</p>
+      <p>Fonte: Elaborada pela autora (dados fictícios).</p>
     </figure>
 
     <div data-bloco="olho">
       <div><div>Pense nisso</div></div>
-      <div><div><p>Como Roberto pode proceder para obter os parâmetros de uma máquina de indução a partir dos ensaios em vazio e de rotor bloqueado? Vamos ajudá-lo a obter as perdas rotacionais deste tipo de máquina!</p></div></div>
+      <div><div><p>Com essas leituras, como Camila pode separar as perdas mecânicas das perdas no cobre e descobrir os valores de R<sub>1</sub>, R<sub>2</sub>, X<sub>1</sub>, X<sub>2</sub> e X<sub>M</sub>? Vamos construir esse caminho juntos!</p></div></div>
     </div>
   </section>
 </main>

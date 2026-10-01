@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <title>Vamos Começar! | Aula 2 – Máquinas Elétricas Avançadas</title>
-  <meta name="description" content="Equacionamento da curva de conjugado: potência e conjugado, efeito da resistência do rotor e circuito equivalente de Thévenin da máquina de indução.">
+  <meta name="description" content="Do circuito equivalente à equação do conjugado: potência no entreferro, efeito da resistência do rotor e equivalente de Thévenin da máquina de indução.">
   <meta name="nav" content="/maquinas-eletricas-avancadas/unidade-1/aula-2/nav">
   <meta name="disciplina" content="Máquinas Elétricas Avançadas">
   <meta name="unidade" content="Unidade 1 – Conceitos Avançados de Máquinas Elétricas">
@@ -15,32 +15,32 @@
   <section>
     <header data-bloco="banner">
       <p>Vamos Começar!</p>
-      <h1>Equacionamento da curva de conjugado</h1>
+      <h1>Do circuito equivalente à equação do conjugado</h1>
     </header>
   </section>
 
   <section>
     <h2>Potência e conjugado</h2>
-    <p>O circuito equivalente da máquina de indução que estudamos é fundamental para analisar as características de desempenho do motor de indução. Uma vez que as correntes elétricas no estator e no rotor podem ser determinadas através da análise do circuito equivalente da máquina, os valores de potência também podem ser obtidos pela mesma análise. Contudo, precisamos dar um passo atrás para lembrar como o conjugado eletromecânico (ou torque, denominado aqui por T<sub>m</sub>) se relaciona com a potência mecânica (P<sub>m</sub>). O torque pode ser obtido a partir da relação constante na Equação 1, que relaciona a potência mecânica em Watts com a velocidade mecânica (ω<sub>m</sub>) em radianos por segundo (Umans, 2014; Chapman, 2013).</p>
+    <p>Com o circuito equivalente, podemos calcular as correntes do estator e do rotor para qualquer escorregamento e, a partir delas, as potências envolvidas na conversão de energia. Para chegar ao conjugado (ou torque, T<sub>m</sub>), partimos de uma relação da mecânica: a potência mecânica P<sub>m</sub>, em watts, é o produto do conjugado pela velocidade angular do eixo ω<sub>m</sub>, em rad/s (Chapman, 2013).</p>
     <div data-bloco="formula">
       <p data-rotulo="(1)">P_m = T_m\,\omega_m</p>
     </div>
-    <p>Entretanto, em máquinas de indução, a velocidade mecânica depende de seu escorregamento s. Dessa forma, fica mais conveniente escrever essa equação em termos da velocidade síncrona de rotação, pois sabemos da Equação 2 que:</p>
+    <p>Na máquina de indução, a velocidade do eixo é sempre escrita em relação à velocidade síncrona ω<sub>s</sub>, por meio do escorregamento:</p>
     <div data-bloco="formula">
       <p data-rotulo="(2)">\omega_m = (1 - s)\,\omega_s</p>
     </div>
-    <p>A substituição direta de (2) por (1) nos leva à Equação 3, na qual colocamos o torque em função da velocidade síncrona. Para isso, obtemos a potência do entreferro (P<sub>g</sub>) a partir da potência mecânica e da sua relação com o escorregamento s (Umans, 2014). Ou seja:</p>
+    <p>Do total de potência que atravessa o entreferro (P<sub>g</sub>), uma fração s é dissipada no cobre do rotor e o restante, (1 − s)·P<sub>g</sub>, é convertido em potência mecânica. Substituindo em (1), o fator (1 − s) se cancela e o conjugado passa a depender apenas da potência no entreferro e da velocidade síncrona (Umans, 2014):</p>
     <div data-bloco="formula">
-      <p data-rotulo="(3)">T_m = \dfrac{P_m}{\omega_m} = \dfrac{P_m}{(1 - s)\,\omega_s} = \dfrac{P_g}{\omega_s}</p>
+      <p data-rotulo="(3)">T_m = \dfrac{P_m}{\omega_m} = \dfrac{(1 - s)\,P_g}{(1 - s)\,\omega_s} = \dfrac{P_g}{\omega_s}</p>
     </div>
-    <p>Como também \(P_g = 3\, I_2^{2}\, \dfrac{R_2}{s}\), teremos então a Equação 4 do torque, que relaciona a velocidade síncrona e os parâmetros do circuito equivalente da máquina de indução:</p>
+    <p>No circuito equivalente, a potência no entreferro é a potência dissipada na resistência R<sub>2</sub>/s das três fases, \(P_g = 3\, I_2^{2}\, \dfrac{R_2}{s}\). Assim:</p>
     <div data-bloco="formula" data-variante="destaque">
       <p data-rotulo="(4)">T_m = \dfrac{3}{\omega_s}\, I_2^{2}\, \dfrac{R_2}{s}</p>
     </div>
     <div data-bloco="quadro-box" data-variante="importante">
       <div>
         <div>
-          <p>Concluímos então que o conjugado mecânico é inversamente proporcional à velocidade síncrona e ao escorregamento, enquanto também é diretamente proporcional à corrente do rotor e à sua resistência. Note que, enquanto a Equação 3 nos mostrou uma relação entre o torque mecânico e a potência do entreferro, na Equação 4 obtemos uma relação entre o torque mecânico e a resistência do rotor. É importante lembrar que estamos assumindo uma relação de transformação unitária entre o enrolamento do estator e o enrolamento do rotor.</p>
+          <p>A Equação 4 mostra que, para uma mesma rede (ω<sub>s</sub> fixo), o conjugado depende da corrente do rotor e da relação R<sub>2</sub>/s. Ela é válida para qualquer escorregamento e vale tanto para o funcionamento como motor quanto como gerador. Lembre-se de que todas as grandezas do rotor estão referidas ao estator, como fizemos na aula anterior.</p>
         </div>
       </div>
     </div>
@@ -48,36 +48,36 @@
 
   <section>
     <h2>O efeito da resistência do rotor</h2>
-    <p>A Figura 1 ilustra a característica do conjugado mecânico em função da velocidade da máquina para diferentes valores de resistência do rotor. Observa-se que a variação desta resistência do rotor impacta no comportamento da curva característica, que pode ser ajustada ao aumentar ou diminuir de valor. De fato, uma estratégia de controle comum em rotores do tipo bobinado, no qual é possível ter acesso aos terminais, é a utilização de resistências associadas ao enrolamento para controlar as características de conjugado e velocidade da máquina de indução com rotor bobinado (Chapman, 2013).</p>
+    <p>Antes de deduzir a equação completa, observe na Figura 1 o que acontece com a curva de conjugado quando a resistência do rotor é multiplicada por diferentes fatores. O pico de conjugado se desloca para velocidades cada vez menores, até chegar à partida, mas a sua altura praticamente não muda. É esse efeito que o rotor bobinado explora, ao inserir resistências externas para aumentar o conjugado de partida, e que os rotores de barras profundas e de dupla gaiola reproduzem automaticamente (Chapman, 2013).</p>
     <figure data-bloco="imagem">
-      <figcaption>Figura 1 | Característica de conjugado da máquina de acordo com a resistência de rotor</figcaption>
-      <img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/aula-2/figura-1-conjugado-resistencia-rotor.png" alt="Curvas de conjugado induzido versus velocidade mecânica para resistências de rotor R1 a R6: o pico de conjugado se desloca para velocidades menores à medida que a resistência aumenta, mantendo o mesmo valor máximo">
-      <p>Fonte: Chapman (2013, p. 340).</p>
+      <figcaption>Figura 1 | Curvas de conjugado para diferentes valores de resistência do rotor</figcaption>
+      <img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/aula-2/figura-1-conjugado-resistencia-rotor.png" alt="Cinco curvas de conjugado induzido versus velocidade mecânica para R2 multiplicada por 1, 2, 3, 4 e 6: o pico se desloca para velocidades menores à medida que a resistência aumenta, mantendo o mesmo valor máximo de cerca de 640 N·m">
+      <p>Fonte: Elaborada pela autora.</p>
     </figure>
   </section>
 
   <section>
     <h2>Circuito equivalente de Thévenin</h2>
-    <p>A Equação 4 nos mostra que a corrente de rotor quadrática tem relação direta com o valor do torque. Podemos a partir do circuito equivalente da máquina e obter a corrente de rotor em função dos parâmetros da máquina. Uma estratégia para isso é partir das associações de impedâncias em série e paralelo de forma a obter um circuito equivalente de Thévenin, conforme mostra a Figura 2. A Figura 2(a) mostra o circuito equivalente simplificado, desprezando as perdas no núcleo. Já a Figura 2(b) mostra o circuito com os equivalentes de Thévenin.</p>
-    <p><strong>Figura 2 | Obtenção do circuito de Thévenin da máquina de indução</strong></p>
+    <p>Para usar a Equação 4, precisamos de I<sub>2</sub> em função do escorregamento. Um caminho elegante é aplicar o teorema de Thévenin à parte do circuito que fica à esquerda do rotor, desprezando as perdas no núcleo (R<sub>C</sub>). A fonte V<sub>1</sub>, o ramo do estator e o ramo de magnetização são substituídos por uma única fonte V<sub>th</sub> em série com uma impedância Z<sub>th</sub>. Arraste o controle da Figura 2 para comparar os dois circuitos.</p>
+    <p><strong>Figura 2 | Do circuito simplificado ao equivalente de Thévenin</strong></p>
     <div data-bloco="comparador-imagens" data-variante="diagrama">
       <div>
-        <div><img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/aula-2/figura-2a-circuito-simplificado.png" alt="(a) Circuito equivalente simplificado da máquina de indução, desprezando as perdas no núcleo"></div>
-        <div><img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/aula-2/figura-2b-circuito-thevenin.png" alt="(b) Circuito equivalente de Thévenin com Vth, Rth, Xth, X2 e R2/s"></div>
+        <div><img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/aula-2/figura-2a-circuito-simplificado.png" alt="(a) Circuito equivalente simplificado sem perdas no núcleo, com R1, jX1, jXM, jX2 e R2/s; a parte à esquerda do rotor está destacada"></div>
+        <div><img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/aula-2/figura-2b-circuito-thevenin.png" alt="(b) Circuito equivalente de Thévenin com fonte Vth, Rth, jXth, jX2 e R2/s"></div>
       </div>
-      <div><div>(a) Circuito equivalente simplificado</div><div>(b) Circuito de Thévenin</div></div>
+      <div><div>(a) Circuito simplificado</div><div>(b) Equivalente de Thévenin</div></div>
     </div>
-    <p>Fonte: Adaptada de Umans (2014, p. 361).</p>
-    <p>Após determinar os parâmetros do circuito equivalente, como resistência do estator (R<sub>1</sub>), reatância do estator (X<sub>1</sub>), resistência do rotor (R<sub>2</sub>), reatância do rotor (X<sub>2</sub>) e reatância de magnetização (X<sub>m</sub>), devemos utilizar as relações entre os parâmetros do circuito equivalente para encontrar a fonte de Thévenin, que consiste em uma tensão de Thévenin (V<sub>th</sub>) e uma impedância de Thévenin (Z<sub>th</sub>). Para calcular esses valores a partir do circuito equivalente, temos a Equação 5 e Equação 6 (Umans, 2014; Chapman, 2013).</p>
+    <p>Fonte: Elaborada pela autora.</p>
+    <p>A tensão de Thévenin é a tensão que aparece nos terminais do ramo de magnetização com o rotor desconectado: um simples divisor de tensão entre (R<sub>1</sub> + jX<sub>1</sub>) e jX<sub>M</sub>. A impedância de Thévenin é a associação em paralelo dessas duas impedâncias, vista com a fonte em curto (Umans, 2014):</p>
     <div data-bloco="formula" data-variante="destaque">
-      <p data-rotulo="(5)">V_{th} = \dfrac{X_m}{\sqrt{R_1^{2} + \left(X_1 + X_m\right)^{2}}}\, V_1</p>
-      <p data-rotulo="(6)">\hat{Z}_{th} = \dfrac{jX_m\left(R_1 + jX_1\right)}{R_1 + j\left(X_1 + X_m\right)} = R_{th} + jX_{th}</p>
+      <p data-rotulo="(5)">V_{th} = \dfrac{X_M}{\sqrt{R_1^{2} + \left(X_1 + X_M\right)^{2}}}\, V_1</p>
+      <p data-rotulo="(6)">\hat{Z}_{th} = \dfrac{jX_M\left(R_1 + jX_1\right)}{R_1 + j\left(X_1 + X_M\right)} = R_{th} + jX_{th}</p>
     </div>
-    <p>A partir da fonte de Thévenin encontrada, podemos representar o circuito equivalente da máquina de indução como um circuito equivalente de Thévenin, facilitando a análise da característica de conjugado da máquina em diferentes condições de operação. Para isso, iremos descrever a corrente do rotor refletida (I<sub>2</sub>) em função dos elementos do circuito equivalente de Thévenin.</p>
+    <p>Com o circuito reduzido a uma única malha, a corrente do rotor é obtida diretamente pela lei de Ohm:</p>
     <div data-bloco="formula">
       <p data-rotulo="(7)">I_2 = \dfrac{V_{th}}{\sqrt{\left(R_{th} + \dfrac{R_2}{s}\right)^{2} + \left(X_{th} + X_2\right)^{2}}}</p>
     </div>
-    <p>Basta então que façamos uma substituição direta desta corrente na equação do torque que podemos obter a seguinte expressão desejada na Equação 8 (Umans, 2014; Chapman, 2013).</p>
+    <p>Substituindo (7) em (4), chegamos à equação do conjugado em função do escorregamento, que descreve toda a curva de torque × velocidade da máquina:</p>
     <div data-bloco="formula" data-variante="destaque">
       <p data-rotulo="(8)">T_m = \dfrac{3}{\omega_s}\left(\dfrac{V_{th}^{2}}{\left(R_{th} + \dfrac{R_2}{s}\right)^{2} + \left(X_{th} + X_2\right)^{2}}\right)\dfrac{R_2}{s}</p>
     </div>

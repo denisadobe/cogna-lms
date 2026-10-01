@@ -22,7 +22,7 @@
 
   <section>
     <h2>Texto rico</h2>
-    <p>O texto corrido da aula não precisa de bloco: títulos, parágrafos, <strong>negrito</strong>, <em>itálico</em>, <a href="https://www.kroton.com.br/">links</a>, listas e índices como R<sub>1</sub> ou X<sup>2</sup> são escritos diretamente no documento. Fórmulas curtas no meio do texto usam a notação \(\hat{V}_1 = \hat{E}_2 + \hat{I}_1 (R_1 + jX_1)\).</p>
+    <p>O texto corrido da aula não precisa de bloco: títulos, parágrafos, <strong>negrito</strong>, <em>itálico</em>, <a href="https://www.kroton.com.br/">links</a>, listas e índices como R<sub>1</sub> ou X<sup>2</sup> são escritos diretamente no documento. Fórmulas curtas no meio do texto usam a notação \(\hat{V}_1 = \hat{E}_1 + \hat{I}_1 (R_1 + jX_1)\).</p>
     <ul>
       <li>Listas com marcadores para itens sem ordem.</li>
       <li>Parágrafos curtos facilitam a leitura em telas pequenas.</li>
@@ -54,7 +54,7 @@
         <li><a href="/maquinas-eletricas-avancadas/unidade-1/aula-1/vamos-comecar">Obtenção dos parâmetros</a></li>
         <li><a href="/maquinas-eletricas-avancadas/unidade-1/aula-1/siga-em-frente">Particularidades dos tipos de rotores</a></li>
       </ol>
-      <img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/aula-1/estudo-bancada.png" alt="Estudante trabalhando em planilha no notebook">
+      <img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/aula-1/estudo-bancada.png" alt="Ilustração de uma mesa de estudos com notebook, caderno e calculadora">
     </div>
   </section>
 
@@ -98,8 +98,8 @@
     <div data-bloco="bloco-de-codigo">
       <div><div><pre><code>import math
 
-R1 = 0.0298                    # resistência CC do estator (ohm)
-V, I, P = 460, 34.0, 1300      # ensaio em vazio
+R1 = 0.070                     # resistência CC do estator (ohm)
+V, I, P = 380, 18.5, 1200      # ensaio em vazio
 P_rot = P - 3 * I**2 * R1
 Z = (V / math.sqrt(3)) / I
 print(f"P_rot = {P_rot:.1f} W, Z_vazio = {Z:.3f} ohm")</code></pre></div></div>
@@ -123,9 +123,9 @@ print(f"P_rot = {P_rot:.1f} W, Z_vazio = {Z:.3f} ohm")</code></pre></div></div>
     <h2>Vídeo</h2>
     <p>Videoaula com capa. O player (YouTube, Vimeo, MP4 ou player externo) só carrega ao clicar.</p>
     <div data-bloco="video">
-      <p><a href="https://www.youtube.com/watch?v=mzFksL9F8Gw">https://www.youtube.com/watch?v=mzFksL9F8Gw</a></p>
+      <p><a href="https://www.youtube.com/watch?v=N7TZ4gm3aUg">https://www.youtube.com/watch?v=N7TZ4gm3aUg</a></p>
       <img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/aula-1/capa-enrolamento-motor.jpg" alt="Capa da videoaula">
-      <p>Ensaio em vazio e de rotor bloqueado do motor de indução</p>
+      <p>Como funciona o motor de indução</p>
     </div>
   </section>
 
@@ -144,7 +144,7 @@ print(f"P_rot = {P_rot:.1f} W, Z_vazio = {Z:.3f} ohm")</code></pre></div></div>
     <figure data-bloco="imagem">
       <figcaption>Figura 1 | Circuito equivalente de um motor de indução</figcaption>
       <img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/aula-1/figura-1-circuito-equivalente.png" alt="Circuito equivalente por fase do motor de indução">
-      <p>Fonte: Chapman (2013, p. 321).</p>
+      <p>Fonte: Elaborada pela autora.</p>
     </figure>
   </section>
 
@@ -163,7 +163,7 @@ print(f"P_rot = {P_rot:.1f} W, Z_vazio = {Z:.3f} ohm")</code></pre></div></div>
         <div>Ver circuito do ensaio em vazio</div>
         <div>
           <p><img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/aula-1/circuito-ensaio-vazio.png" alt="Circuito equivalente do ensaio em vazio"></p>
-          <p>Fonte: Umans (2014).</p>
+          <p>Fonte: Elaborada pela autora.</p>
         </div>
       </div>
     </div>
@@ -173,8 +173,8 @@ print(f"P_rot = {P_rot:.1f} W, Z_vazio = {Z:.3f} ohm")</code></pre></div></div>
     <h2>Citação</h2>
     <p>Destaque para um trecho citado, com autoria.</p>
     <div data-bloco="citacao">
-      <div><div><p>Ao analisar o motor de indução usando seu circuito equivalente, é possível determinar seu desempenho elétrico, eficiência, características de torque-velocidade e outras propriedades importantes para diferentes condições de operação.</p></div></div>
-      <div><div>Rafael Schincariol da Silva, Máquinas Elétricas Avançadas</div></div>
+      <div><div><p>Uma vez conhecidos os parâmetros do circuito equivalente, o motor deixa de ser uma caixa-preta: corrente, perdas, rendimento e conjugado podem ser previstos para qualquer carga.</p></div></div>
+      <div><div>Helena Duarte Vasconcelos (autora fictícia), Máquinas Elétricas Avançadas</div></div>
     </div>
   </section>
 
@@ -184,15 +184,15 @@ print(f"P_rot = {P_rot:.1f} W, Z_vazio = {Z:.3f} ohm")</code></pre></div></div>
     <div data-bloco="galeria">
       <div>
         <div><img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/aula-1/rotor-gaiola-de-esquilo.png" alt="Rotor gaiola de esquilo"></div>
-        <div><p>Rotor gaiola de esquilo. Fonte: Chapman (2013).</p></div>
+        <div><p>Rotor gaiola de esquilo. Fonte: Elaborada pela autora.</p></div>
       </div>
       <div>
         <div><img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/aula-1/figura-4-barras-profundas.png" alt="Rotor de barras profundas"></div>
-        <div><p>Rotor de barras profundas. Fonte: Chapman (2013).</p></div>
+        <div><p>Rotor de barras profundas. Fonte: Elaborada pela autora.</p></div>
       </div>
       <div>
         <div><img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/aula-1/figura-5-dupla-gaiola.png" alt="Rotor dupla gaiola de esquilo"></div>
-        <div><p>Rotor dupla gaiola de esquilo. Fonte: Umans (2014).</p></div>
+        <div><p>Rotor dupla gaiola de esquilo. Fonte: Elaborada pela autora.</p></div>
       </div>
     </div>
   </section>
@@ -227,7 +227,7 @@ print(f"P_rot = {P_rot:.1f} W, Z_vazio = {Z:.3f} ohm")</code></pre></div></div>
       <div><div><p>Por que a reatância medida a 15 Hz precisa ser convertida para 60 Hz?</p></div></div>
     </div>
     <div data-bloco="quadro-box" data-variante="saiba-mais">
-      <div><div><p>Leia o tópico “Modelo de Circuito do Rotor” em Chapman (2013), Capítulo 6.</p></div></div>
+      <div><div><p>Consulte a norma IEEE Std 112 para conhecer o roteiro completo dos ensaios de motores de indução.</p></div></div>
     </div>
   </section>
 
@@ -235,15 +235,15 @@ print(f"P_rot = {P_rot:.1f} W, Z_vazio = {Z:.3f} ohm")</code></pre></div></div>
     <h2>Tabela</h2>
     <p>Tabela com legenda e fonte no padrão ABNT. Linhas mais curtas expandem a última célula. Variantes: <strong>centralizada</strong>, <strong>primeira-coluna</strong> e <strong>sem-cabecalho</strong>.</p>
     <figure data-bloco="tabela" data-variante="centralizada">
-      <figcaption>Tabela 1 | Dados dos ensaios com motor de indução</figcaption>
+      <figcaption>Tabela 1 | Leituras dos ensaios de um motor de indução</figcaption>
       <table>
-        <tr><th>Parâmetros</th><th>Ensaio em vazio</th><th>Ensaio de rotor bloqueado</th></tr>
-        <tr><td>Tensão (V)</td><td>460,0 V</td><td>42,4 V</td></tr>
-        <tr><td>Corrente (A)</td><td>34,0 A</td><td>171 A</td></tr>
-        <tr><td>Potência (W)</td><td>1,3 kW</td><td>4.340 W</td></tr>
-        <tr><td>Resistência CC estator (fase)</td><td>0,0298 Ohms</td></tr>
+        <tr><th>Grandeza</th><th>Ensaio em vazio</th><th>Ensaio de rotor bloqueado</th></tr>
+        <tr><td>Tensão de linha</td><td>380 V</td><td>26,0 V</td></tr>
+        <tr><td>Corrente de linha</td><td>18,5 A</td><td>72,0 A</td></tr>
+        <tr><td>Potência trifásica</td><td>1.200 W</td><td>2.600 W</td></tr>
+        <tr><td>Resistência CC do estator (por fase)</td><td>0,070 Ω</td></tr>
       </table>
-      <p>Fonte: Elaborada pelo autor (2024).</p>
+      <p>Fonte: Elaborada pela autora (dados fictícios).</p>
     </figure>
   </section>
 
@@ -268,9 +268,9 @@ print(f"P_rot = {P_rot:.1f} W, Z_vazio = {Z:.3f} ohm")</code></pre></div></div>
       <div data-campo="Bloom">Compreensão</div>
       <div data-campo="Texto-base">
         <p>Avalie as seguintes asserções e a relação proposta entre elas.</p>
-        <p>I. Uma das principais vantagens do rotor bobinado é sua capacidade de oferecer controle variável de velocidade e torque.</p>
+        <p>I. Na partida de um motor com rotor de dupla gaiola, a maior parte da corrente do rotor circula pela gaiola externa.</p>
         <p>PORQUE</p>
-        <p>II. Existem configurações do rotor tipo gaiola de esquilo que permitem tornar a resistência de rotor variável entre as condições de partida até a sua operação nominal.</p>
+        <p>II. Na partida, a frequência das correntes do rotor é igual à da rede, e a elevada reatância de dispersão da gaiola interna dificulta a passagem de corrente por ela.</p>
       </div>
       <div data-campo="Enunciado"><p>A respeito dessas asserções, assinale a alternativa correta.</p></div>
       <div data-campo="A"><p>As asserções I e II são proposições verdadeiras, mas a II não justifica a I.</p></div>
@@ -278,20 +278,20 @@ print(f"P_rot = {P_rot:.1f} W, Z_vazio = {Z:.3f} ohm")</code></pre></div></div>
       <div data-campo="C"><p>A asserção I é uma proposição verdadeira e a II, falsa.</p></div>
       <div data-campo="D"><p>A asserção I é uma proposição falsa e a II, verdadeira.</p></div>
       <div data-campo="E"><p>As asserções I e II são proposições falsas.</p></div>
-      <div data-campo="Gabarito"><p>A</p></div>
-      <div data-campo="Resolução"><p>As duas asserções são verdadeiras, mas a II não justifica a I: a variação de resistência nos rotores de barras profundas e dupla gaiola é uma característica construtiva da gaiola de esquilo, e não a razão do controle de velocidade e torque do rotor bobinado.</p></div>
+      <div data-campo="Gabarito"><p>B</p></div>
+      <div data-campo="Resolução"><p>As duas asserções são verdadeiras e a II justifica a I: com o rotor parado, a alta reatância da gaiola interna empurra a corrente para a gaiola externa, de maior resistência, o que eleva o conjugado de partida.</p></div>
     </section>
     <section data-bloco="questao">
       <div data-campo="Tipo">Discursiva</div>
       <div data-campo="Dificuldade">Difícil</div>
       <div data-campo="Bloom">Análise</div>
-      <div data-campo="Texto-base"><p>A máquina síncrona, quando operando como gerador, desempenha um papel importante na geração de energia elétrica. O controle de excitação é essencial para manter a tensão gerada na máquina síncrona dentro dos limites desejados, garantindo assim a estabilidade do sistema elétrico.</p></div>
-      <div data-campo="Enunciado"><p>Considere uma máquina síncrona trifásica de 5 kVA, 208 V, quatro polos, conexão em estrela, com resistência de estator desprezível, operando como gerador em paralelo com uma fonte de 208 V e 60 Hz. Explique como obter a tensão de excitação e o ângulo de potência quando a máquina entrega a potência nominal com fator de potência 0,8 atrasado, e desenhe o diagrama fasorial.</p></div>
+      <div data-campo="Texto-base"><p>Em uma pequena central hidrelétrica fictícia, um gerador síncrono é ligado em paralelo com a rede da concessionária. A equipe de operação precisa ajustar a corrente de campo para que o gerador entregue potência com o fator de potência pedido pelo operador da rede.</p></div>
+      <div data-campo="Enunciado"><p>Considere um gerador síncrono trifásico de 15 kVA, 220 V, ligado em estrela, com resistência de armadura desprezível, operando em paralelo com uma rede de 220 V e 60 Hz e entregando a potência nominal com fator de potência 0,8 atrasado. Explique como obter a tensão interna gerada e o ângulo de potência e desenhe o diagrama fasorial.</p></div>
       <div data-campo="Resposta esperada">
-        <p>O circuito equivalente da máquina é composto por uma fonte de tensão interna e uma reatância síncrona. Calcula-se a tensão por fase e a corrente de estator com o seu ângulo (a partir do fator de potência) e, em seguida, aplica-se a equação do gerador:</p>
-        <p>\[ \hat{E}_a = \hat{V}_{\phi} + jX_s \hat{I}_a \]</p>
-        <p>Por conta da ação de gerador, o ângulo de potência é positivo e o diagrama fasorial pode ser desenhado conforme apresentado a seguir:</p>
-        <p><img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/questoes/diagrama-fasorial-gerador.png" alt="Diagrama fasorial do gerador síncrono com Ea, Vt, Ia e jIaXs"></p>
+        <p>O gerador é representado por uma fonte de tensão interna em série com a reatância síncrona. Com a tensão de fase e a corrente de armadura (módulo e ângulo obtidos do fator de potência), aplica-se a equação do gerador:</p>
+        <p>\[ \hat{E}_A = \hat{V}_{\phi} + jX_s \hat{I}_a \]</p>
+        <p>Como a máquina opera como gerador, E<sub>A</sub> fica adiantada em relação a V<sub>φ</sub> (ângulo de potência δ positivo), como no diagrama fasorial a seguir:</p>
+        <p><img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/questoes/diagrama-fasorial-gerador.png" alt="Diagrama fasorial do gerador síncrono com V-fi na horizontal, Ia atrasada de theta, jXs Ia perpendicular a Ia e EA adiantada de delta"></p>
       </div>
     </section>
   </section>
@@ -301,9 +301,9 @@ print(f"P_rot = {P_rot:.1f} W, Z_vazio = {Z:.3f} ohm")</code></pre></div></div>
     <p>Página de créditos editoriais da aula ou do material.</p>
     <div data-bloco="folha-de-creditos">
       <div><div>Título da aula</div></div>
-      <div><div></div><div><p><strong>© 2026 por Editora e Distribuidora Educacional S.A.</strong></p><p>Todos os direitos reservados.</p></div></div>
+      <div><div></div><div><p><strong>© 2026 Editora Horizonte Educacional (fictícia)</strong></p><p>Conteúdo fictício para demonstração.</p></div></div>
       <div><div>Autoria</div><div><p>Nome do autor</p></div></div>
-      <div><div>Imagens</div><div><p>Adaptadas de bancos de imagens licenciados.</p></div></div>
+      <div><div>Imagens</div><div><p>Figuras e ilustrações originais.</p></div></div>
     </div>
   </section>
 </main>

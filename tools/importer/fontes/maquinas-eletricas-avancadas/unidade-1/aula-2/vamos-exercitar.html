@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <title>Vamos Exercitar? | Aula 2 – Máquinas Elétricas Avançadas</title>
-  <meta name="description" content="Resolução do desafio de Roberto: equivalente de Thévenin, curva característica de torque × velocidade, torque máximo e escorregamento no torque máximo.">
+  <meta name="description" content="Resolução do desafio de Camila: equivalente de Thévenin, curva de torque × velocidade, torque máximo e escorregamento no torque máximo do motor de 50 HP.">
   <meta name="nav" content="/maquinas-eletricas-avancadas/unidade-1/aula-2/nav">
   <meta name="disciplina" content="Máquinas Elétricas Avançadas">
   <meta name="unidade" content="Unidade 1 – Conceitos Avançados de Máquinas Elétricas">
@@ -15,75 +15,77 @@
   <section>
     <header data-bloco="banner">
       <p>Vamos Exercitar?</p>
-      <h1>Obtenção da curva característica e seu torque máximo</h1>
+      <h1>A curva de torque do motor e o seu ponto máximo</h1>
     </header>
   </section>
 
   <section>
-    <p>Para que possamos ajudar Roberto em seu novo desafio de determinar a característica de torque versus velocidade da máquina, precisaremos agora considerar os valores calculados para os parâmetros da máquina obtidos com os dados medidos no ensaio. Estes parâmetros foram apresentados na Tabela 1.</p>
+    <p>Chegou a hora de ajudar Camila a responder ao cliente. Vamos usar os parâmetros do circuito equivalente da Tabela 1 e as equações desta aula para traçar a curva de torque × velocidade do motor de 50 HP e localizar o seu conjugado máximo.</p>
     <div data-bloco="botao-expansivel">
       <div>
         <div>Rever a Tabela 1</div>
         <div>
-          <h3>Tabela 1 | Parâmetros da máquina de indução</h3>
+          <h3>Tabela 1 | Parâmetros do circuito equivalente do motor de 50 HP</h3>
           <ul>
-            <li>R<sub>1</sub> = 0,0298 Ω e R<sub>2</sub> = 0,0192 Ω</li>
-            <li>X<sub>1</sub> = X<sub>2</sub> = 0,270 Ω</li>
-            <li>X<sub>m</sub> = 7,5 Ω</li>
-            <li>Motor de 100 HP, 460 V, 60 Hz, 1800 rpm (≈ 188,4 rad/s)</li>
+            <li>R<sub>1</sub> = 0,070 Ω e R<sub>2</sub> = 0,097 Ω</li>
+            <li>X<sub>1</sub> = X<sub>2</sub> = 0,249 Ω</li>
+            <li>X<sub>M</sub> = 11,55 Ω</li>
+            <li>Motor de 50 HP, 380 V, 60 Hz, 4 polos, ligação estrela: n<sub>s</sub> = 1.800 rpm (≈ 188,5 rad/s)</li>
           </ul>
-          <p>Fonte: Elaborada pelo autor (2024).</p>
+          <p>Fonte: Elaborada pela autora (dados fictícios).</p>
         </div>
       </div>
     </div>
     <h2>Roteiro da resolução</h2>
     <div data-bloco="linha-do-tempo" data-variante="etapas">
-      <div><div>Tensão de fase</div><div><p>Calcular a tensão por fase a partir da tensão nominal de linha.</p></div></div>
-      <div><div>Thévenin</div><div><p>Obter V<sub>th</sub>, R<sub>th</sub> e X<sub>th</sub> com as Equações 5 e 6.</p></div></div>
-      <div><div>Curva</div><div><p>Substituir os valores na Equação 8 e traçar o torque em função da velocidade.</p></div></div>
-      <div><div>Máximos</div><div><p>Calcular o torque máximo (Equação 10) e o escorregamento em que ele ocorre (Equação 9).</p></div></div>
+      <div><div>Tensão de fase</div><div><p>Obter a tensão por fase a partir da tensão nominal de linha (ligação estrela).</p></div></div>
+      <div><div>Thévenin</div><div><p>Calcular V<sub>th</sub>, R<sub>th</sub> e X<sub>th</sub> com as Equações 5 e 6.</p></div></div>
+      <div><div>Curva</div><div><p>Substituir os valores na Equação 8 e variar o escorregamento de 1 até perto de 0.</p></div></div>
+      <div><div>Pico</div><div><p>Calcular o torque máximo (Equação 10) e o escorregamento em que ele ocorre (Equação 9).</p></div></div>
     </div>
   </section>
 
   <section>
     <h2>Equivalente de Thévenin</h2>
-    <p>Com base nos parâmetros calculados, podemos inicialmente calcular a impedância equivalente de Thévenin e a tensão de Thévenin. Isto é feito por meio das equações apresentadas e aqui vamos assumir que a máquina está sendo alimentada com a tensão nominal. Dessa forma teremos:</p>
+    <p>Considerando o motor alimentado com tensão nominal, a tensão de fase é:</p>
     <div data-bloco="formula">
-      <p>V_1 = \dfrac{460}{\sqrt{3}} \approx 265{,}58\ \text{V}</p>
+      <p>V_1 = \dfrac{380}{\sqrt{3}} \approx 219{,}39\ \text{V}</p>
     </div>
-    <p>Com base neste valor de tensão de fase, utilizamos a equação da tensão de Thévenin:</p>
+    <p>Aplicando a Equação 5:</p>
     <div data-bloco="formula" data-variante="destaque">
-      <p>V_{th} = \dfrac{X_m}{\sqrt{R_1^{2} + \left(X_1 + X_m\right)^{2}}}\, V_1 = \dfrac{7{,}5}{\sqrt{0{,}0298^{2} + \left(0{,}27 + 7{,}5\right)^{2}}} \cdot 265{,}58 \approx 256{,}35\ \text{V}</p>
+      <p>V_{th} = \dfrac{X_M}{\sqrt{R_1^{2} + \left(X_1 + X_M\right)^{2}}}\, V_1 = \dfrac{11{,}55}{\sqrt{0{,}070^{2} + \left(0{,}249 + 11{,}55\right)^{2}}} \cdot 219{,}39 \approx 214{,}76\ \text{V}</p>
     </div>
-    <p>Podemos verificar que este valor é bem próximo da tensão de alimentação. Isso porque o valor da reatância de magnetização é bem mais significativo que os outros parâmetros.</p>
-    <p>Agora, calcularemos a impedância de Thévenin do circuito. Para isso, aplicamos novamente a equação já estudada. Entretanto, podemos simplificar fazendo uma aproximação razoável da resistência e da reatância de Thévenin, uma vez que \(R_1^{2} \ll \left(X_1 + X_m\right)^{2}\) e \(X_1 \ll X_m\). Ou seja:</p>
+    <p>A tensão de Thévenin fica apenas cerca de 2% abaixo da tensão de fase, porque a reatância de magnetização é muito maior que a impedância do estator.</p>
+    <p>Para a impedância de Thévenin, como \(R_1^{2} \ll \left(X_1 + X_M\right)^{2}\) e \(X_1 \ll X_M\), podemos usar as aproximações a seguir, que diferem do cálculo exato da Equação 6 em menos de 2%:</p>
     <div data-bloco="formula" data-variante="destaque">
-      <p>R_{th} \approx \dfrac{X_m}{X_1 + X_m}\, R_1 = \dfrac{7{,}5}{0{,}27 + 7{,}5} \cdot 0{,}0298 \approx 0{,}0288\ \Omega</p>
-      <p>X_{th} \approx X_1 = 0{,}270\ \Omega</p>
+      <p>R_{th} \approx R_1 \left(\dfrac{X_M}{X_1 + X_M}\right)^{2} = 0{,}070 \cdot \left(\dfrac{11{,}55}{11{,}799}\right)^{2} \approx 0{,}0671\ \Omega</p>
+      <p>X_{th} \approx X_1 = 0{,}249\ \Omega</p>
     </div>
   </section>
 
   <section>
     <h2>Curva característica</h2>
-    <p>Utilizando os parâmetros da máquina e a impedância equivalente de Thévenin, pode-se obter a equação da curva do torque:</p>
+    <p>Com os valores de Thévenin, a Equação 8 fica em função apenas do escorregamento:</p>
     <div data-bloco="formula" data-variante="destaque">
-      <p>T_m = \dfrac{3}{188{,}4}\left(\dfrac{256{,}35^{2}}{\left(0{,}0288 + \dfrac{0{,}0192}{s}\right)^{2} + \left(0{,}270 + 0{,}270\right)^{2}}\right)\dfrac{0{,}0192}{s}</p>
+      <p>T_m = \dfrac{3}{188{,}5}\left(\dfrac{214{,}76^{2}}{\left(0{,}0671 + \dfrac{0{,}097}{s}\right)^{2} + \left(0{,}249 + 0{,}249\right)^{2}}\right)\dfrac{0{,}097}{s}</p>
     </div>
-    <p>Podemos traçar esta curva em um gráfico, considerando que o escorregamento tem relação com a velocidade da máquina. Dessa forma, Roberto poderá apresentar a característica da curva de torque por velocidade. Essa curva é apresentada na Figura 5. Observe.</p>
+    <p>Para cada valor de s, a velocidade do eixo é ω<sub>m</sub> = (1 − s)·ω<sub>s</sub>. Calculando o conjugado para vários escorregamentos, Camila traça a curva da Figura 5.</p>
     <figure data-bloco="imagem">
-      <figcaption>Figura 5 | Característica torque × velocidade da máquina analisada</figcaption>
-      <img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/aula-2/figura-5-torque-velocidade-roberto.png" alt="Curva de torque em N·m versus velocidade em rad/s do motor de 100 HP: cerca de 68 N·m na partida, crescendo até o pico de aproximadamente 920 N·m perto de 182 rad/s e caindo a zero na velocidade síncrona de 188,4 rad/s">
-      <p>Fonte: Elaborada pelo autor.</p>
+      <figcaption>Figura 5 | Curva de torque × velocidade do motor de 50 HP</figcaption>
+      <img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/aula-2/figura-5-torque-velocidade-caso.png" alt="Curva de torque em N·m versus velocidade em rad/s do motor de 50 HP: cerca de 259 N·m na partida, subindo até o pico de aproximadamente 644 N·m em 152,1 rad/s e caindo a zero na velocidade síncrona de 188,5 rad/s">
+      <p>Fonte: Elaborada pela autora.</p>
     </figure>
-    <p>A curva pode ser reproduzida com poucas linhas de código, variando o escorregamento de 1 (partida) até próximo de 0 (velocidade síncrona):</p>
+    <p>A mesma curva pode ser gerada com poucas linhas de código, variando o escorregamento de 1 (partida) até quase 0 (velocidade síncrona):</p>
     <div data-bloco="bloco-de-codigo">
       <div><div><pre><code>import numpy as np
 import matplotlib.pyplot as plt
 
-Vth, Rth, Xth, X2, R2, ws = 256.35, 0.0288, 0.270, 0.270, 0.0192, 188.4
-s = np.linspace(1, 0.001, 2000)                       # escorregamento
+Vth, Rth, Xth = 214.76, 0.0671, 0.249       # equivalente de Thévenin
+R2, X2, ws = 0.097, 0.249, 188.5            # rotor e velocidade síncrona (rad/s)
+
+s = np.linspace(1, 0.001, 2000)             # escorregamento
 Tm = 3 / ws * Vth**2 / ((Rth + R2 / s)**2 + (Xth + X2)**2) * R2 / s
-wm = (1 - s) * ws                                     # velocidade mecânica (rad/s)
+wm = (1 - s) * ws                           # velocidade do eixo (rad/s)
 
 plt.plot(wm, Tm)
 plt.xlabel("Velocidade (rad/s)"); plt.ylabel("Torque (N.m)"); plt.grid(True)
@@ -94,24 +96,29 @@ plt.show()</code></pre></div></div>
 
   <section>
     <h2>Torque máximo e escorregamento</h2>
-    <p>Verifica-se que \(R_{th} \ll X_{th}\). Então, para o máximo torque, temos:</p>
-    <div data-bloco="formula" data-variante="destaque">
-      <p>T_{max} = \dfrac{3}{2 \cdot 188{,}4}\left(\dfrac{256{,}35^{2}}{0{,}0288 + \sqrt{0{,}0288^{2} + 0{,}54^{2}}}\right) \approx \dfrac{3}{376{,}8} \cdot \dfrac{256{,}35^{2}}{0{,}0288 + 0{,}54} \approx 918{,}7\ \text{N·m}</p>
+    <p>Primeiro, calculamos o denominador comum às Equações 9 e 10:</p>
+    <div data-bloco="formula">
+      <p>\sqrt{R_{th}^{2} + \left(X_{th} + X_2\right)^{2}} = \sqrt{0{,}0671^{2} + 0{,}498^{2}} \approx 0{,}5025\ \Omega</p>
     </div>
-    <p>Finalmente, obteremos o escorregamento onde este máximo torque ocorre. Ou seja:</p>
+    <p>O conjugado máximo é, então:</p>
     <div data-bloco="formula" data-variante="destaque">
-      <p>s_{maxT} = \dfrac{R_2}{\sqrt{R_{th}^{2} + \left(X_{th} + X_2\right)^{2}}} \approx \dfrac{R_2}{X_{th} + X_2} = \dfrac{0{,}0192}{0{,}27 + 0{,}27} \approx 0{,}036</p>
-      <p>\omega_{m,maxT} = \left(1 - s_{maxT}\right)\omega_s \approx \left(1 - 0{,}036\right) \cdot 188{,}4 \approx 181{,}7\ \text{rad/s}</p>
+      <p>T_{max} = \dfrac{3}{2 \cdot 188{,}5}\left(\dfrac{214{,}76^{2}}{0{,}0671 + 0{,}5025}\right) \approx \dfrac{3}{377} \cdot \dfrac{46.122}{0{,}5696} \approx 644\ \text{N·m}</p>
     </div>
+    <p>E o escorregamento e a velocidade em que ele ocorre:</p>
+    <div data-bloco="formula" data-variante="destaque">
+      <p>s_{maxT} = \dfrac{R_2}{\sqrt{R_{th}^{2} + \left(X_{th} + X_2\right)^{2}}} = \dfrac{0{,}097}{0{,}5025} \approx 0{,}193</p>
+      <p>\omega_{m,maxT} = \left(1 - s_{maxT}\right)\omega_s \approx \left(1 - 0{,}193\right) \cdot 188{,}5 \approx 152{,}1\ \text{rad/s} \;(\approx 1.453\ \text{rpm})</p>
+    </div>
+    <p>Por fim, o conjugado nominal do motor, de 50 HP (37,3 kW) a cerca de 1.749 rpm, é de aproximadamente 204 N·m. A capacidade de sobrecarga é, portanto, T<sub>max</sub>/T<sub>nom</sub> ≈ 644/204 ≈ 3,2.</p>
   </section>
 
   <section data-estilo="light">
     <h2>Resultado</h2>
     <figure data-bloco="tabela" data-variante="centralizada">
-      <figcaption>Tabela 2 | Característica de conjugado do motor de 100 HP, 460 V e 60 Hz</figcaption>
+      <figcaption>Tabela 2 | Característica de conjugado do motor de 50 HP, 380 V e 60 Hz</figcaption>
       <table>
         <tr><th>V<sub>th</sub></th><th>R<sub>th</sub></th><th>X<sub>th</sub></th><th>T<sub>max</sub></th><th>s<sub>maxT</sub></th><th>Torque de partida</th></tr>
-        <tr><td>≈ 256,35 V</td><td>≈ 0,0288 Ω</td><td>≈ 0,270 Ω</td><td>≈ 918,7 N·m</td><td>≈ 0,036</td><td>≈ 68 N·m</td></tr>
+        <tr><td>≈ 214,8 V</td><td>≈ 0,0671 Ω</td><td>≈ 0,249 Ω</td><td>≈ 644 N·m</td><td>≈ 0,193</td><td>≈ 259 N·m</td></tr>
       </table>
       <p>Fonte: Elaborada a partir dos dados da Tabela 1.</p>
     </figure>
@@ -119,7 +126,7 @@ plt.show()</code></pre></div></div>
       <div>
         <div>
           <p><strong>Missão cumprida!</strong></p>
-          <p>Resumindo, Roberto levantou o comportamento de torque versus velocidade angular da máquina. Essa informação é muito valiosa para a seleção de uma máquina adequada para uma determinada aplicação. Com estas informações, Roberto já pode pensar em selecionar uma máquina elétrica, de acordo com parâmetros de utilização dados em uma situação de projeto de acionamento de algum atuador mecânico, por exemplo.</p>
+          <p>Com a curva em mãos, Camila pode responder ao cliente com segurança: o motor desenvolve até cerca de 644 N·m, pouco mais de três vezes o conjugado nominal. Isso dá folga para absorver os travamentos momentâneos do transportador, desde que o pico de carga fique abaixo desse valor e a tensão da rede não caia muito. A partida, com cerca de 259 N·m, também precisa ser comparada com o conjugado resistente do transportador carregado.</p>
         </div>
       </div>
     </div>
