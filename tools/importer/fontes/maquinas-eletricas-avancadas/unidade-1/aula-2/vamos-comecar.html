@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <title>Vamos Começar! | Aula 2 – Máquinas Elétricas Avançadas</title>
+  <meta name="description" content="Equacionamento da curva de conjugado: potência e conjugado, efeito da resistência do rotor e circuito equivalente de Thévenin da máquina de indução.">
+  <meta name="nav" content="/maquinas-eletricas-avancadas/unidade-1/aula-2/nav">
+  <meta name="disciplina" content="Máquinas Elétricas Avançadas">
+  <meta name="unidade" content="Unidade 1 – Conceitos Avançados de Máquinas Elétricas">
+  <meta name="aula" content="Aula 2 – Análise da curva de conjugado em máquinas de indução">
+  <meta name="secao" content="vamos-comecar">
+  <meta name="ordem" content="3">
+</head>
+<body>
+<main>
+  <section>
+    <header data-bloco="banner">
+      <p>Vamos Começar!</p>
+      <h1>Equacionamento da curva de conjugado</h1>
+    </header>
+  </section>
+
+  <section>
+    <h2>Potência e conjugado</h2>
+    <p>O circuito equivalente da máquina de indução que estudamos é fundamental para analisar as características de desempenho do motor de indução. Uma vez que as correntes elétricas no estator e no rotor podem ser determinadas através da análise do circuito equivalente da máquina, os valores de potência também podem ser obtidos pela mesma análise. Contudo, precisamos dar um passo atrás para lembrar como o conjugado eletromecânico (ou torque, denominado aqui por T<sub>m</sub>) se relaciona com a potência mecânica (P<sub>m</sub>). O torque pode ser obtido a partir da relação constante na Equação 1, que relaciona a potência mecânica em Watts com a velocidade mecânica (ω<sub>m</sub>) em radianos por segundo (Umans, 2014; Chapman, 2013).</p>
+    <div data-bloco="formula">
+      <p data-rotulo="(1)">P_m = T_m\,\omega_m</p>
+    </div>
+    <p>Entretanto, em máquinas de indução, a velocidade mecânica depende de seu escorregamento s. Dessa forma, fica mais conveniente escrever essa equação em termos da velocidade síncrona de rotação, pois sabemos da Equação 2 que:</p>
+    <div data-bloco="formula">
+      <p data-rotulo="(2)">\omega_m = (1 - s)\,\omega_s</p>
+    </div>
+    <p>A substituição direta de (2) por (1) nos leva à Equação 3, na qual colocamos o torque em função da velocidade síncrona. Para isso, obtemos a potência do entreferro (P<sub>g</sub>) a partir da potência mecânica e da sua relação com o escorregamento s (Umans, 2014). Ou seja:</p>
+    <div data-bloco="formula">
+      <p data-rotulo="(3)">T_m = \dfrac{P_m}{\omega_m} = \dfrac{P_m}{(1 - s)\,\omega_s} = \dfrac{P_g}{\omega_s}</p>
+    </div>
+    <p>Como também \(P_g = 3\, I_2^{2}\, \dfrac{R_2}{s}\), teremos então a Equação 4 do torque, que relaciona a velocidade síncrona e os parâmetros do circuito equivalente da máquina de indução:</p>
+    <div data-bloco="formula" data-variante="destaque">
+      <p data-rotulo="(4)">T_m = \dfrac{3}{\omega_s}\, I_2^{2}\, \dfrac{R_2}{s}</p>
+    </div>
+    <div data-bloco="quadro-box" data-variante="importante">
+      <div>
+        <div>
+          <p>Concluímos então que o conjugado mecânico é inversamente proporcional à velocidade síncrona e ao escorregamento, enquanto também é diretamente proporcional à corrente do rotor e à sua resistência. Note que, enquanto a Equação 3 nos mostrou uma relação entre o torque mecânico e a potência do entreferro, na Equação 4 obtemos uma relação entre o torque mecânico e a resistência do rotor. É importante lembrar que estamos assumindo uma relação de transformação unitária entre o enrolamento do estator e o enrolamento do rotor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>O efeito da resistência do rotor</h2>
+    <p>A Figura 1 ilustra a característica do conjugado mecânico em função da velocidade da máquina para diferentes valores de resistência do rotor. Observa-se que a variação desta resistência do rotor impacta no comportamento da curva característica, que pode ser ajustada ao aumentar ou diminuir de valor. De fato, uma estratégia de controle comum em rotores do tipo bobinado, no qual é possível ter acesso aos terminais, é a utilização de resistências associadas ao enrolamento para controlar as características de conjugado e velocidade da máquina de indução com rotor bobinado (Chapman, 2013).</p>
+    <figure data-bloco="imagem">
+      <figcaption>Figura 1 | Característica de conjugado da máquina de acordo com a resistência de rotor</figcaption>
+      <img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/aula-2/figura-1-conjugado-resistencia-rotor.png" alt="Curvas de conjugado induzido versus velocidade mecânica para resistências de rotor R1 a R6: o pico de conjugado se desloca para velocidades menores à medida que a resistência aumenta, mantendo o mesmo valor máximo">
+      <p>Fonte: Chapman (2013, p. 340).</p>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Circuito equivalente de Thévenin</h2>
+    <p>A Equação 4 nos mostra que a corrente de rotor quadrática tem relação direta com o valor do torque. Podemos a partir do circuito equivalente da máquina e obter a corrente de rotor em função dos parâmetros da máquina. Uma estratégia para isso é partir das associações de impedâncias em série e paralelo de forma a obter um circuito equivalente de Thévenin, conforme mostra a Figura 2. A Figura 2(a) mostra o circuito equivalente simplificado, desprezando as perdas no núcleo. Já a Figura 2(b) mostra o circuito com os equivalentes de Thévenin.</p>
+    <p><strong>Figura 2 | Obtenção do circuito de Thévenin da máquina de indução</strong></p>
+    <div data-bloco="comparador-imagens" data-variante="diagrama">
+      <div>
+        <div><img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/aula-2/figura-2a-circuito-simplificado.png" alt="(a) Circuito equivalente simplificado da máquina de indução, desprezando as perdas no núcleo"></div>
+        <div><img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/aula-2/figura-2b-circuito-thevenin.png" alt="(b) Circuito equivalente de Thévenin com Vth, Rth, Xth, X2 e R2/s"></div>
+      </div>
+      <div><div>(a) Circuito equivalente simplificado</div><div>(b) Circuito de Thévenin</div></div>
+    </div>
+    <p>Fonte: Adaptada de Umans (2014, p. 361).</p>
+    <p>Após determinar os parâmetros do circuito equivalente, como resistência do estator (R<sub>1</sub>), reatância do estator (X<sub>1</sub>), resistência do rotor (R<sub>2</sub>), reatância do rotor (X<sub>2</sub>) e reatância de magnetização (X<sub>m</sub>), devemos utilizar as relações entre os parâmetros do circuito equivalente para encontrar a fonte de Thévenin, que consiste em uma tensão de Thévenin (V<sub>th</sub>) e uma impedância de Thévenin (Z<sub>th</sub>). Para calcular esses valores a partir do circuito equivalente, temos a Equação 5 e Equação 6 (Umans, 2014; Chapman, 2013).</p>
+    <div data-bloco="formula" data-variante="destaque">
+      <p data-rotulo="(5)">V_{th} = \dfrac{X_m}{\sqrt{R_1^{2} + \left(X_1 + X_m\right)^{2}}}\, V_1</p>
+      <p data-rotulo="(6)">\hat{Z}_{th} = \dfrac{jX_m\left(R_1 + jX_1\right)}{R_1 + j\left(X_1 + X_m\right)} = R_{th} + jX_{th}</p>
+    </div>
+    <p>A partir da fonte de Thévenin encontrada, podemos representar o circuito equivalente da máquina de indução como um circuito equivalente de Thévenin, facilitando a análise da característica de conjugado da máquina em diferentes condições de operação. Para isso, iremos descrever a corrente do rotor refletida (I<sub>2</sub>) em função dos elementos do circuito equivalente de Thévenin.</p>
+    <div data-bloco="formula">
+      <p data-rotulo="(7)">I_2 = \dfrac{V_{th}}{\sqrt{\left(R_{th} + \dfrac{R_2}{s}\right)^{2} + \left(X_{th} + X_2\right)^{2}}}</p>
+    </div>
+    <p>Basta então que façamos uma substituição direta desta corrente na equação do torque que podemos obter a seguinte expressão desejada na Equação 8 (Umans, 2014; Chapman, 2013).</p>
+    <div data-bloco="formula" data-variante="destaque">
+      <p data-rotulo="(8)">T_m = \dfrac{3}{\omega_s}\left(\dfrac{V_{th}^{2}}{\left(R_{th} + \dfrac{R_2}{s}\right)^{2} + \left(X_{th} + X_2\right)^{2}}\right)\dfrac{R_2}{s}</p>
+    </div>
+  </section>
+</main>
+</body>
+</html>
