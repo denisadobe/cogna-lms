@@ -732,8 +732,7 @@
         "component": "richtext",
         "name": "enunciado",
         "label": "Enunciado",
-        "valueType": "string",
-        "required": true
+        "valueType": "string"
       },
       {
         "component": "richtext",
@@ -774,7 +773,7 @@
       {
         "component": "richtext",
         "name": "resolucao",
-        "label": "Resolução comentada (equações em \\[ ... \\])",
+        "label": "Resolução comentada (equações em \\[ ... \\], no texto em \\( ... \\))",
         "valueType": "string"
       }
     ]

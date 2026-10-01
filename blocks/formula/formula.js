@@ -1,10 +1,11 @@
 import { moveInstrumentation } from '../../scripts/ue-utils.js';
-
-import { renderTex } from '../../scripts/formula.js';
+import { renderTexInHost } from '../../scripts/formula.js';
 
 /**
  * Fórmula: cada linha contém uma expressão LaTeX e, opcionalmente, um rótulo
  * (ex.: "(1)") na segunda célula. Variante "destaque" envolve as equações num quadro.
+ * A expressão fica como texto no elemento e o desenho fica num shadow root, para que
+ * edições (Universal Editor) gravem sempre o LaTeX, nunca a fórmula renderizada.
  * @param {Element} block
  */
 export default async function decorate(block) {
@@ -16,23 +17,23 @@ export default async function decorate(block) {
 
     const line = document.createElement('div');
     line.className = 'formula-linha';
-    // a expressão é editada pelo painel de propriedades; a linha é o item selecionável
     moveInstrumentation(row, line);
 
     const math = document.createElement('div');
     math.className = 'formula-expressao';
-    math.dataset.tex = tex;
+    moveInstrumentation(texCell, math);
     math.textContent = tex;
     line.append(math);
 
     const label = labelCell?.textContent.trim();
-    if (label) {
+    if (label || labelCell?.hasAttribute('data-aue-prop')) {
       const span = document.createElement('span');
       span.className = 'formula-rotulo';
-      span.textContent = label;
+      moveInstrumentation(labelCell, span);
+      span.textContent = label || '';
       line.append(span);
     }
-    rendering.push(renderTex(math, tex, true));
+    rendering.push(renderTexInHost(math, tex, true));
     return line;
   }).filter(Boolean);
 

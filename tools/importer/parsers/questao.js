@@ -24,8 +24,16 @@ const toCampo = (label) => {
   return CAMPOS[key] || key;
 };
 
+// ordem fixa das linhas: é a ordem dos campos no modelo do Universal Editor
+const ORDEM = ['tipo', 'dificuldade', 'bloom', 'texto-base', 'referencia', 'enunciado',
+  'a', 'b', 'c', 'd', 'e', 'gabarito', 'resolucao'];
+
 export default function questaoParser(element, { document }) {
-  const cells = [...element.querySelectorAll(':scope > [data-campo]')]
-    .map((field) => [toCampo(field.dataset.campo), nodes(field)]);
+  const campos = {};
+  [...element.querySelectorAll(':scope > [data-campo]')].forEach((field) => {
+    campos[toCampo(field.dataset.campo)] = nodes(field);
+  });
+  // todas as linhas, mesmo vazias, para os seletores do editor apontarem sempre para o campo certo
+  const cells = ORDEM.map((campo) => [campo, campos[campo] || '']);
   replaceWithBlock(element, document, 'Questao', cells);
 }

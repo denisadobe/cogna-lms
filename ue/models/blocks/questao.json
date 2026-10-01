@@ -7,7 +7,61 @@
       "plugins": {
         "da": {
           "name": "questao",
-          "type": "key-value-block"
+          "unsafeHTML": "<div class=\"questao\"><div><div>tipo</div><div>Múltipla escolha simples</div></div><div><div>dificuldade</div><div>Intermediário</div></div><div><div>bloom</div><div>Aplicação</div></div><div><div>texto-base</div><div></div></div><div><div>referencia</div><div></div></div><div><div>enunciado</div><div><p>Enunciado da questão.</p></div></div><div><div>a</div><div><p>Alternativa A</p></div></div><div><div>b</div><div><p>Alternativa B</p></div></div><div><div>c</div><div><p>Alternativa C</p></div></div><div><div>d</div><div><p>Alternativa D</p></div></div><div><div>e</div><div><p>Alternativa E</p></div></div><div><div>gabarito</div><div>A</div></div><div><div>resolucao</div><div><p>Resolução comentada.</p></div></div></div>",
+          "fields": [
+            {
+              "name": "tipo",
+              "selector": "div:nth-child(1)>div:nth-child(2)"
+            },
+            {
+              "name": "dificuldade",
+              "selector": "div:nth-child(2)>div:nth-child(2)"
+            },
+            {
+              "name": "bloom",
+              "selector": "div:nth-child(3)>div:nth-child(2)"
+            },
+            {
+              "name": "texto-base",
+              "selector": "div:nth-child(4)>div:nth-child(2)"
+            },
+            {
+              "name": "referencia",
+              "selector": "div:nth-child(5)>div:nth-child(2)"
+            },
+            {
+              "name": "enunciado",
+              "selector": "div:nth-child(6)>div:nth-child(2)"
+            },
+            {
+              "name": "a",
+              "selector": "div:nth-child(7)>div:nth-child(2)"
+            },
+            {
+              "name": "b",
+              "selector": "div:nth-child(8)>div:nth-child(2)"
+            },
+            {
+              "name": "c",
+              "selector": "div:nth-child(9)>div:nth-child(2)"
+            },
+            {
+              "name": "d",
+              "selector": "div:nth-child(10)>div:nth-child(2)"
+            },
+            {
+              "name": "e",
+              "selector": "div:nth-child(11)>div:nth-child(2)"
+            },
+            {
+              "name": "gabarito",
+              "selector": "div:nth-child(12)>div:nth-child(2)"
+            },
+            {
+              "name": "resolucao",
+              "selector": "div:nth-child(13)>div:nth-child(2)"
+            }
+          ]
         }
       }
     }
@@ -105,8 +159,7 @@
           "component": "richtext",
           "name": "enunciado",
           "label": "Enunciado",
-          "valueType": "string",
-          "required": true
+          "valueType": "string"
         },
         {
           "component": "richtext",
@@ -147,7 +200,7 @@
         {
           "component": "richtext",
           "name": "resolucao",
-          "label": "Resolução comentada (equações em \\[ ... \\])",
+          "label": "Resolução comentada (equações em \\[ ... \\], no texto em \\( ... \\))",
           "valueType": "string"
         }
       ]

@@ -1,5 +1,5 @@
-/* expressões inline no texto: \( ... \) */
-.formula-inline .katex {
+/* expressões inline no texto: \( ... \) (desenhadas em shadow root) */
+.formula-inline {
   font-size: 1.05em;
 }
 
@@ -26,10 +26,6 @@
   text-align: center;
 }
 
-.formula .formula-expressao .katex-display {
-  margin: 0.4em 0;
-}
-
 .formula .formula-rotulo {
   flex: none;
   color: var(--text-muted);
@@ -43,11 +39,11 @@
   background: var(--color-tint);
 }
 
-.formula.esquerda .formula-expressao {
-  text-align: left;
+.formula.esquerda {
+  --formula-alinhamento: left;
 }
 
-.formula.esquerda .katex-display > .katex {
+.formula.esquerda .formula-expressao {
   text-align: left;
 }
 

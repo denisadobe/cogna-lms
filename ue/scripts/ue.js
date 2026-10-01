@@ -4,6 +4,27 @@
  * apenas as reações às ações do autor no editor.
  */
 
+import { renderInlineMath, renderTexInHost } from '../../scripts/formula.js';
+
+let mathTimer;
+
+/**
+ * Redesenha as fórmulas depois que o editor altera o conteúdo. O LaTeX fica no texto
+ * dos elementos (o desenho fica em shadow root), então basta comparar e redesenhar.
+ */
+function refreshMath() {
+  clearTimeout(mathTimer);
+  mathTimer = setTimeout(() => {
+    const main = document.querySelector('main');
+    if (!main) return;
+    main.querySelectorAll('.formula-expressao').forEach((el) => {
+      const tex = el.textContent.trim();
+      if (tex && tex !== el.dataset.formulaTex) renderTexInHost(el, tex, true);
+    });
+    renderInlineMath(main);
+  }, 150);
+}
+
 /**
  * Mostra, dentro do bloco, o item selecionado no editor (aba, sanfona, slide, modal).
  * @param {Element} element elemento selecionado (item do bloco)
@@ -50,6 +71,9 @@ function setupEventHandlers() {
     picture?.querySelectorAll('source').forEach((source) => source.remove());
     picture?.querySelector('img')?.removeAttribute('srcset');
   });
+
+  ['aue:content-patch', 'aue:content-update', 'aue:content-add', 'aue:content-move']
+    .forEach((type) => document.body.addEventListener(type, refreshMath));
 
   document.body.addEventListener('aue:ui-select', ({ detail }) => {
     const resource = detail?.resource;

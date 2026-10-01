@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <title>Teste pipeline</title>
+  <meta name="description" content="Teste">
+  <meta name="theme" content="editora">
+</head>
+<body>
+<main>
+  <section>
+    <h1>Teste</h1>
+    <p>Texto com \(R_1 + jX_1\) inline e *asterisco* e sublinhado_ok.</p>
+    <div data-bloco="formula">
+      <p data-rotulo="(1)">\hat{Z}_{vazio} = R_{vazio} + jX_{vazio} = R_1 + j(X_1 + X_m)</p>
+      <p>X_{vazio} = \sqrt{Z_{vazio}^2 - R_{vazio}^2} \approx 7{,}80\ \Omega</p>
+    </div>
+    <figure data-bloco="tabela" data-variante="centralizada">
+      <figcaption>Tabela 1 | Dados</figcaption>
+      <table>
+        <tr><th>Parâmetros</th><th>Ensaio em vazio</th><th>Rotor bloqueado</th></tr>
+        <tr><td>Tensão (V)</td><td>460,0 V</td><td>42,4 V</td></tr>
+        <tr><td>Resistência</td><td>0,0298 Ohms</td></tr>
+      </table>
+      <p>Fonte: Elaborada pelo autor (2024).</p>
+    </figure>
+  </section>
+  <section data-estilo="light">
+    <section data-bloco="questao">
+      <div data-campo="Tipo">Múltipla escolha simples</div>
+      <div data-campo="Enunciado"><p>Qual?</p></div>
+      <div data-campo="A"><p>\(P_{rot} = 283\) W.</p></div>
+      <div data-campo="B"><p>370 W</p></div>
+      <div data-campo="Gabarito"><p>B) 370 W</p></div>
+      <div data-campo="Resolução"><p>Texto</p><p>\[ R_1 = \frac{V_{cc}}{2 I_{cc}} = 0{,}25\ \Omega \]</p></div>
+    </section>
+    <figure data-bloco="imagem">
+      <figcaption>Figura 1 | Circuito</figcaption>
+      <img src="/assets/aulas/maquinas-eletricas-avancadas/unidade-1/aula-1/figura-1-circuito-equivalente.png" alt="Circuito equivalente">
+      <p>Fonte: Chapman (2013, p. 321).</p>
+    </figure>
+  </section>
+</main>
+</body>
+</html>

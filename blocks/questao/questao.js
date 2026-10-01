@@ -1,4 +1,4 @@
-import { renderTex } from '../../scripts/formula.js';
+import { renderTexInHost } from '../../scripts/formula.js';
 import { moveInstrumentation } from '../../scripts/ue-utils.js';
 
 const LETRAS = ['A', 'B', 'C', 'D', 'E', 'F'];
@@ -42,9 +42,12 @@ function readModel(block) {
   [...block.children].forEach((row) => {
     const [keyCell, valueCell] = [...row.children];
     if (!keyCell || !valueCell) return;
-    const rawKey = keyCell.textContent.trim();
+    // no Universal Editor o nome do campo também vem em data-aue-prop
+    const rawKey = valueCell.dataset.aueProp || keyCell.textContent.trim();
+    const isEmpty = !valueCell.textContent.trim() && !valueCell.querySelector('img');
     const letter = rawKey.match(/^([A-F])\)?$/i);
     if (letter) {
+      if (isEmpty) return;
       model.alternativas.push({ letra: letter[1].toUpperCase(), cell: valueCell });
       return;
     }
@@ -61,7 +64,7 @@ function readModel(block) {
         if (first?.nodeType === Node.TEXT_NODE) first.nodeValue = first.nodeValue.replace(/^\s*[A-F]\)\s*/i, '');
         model.alternativas.push({ letra: LETRAS[i], cell });
       });
-    } else if (key) {
+    } else if (key && !isEmpty) {
       model[key] = valueCell;
     }
   });
@@ -84,10 +87,9 @@ function toContent(cell, className) {
     const text = p.textContent.trim();
     const display = text.match(/^\\\[([\s\S]+)\\\]$/);
     if (display) {
-      const math = document.createElement('div');
-      math.className = 'questao-formula';
-      renderTex(math, display[1].trim(), true);
-      p.replaceWith(math);
+      // o LaTeX continua no parágrafo; o desenho fica num shadow root
+      p.classList.add('questao-formula');
+      renderTexInHost(p, display[1].trim(), true);
     } else if (/^porque$/i.test(text)) {
       p.className = 'questao-porque';
     } else if (/^(I|II|III|IV|V|VI)\s*[.)–-]\s/.test(text)) {
@@ -245,8 +247,7 @@ export default function decorate(block) {
     const sr = document.createElement('span');
     sr.className = 'visually-hidden';
     sr.textContent = `Alternativa ${letra}: `;
-    text.prepend(sr);
-    label.append(input, badge, text);
+    label.append(input, badge, sr, text);
     fieldset.append(label);
   });
   form.append(fieldset);
